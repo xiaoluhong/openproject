@@ -17,7 +17,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #++
 
-class PrincipalRole < ActiveRecord::Base
+class PrincipalRole < ApplicationRecord
   belongs_to :principal
   belongs_to :role
   validate :validate_assignable

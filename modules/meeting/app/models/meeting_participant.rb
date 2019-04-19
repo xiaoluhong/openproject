@@ -18,7 +18,7 @@
 # See doc/COPYRIGHT.md for more details.
 #++
 
-class MeetingParticipant < ActiveRecord::Base
+class MeetingParticipant < ApplicationRecord
   belongs_to :meeting
   belongs_to :user
 

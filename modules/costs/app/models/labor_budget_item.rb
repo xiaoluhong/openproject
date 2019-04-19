@@ -17,7 +17,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #++
 
-class LaborBudgetItem < ActiveRecord::Base
+class LaborBudgetItem < ApplicationRecord
   belongs_to :cost_object
   belongs_to :user
   belongs_to :principal, foreign_key: 'user_id'

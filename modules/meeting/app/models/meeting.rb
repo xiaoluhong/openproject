@@ -18,7 +18,7 @@
 # See doc/COPYRIGHT.md for more details.
 #++
 
-class Meeting < ActiveRecord::Base
+class Meeting < ApplicationRecord
   include Concerns::VirtualAttribute
 
   self.table_name = 'meetings'

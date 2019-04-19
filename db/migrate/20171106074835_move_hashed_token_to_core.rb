@@ -1,5 +1,5 @@
 class MoveHashedTokenToCore < ActiveRecord::Migration[5.1]
-  class OldToken < ActiveRecord::Base
+  class OldToken < ApplicationRecord
     self.table_name = :plaintext_tokens
   end
 

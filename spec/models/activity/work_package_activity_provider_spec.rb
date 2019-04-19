@@ -29,11 +29,13 @@
 require 'spec_helper'
 
 describe Activity::WorkPackageActivityProvider, type: :model do
+  using_shared_fixtures :admin
+  let(:user) { admin }
+
   let(:event_scope)               { 'work_packages' }
   let(:work_package_edit_event)   { 'work_package-edit' }
   let(:work_package_closed_event) { 'work_package-closed' }
 
-  let(:user)          { FactoryBot.create :admin }
   let(:role)          { FactoryBot.create :role }
   let(:status_closed) { FactoryBot.create :closed_status }
   let(:work_package)  { FactoryBot.build :work_package }

@@ -31,9 +31,9 @@ require File.expand_path('../../support/shared/become_member', __FILE__)
 
 describe Project, type: :model do
   include BecomeMember
+  using_shared_fixtures :admin
 
   let(:project) { FactoryBot.create(:project, is_public: false) }
-  let(:admin) { FactoryBot.create(:admin) }
   let(:user) { FactoryBot.create(:user) }
 
   describe Project::STATUS_ACTIVE do

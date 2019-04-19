@@ -28,7 +28,7 @@
 # See docs/COPYRIGHT.rdoc for more details.
 #++
 
-class Version < ActiveRecord::Base
+class Version < ApplicationRecord
   include Version::ProjectSharing
 
   belongs_to :project

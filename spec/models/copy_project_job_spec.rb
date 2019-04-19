@@ -70,7 +70,7 @@ describe CopyProjectJob, type: :model do
   end
 
   describe 'copy project succeeds with errors' do
-    let(:admin) { FactoryBot.create(:admin) }
+    using_shared_fixtures :admin
     let(:source_project) { FactoryBot.create(:project, types: [type]) }
     let!(:work_package) { FactoryBot.create(:work_package, project: source_project, type: type) }
     let(:type) { FactoryBot.create(:type_bug) }

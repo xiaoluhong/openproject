@@ -30,8 +30,7 @@ require 'spec_helper'
 
 describe 'Test mail notification', type: :feature do
   include Redmine::I18n
-
-  let(:admin) { FactoryBot.create(:admin) }
+  using_shared_fixtures :admin
 
   before do
     login_as(admin)

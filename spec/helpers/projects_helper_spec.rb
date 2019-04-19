@@ -32,16 +32,7 @@ describe ProjectsHelper, type: :helper do
   include ApplicationHelper
   include ProjectsHelper
 
-  before do
-    User.delete_all
-    Version.delete_all
-    Project.delete_all
-
-    set_language_if_valid('en')
-    User.current = nil
-  end
-
-  let(:test_project) { FactoryBot.create :valid_project }
+  let(:test_project)  { FactoryBot.create :valid_project }
 
   describe 'a version' do
     let(:version) { FactoryBot.create :version, project: test_project }

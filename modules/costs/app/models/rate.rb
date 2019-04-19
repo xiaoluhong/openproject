@@ -17,7 +17,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #++
 
-class Rate < ActiveRecord::Base
+class Rate < ApplicationRecord
   validates_numericality_of :rate, allow_nil: false
   validate :validate_date_is_a_date
 

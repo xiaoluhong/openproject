@@ -24,7 +24,7 @@ require_dependency 'wiki_page'
 # Because of the WikiDiff class defined therein
 require 'wiki_page'
 
-class MeetingContent < ActiveRecord::Base
+class MeetingContent < ApplicationRecord
   include OpenProject::Journal::AttachmentHelper
 
   belongs_to :meeting

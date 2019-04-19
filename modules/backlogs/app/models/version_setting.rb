@@ -33,7 +33,7 @@
 # See doc/COPYRIGHT.rdoc for more details.
 #++
 
-class VersionSetting < ActiveRecord::Base
+class VersionSetting < ApplicationRecord
   belongs_to :project
   belongs_to :version
 

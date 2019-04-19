@@ -24,7 +24,7 @@
 #++
 
 
-class ExportCardConfiguration < ActiveRecord::Base
+class ExportCardConfiguration < ApplicationRecord
 
   class RowsYamlValidator < ActiveModel::Validator
     REQUIRED_GROUP_KEYS = ["rows"]

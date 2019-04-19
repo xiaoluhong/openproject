@@ -222,7 +222,7 @@ class GenerateWpClosure < ActiveRecord::Migration[5.0]
     NestedSetWorkPackage.rebuild_silently!
   end
 
-  class NestedSetWorkPackage < ActiveRecord::Base
+  class NestedSetWorkPackage < ApplicationRecord
     self.table_name = 'work_packages'
 
     acts_as_nested_set scope: 'root_id', dependent: :destroy

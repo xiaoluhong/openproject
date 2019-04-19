@@ -29,10 +29,6 @@
 require 'spec_helper'
 
 describe AccountController, type: :controller do
-  after do
-    User.delete_all
-    User.current = nil
-  end
   let(:user) { FactoryBot.build_stubbed(:user) }
 
   context 'GET #login' do
@@ -80,7 +76,7 @@ describe AccountController, type: :controller do
   end
 
   context 'POST #login' do
-    let(:admin) { FactoryBot.create(:admin) }
+    using_shared_fixtures :admin
 
     describe 'wrong password' do
       it 'redirects back to login' do
@@ -229,7 +225,7 @@ describe AccountController, type: :controller do
     end
 
     context 'GET #logout' do
-      let(:admin) { FactoryBot.create(:admin) }
+      using_shared_fixtures :admin
 
       it 'calls reset_session' do
         expect(@controller).to receive(:reset_session).once
@@ -541,10 +537,9 @@ describe AccountController, type: :controller do
           end
 
           it "notifies the admins about the issue" do
-            mail = ActionMailer::Base.deliveries.last
-
+            mail = ActionMailer::Base.deliveries.detect { |mail| mail.to.first == admin.mail }
+            expect(mail).to be_present
             expect(mail.subject).to match /limit reached/
-            expect(mail.to.first).to eq admin.mail
             expect(mail.body.parts.first.to_s).to match /new user \(#{params[:user][:mail]}\)/
           end
         end
@@ -769,10 +764,9 @@ describe AccountController, type: :controller do
       end
 
       it "notifies the admins about the issue" do
-        mail = ActionMailer::Base.deliveries.last
-
+        mail = ActionMailer::Base.deliveries.detect { |mail| mail.to.first == admin.mail }
+        expect(mail).to be_present
         expect(mail.subject).to match /limit reached/
-        expect(mail.to.first).to eq admin.mail
       end
     end
 

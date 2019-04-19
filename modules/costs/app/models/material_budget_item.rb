@@ -17,7 +17,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #++
 
-class MaterialBudgetItem < ActiveRecord::Base
+class MaterialBudgetItem < ApplicationRecord
   belongs_to :cost_object
   belongs_to :cost_type
 
