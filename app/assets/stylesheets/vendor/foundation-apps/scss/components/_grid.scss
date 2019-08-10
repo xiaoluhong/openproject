@@ -155,7 +155,7 @@ $block-grid-max-size: 6 !default;
 */
 @mixin grid-container($width: $container-width, $align: center) {
   $margins: (
-    left:  0 auto 0 0,
+    left: 0 auto 0 0,
     right: 0 0 0 auto,
     center: 0 auto,
   );

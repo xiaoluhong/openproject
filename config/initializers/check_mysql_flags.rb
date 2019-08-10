@@ -48,9 +48,9 @@ if defined?(ActiveRecord::ConnectionAdapters::Mysql2Adapter) &&
 
       *   OpenProject expects to have the following sql modes set on MySql.      *
 
-      *   Please ensure having set:                                              *
+      *   Please ensure having set:                                             *
 
-      *     variables:                                                           *
+      *     variables:                                                          *
               sql_mode:
       *         "no_auto_value_on_zero,\                                         *
                 strict_trans_tables,\

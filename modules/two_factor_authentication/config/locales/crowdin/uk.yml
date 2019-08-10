@@ -35,8 +35,8 @@ uk:
     label_one_time_password: 'Одноразовий пароль'
     label_2fa_enabled: 'Двофакторна аутентифікація активна'
     label_2fa_disabled: 'Двофакторна аутентифікація не активна'
-    text_otp_delivery_message_sms: "Ваш %{app_title}  одноразовий пароль %{token}"
-    text_otp_delivery_message_voice: "Ваш %{app_title}  одноразовий пароль:%{pause} %{token} %{pause}  Я повторюю: %{pause} %{token}"
+    text_otp_delivery_message_sms: "Ваш %{app_title} одноразовий пароль %{token}"
+    text_otp_delivery_message_voice: "Ваш %{app_title} одноразовий пароль:%{pause} %{token} %{pause} Я повторюю: %{pause} %{token}"
     text_enter_2fa: 'Please enter the one-time password from your device.'
     text_2fa_enabled: 'Після кожного входу вам буде запропоновано ввести маркер OTP з пристрою 2FA за умовчанням.'
     text_2fa_disabled: 'Щоб увімкнути двофакторну аутентифікацію, скористайтеся кнопкою вище для реєстрації нового пристрою 2FA. Якщо у вас вже є пристрій, потрібно зробити його стандартним.'
@@ -127,7 +127,7 @@ uk:
       sms:
         title: 'Використовуйте свій мобільний телефон'
         redacted_identifier: 'Мобільний пристрій %{redacted_number}'
-        request_2fa_identifier: '%{redacted_identifier}  ми надіслали вам код автентифікації через %{delivery_channel}'
+        request_2fa_identifier: '%{redacted_identifier} ми надіслали вам код автентифікації через %{delivery_channel}'
         description: |
           Зареєструйте свій номер мобільного телефону для доставки одноразових паролів OpenProject.
     sns:
@@ -152,7 +152,7 @@ uk:
       label: 'Пам''ятайте'
       clear_cookie: 'Натисніть тут, щоб видалити всі згадані 2FA сесії.'
       cookie_removed: 'Усі згадані сеанси 2FA були видалені.'
-      dont_ask_again: "Створіть cookie, щоб запам'ятати автентифікацію 2FA на цьому клієнті %{days}  днів."
+      dont_ask_again: "Створіть cookie, щоб запам'ятати автентифікацію 2FA на цьому клієнті %{days} днів."
   field_phone: "Мобільний телефон"
   field_otp: "Одноразовий пароль"
   notice_account_otp_invalid: "Недійсний одноразовий пароль."

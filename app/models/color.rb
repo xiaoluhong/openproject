@@ -30,9 +30,9 @@
 class Color < ActiveRecord::Base
   self.table_name = 'colors'
 
-  has_many :planning_element_types, class_name:  'Type',
+  has_many :planning_element_types, class_name: 'Type',
                                     foreign_key: 'color_id',
-                                    dependent:   :nullify
+                                    dependent:  :nullify
 
   before_validation :normalize_hexcode
 

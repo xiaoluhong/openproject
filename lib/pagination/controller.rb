@@ -214,7 +214,7 @@ module Pagination::Controller
             render json: { results:
             { items: @paginated_items.map { |item| { id: item.id, name: item.name } },
               total: @total ? @total : @paginated_items.size,
-              more:  @more ? @more : 0 }
+              more: @more ? @more : 0 }
           }
           end
         end

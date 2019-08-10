@@ -44,10 +44,10 @@ module Redmine
         # This also creates the routes necessary for watching/unwatching by
         # adding the model's name to routes. This e.g leads to the following
         # routes when marking issues as watchable:
-        #   POST:     issues/1/watch
-        #   DELETE:   issues/1/unwatch
+        #   POST:    issues/1/watch
+        #   DELETE:  issues/1/unwatch
         #   GET/POST: issues/1/watchers/new
-        #   DELETE:   issues/1/watchers/1
+        #   DELETE:  issues/1/watchers/1
         #
         # params:
         #   options:

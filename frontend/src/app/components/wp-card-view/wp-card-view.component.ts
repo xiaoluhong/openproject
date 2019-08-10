@@ -56,7 +56,7 @@ export class WorkPackageCardViewComponent  implements OnInit {
   public columns:QueryColumn[];
   public text = {
     removeCard: this.I18n.t('js.card.remove_from_list'),
-    addNewCard:  this.I18n.t('js.card.add_new'),
+    addNewCard: this.I18n.t('js.card.add_new'),
   };
 
   /** Inline create / reference properties */

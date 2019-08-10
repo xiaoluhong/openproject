@@ -34,7 +34,7 @@ See docs/COPYRIGHT.rdoc for more details.
                               html: {method: :put, multipart: true, id: 'wiki_form'} do |f| %>
   <%= f.hidden_field :lock_version %>
 
-  <%= render partial: 'wiki/page_form', locals: {f: f}  %>
+  <%= render partial: 'wiki/page_form', locals: {f: f} %>
 
 <% end %>
 

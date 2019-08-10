@@ -41,9 +41,9 @@ describe Version, type: :model do
   describe 'rebuild positions' do
     def build_work_package(options = {})
       FactoryBot.build(:work_package, options.reverse_merge(fixed_version_id: version.id,
-                                                             priority_id:      priority.id,
-                                                             project_id:       project.id,
-                                                             status_id:        status.id))
+                                                             priority_id:     priority.id,
+                                                             project_id:      project.id,
+                                                             status_id:       status.id))
     end
 
     def create_work_package(options = {})

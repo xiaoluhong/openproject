@@ -58,7 +58,7 @@ describe Color, type: :model do
 
   describe '- Validations ' do
     let(:attributes) {
-      { name:    'Color No. 1',
+      { name:   'Color No. 1',
         hexcode: '#FFFFFF' }
     }
 

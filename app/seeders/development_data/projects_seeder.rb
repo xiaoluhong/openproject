@@ -82,8 +82,8 @@ module DevelopmentData
         if version_data.is_a? Array
           version_data.each do |attributes|
             p.versions << Version.create!(
-              name:    attributes[:name],
-              status:  attributes[:status],
+              name:   attributes[:name],
+              status: attributes[:status],
               sharing: attributes[:sharing]
             )
           end
@@ -98,10 +98,10 @@ module DevelopmentData
 
     def project_data(identifier)
       {
-        name:                 identifier.humanize,
-        identifier:           identifier,
+        name:                identifier.humanize,
+        identifier:          identifier,
         enabled_module_names: project_modules,
-        types:                Type.all
+        types:               Type.all
       }
     end
 

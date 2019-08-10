@@ -41,10 +41,10 @@ See docs/COPYRIGHT.rdoc for more details.
   <div class="form--field"><%= f.check_box :admin, disabled: (@user == User.current) %></div>
 
   <h3 class="form--section-title"><%= t(:label_custom_field_plural) %></h3>
-  <%= render partial:     'customizable/field',
-             collection:  @user.custom_field_values,
-             as:          :value,
-             locals:      { form: f } %>
+  <%= render partial:    'customizable/field',
+             collection: @user.custom_field_values,
+             as:         :value,
+             locals:     { form: f } %>
 
   <%= call_hook(:view_users_form, user: @user, form: f) %>
 </section>

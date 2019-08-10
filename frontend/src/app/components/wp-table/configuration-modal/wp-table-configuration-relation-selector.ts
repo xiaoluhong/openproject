@@ -36,20 +36,20 @@ export class WpTableConfigurationRelationSelectorComponent implements OnInit  {
 
   public text = {
     please_select: this.I18n.t('js.placeholders.selection'),
-    first_part:    this.I18n.t('js.work_packages.table_configuration.relation_filters.first_part'),
-    second_part:   this.I18n.t('js.work_packages.table_configuration.relation_filters.second_part'),
-    parent:        this.I18n.t('js.types.attribute_groups.filter_types.parent'),
-    precedes:      this.I18n.t('js.types.attribute_groups.filter_types.precedes'),
-    follows:       this.I18n.t('js.types.attribute_groups.filter_types.follows'),
-    relates:     this.I18n.t('js.types.attribute_groups.filter_types.relates'),
-    duplicates:    this.I18n.t('js.types.attribute_groups.filter_types.duplicates'),
-    duplicated:  this.I18n.t('js.types.attribute_groups.filter_types.duplicated'),
-    blocks:        this.I18n.t('js.types.attribute_groups.filter_types.blocks'),
-    blocked:     this.I18n.t('js.types.attribute_groups.filter_types.blocked'),
-    requires:      this.I18n.t('js.types.attribute_groups.filter_types.requires'),
-    required:    this.I18n.t('js.types.attribute_groups.filter_types.required'),
-    partof:        this.I18n.t('js.types.attribute_groups.filter_types.partof'),
-    includes:      this.I18n.t('js.types.attribute_groups.filter_types.includes')
+    first_part:   this.I18n.t('js.work_packages.table_configuration.relation_filters.first_part'),
+    second_part:  this.I18n.t('js.work_packages.table_configuration.relation_filters.second_part'),
+    parent:       this.I18n.t('js.types.attribute_groups.filter_types.parent'),
+    precedes:     this.I18n.t('js.types.attribute_groups.filter_types.precedes'),
+    follows:      this.I18n.t('js.types.attribute_groups.filter_types.follows'),
+    relates:    this.I18n.t('js.types.attribute_groups.filter_types.relates'),
+    duplicates:   this.I18n.t('js.types.attribute_groups.filter_types.duplicates'),
+    duplicated: this.I18n.t('js.types.attribute_groups.filter_types.duplicated'),
+    blocks:       this.I18n.t('js.types.attribute_groups.filter_types.blocks'),
+    blocked:    this.I18n.t('js.types.attribute_groups.filter_types.blocked'),
+    requires:     this.I18n.t('js.types.attribute_groups.filter_types.requires'),
+    required:   this.I18n.t('js.types.attribute_groups.filter_types.required'),
+    partof:       this.I18n.t('js.types.attribute_groups.filter_types.partof'),
+    includes:     this.I18n.t('js.types.attribute_groups.filter_types.includes')
   };
 
   constructor(readonly injector:Injector,

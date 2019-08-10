@@ -34,7 +34,7 @@ See docs/COPYRIGHT.rdoc for more details.
                               url: create_project_wiki_index_path(project_id: @project),
                               html: { method: :post, multipart: true, id: 'wiki_form' } do |f| %>
 
-  <%= render partial: 'page_form', locals: {f: f}  %>
+  <%= render partial: 'page_form', locals: {f: f} %>
 
 <% end %>
 

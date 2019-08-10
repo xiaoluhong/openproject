@@ -49,10 +49,10 @@ describe WikiController, type: :controller do
 
       # creating pages
       @existing_page = FactoryBot.create(:wiki_page, wiki_id: @project.wiki.id,
-                                                      title:   'ExistingPage')
+                                                      title:  'ExistingPage')
 
       # creating page contents
-      FactoryBot.create(:wiki_content, page_id:   @existing_page.id,
+      FactoryBot.create(:wiki_content, page_id:  @existing_page.id,
                                         author_id: @user.id)
     end
 
@@ -242,28 +242,28 @@ describe WikiController, type: :controller do
 
       # creating pages
       @page_default = FactoryBot.create(:wiki_page, wiki_id: @project.wiki.id,
-                                                    title:   'Wiki')
+                                                    title:  'Wiki')
       @page_with_content = FactoryBot.create(:wiki_page, wiki_id: @project.wiki.id,
-                                                         title:   'PagewithContent')
+                                                         title:  'PagewithContent')
       @page_without_content = FactoryBot.create(:wiki_page, wiki_id: @project.wiki.id,
-                                                            title:   'PagewithoutContent')
+                                                            title:  'PagewithoutContent')
       @unrelated_page = FactoryBot.create(:wiki_page, wiki_id: @project.wiki.id,
-                                                      title:   'UnrelatedPage')
+                                                      title:  'UnrelatedPage')
 
       # creating page contents
-      FactoryBot.create(:wiki_content, page_id:   @page_default.id,
+      FactoryBot.create(:wiki_content, page_id:  @page_default.id,
                                        author_id: @user.id)
-      FactoryBot.create(:wiki_content, page_id:   @page_with_content.id,
+      FactoryBot.create(:wiki_content, page_id:  @page_with_content.id,
                                        author_id: @user.id)
-      FactoryBot.create(:wiki_content, page_id:   @unrelated_page.id,
+      FactoryBot.create(:wiki_content, page_id:  @unrelated_page.id,
                                        author_id: @user.id)
 
       # creating some child pages
       @children = {}
       [@page_with_content].each do |page|
-        child_page = FactoryBot.create(:wiki_page, wiki_id:   @project.wiki.id,
+        child_page = FactoryBot.create(:wiki_page, wiki_id:  @project.wiki.id,
                                                    parent_id: page.id,
-                                                   title:     page.title + ' child')
+                                                   title:    page.title + ' child')
         FactoryBot.create(:wiki_content, page_id: child_page.id,
                                          author_id: @user.id)
 
@@ -274,16 +274,16 @@ describe WikiController, type: :controller do
     describe '- main menu links' do
       before do
         @main_menu_item_for_page_with_content = FactoryBot.create(:wiki_menu_item, navigatable_id: @project.wiki.id,
-                                                                                    title:    'Item for Page with Content',
-                                                                                    name:   @page_with_content.slug)
+                                                                                    title:   'Item for Page with Content',
+                                                                                    name:  @page_with_content.slug)
 
         @main_menu_item_for_new_wiki_page = FactoryBot.create(:wiki_menu_item, navigatable_id: @project.wiki.id,
-                                                                                title:    'Item for new WikiPage',
-                                                                                name:   'new-wiki-page')
+                                                                                title:   'Item for new WikiPage',
+                                                                                name:  'new-wiki-page')
 
         @other_menu_item = FactoryBot.create(:wiki_menu_item, navigatable_id: @project.wiki.id,
-                                                               title:    'Item for other page',
-                                                               name:   @unrelated_page.slug)
+                                                               title:   'Item for other page',
+                                                               name:  @unrelated_page.slug)
       end
 
       shared_examples_for 'all wiki menu items' do
@@ -369,8 +369,8 @@ describe WikiController, type: :controller do
       describe '- wiki_menu_item containing special chars only' do
         before do
           @wiki_menu_item = FactoryBot.create(:wiki_menu_item, navigatable_id: @project.wiki.id,
-                                                                title:    '?',
-                                                                name:   'help')
+                                                                title:   '?',
+                                                                name:  'help')
           @other_wiki_menu_item = @other_menu_item
         end
 

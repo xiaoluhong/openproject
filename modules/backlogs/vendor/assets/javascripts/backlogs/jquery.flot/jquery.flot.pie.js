@@ -35,7 +35,7 @@ series: {
 		},
 		label: {
 			show: true/false, or 'auto'
-			formatter:  a user-defined function that modifies the text/style of the label text
+			formatter: a user-defined function that modifies the text/style of the label text
 			radius: 0-1 for percentage of fullsize, or a specified pixel length
 			background: {
 				color: any hexidecimal color value (other formats may or may not work, so best to stick with something like '#000')

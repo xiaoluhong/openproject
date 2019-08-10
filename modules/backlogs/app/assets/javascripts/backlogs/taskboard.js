@@ -78,8 +78,8 @@ RB.Taskboard = (function ($) {
     initializeSortables : function () {
       this.$.find('#impediments .list').sortable({
         placeholder: 'placeholder',
-        start:  this.dragStart,
-        stop:   this.dragStop,
+        start: this.dragStart,
+        stop:  this.dragStop,
         update: this.dragComplete,
         cancel: '.prevent_edit'
       }).sortable('option', 'connectWith', '#impediments .list');
@@ -92,8 +92,8 @@ RB.Taskboard = (function ($) {
       augmentList = function () {
         $(list.splice(0, 50)).sortable({
           placeholder: 'placeholder',
-          start:  self.dragStart,
-          stop:   self.dragStop,
+          start: self.dragStart,
+          stop:  self.dragStop,
           update: self.dragComplete,
           cancel: '.prevent_edit'
         }).sortable('option', 'connectWith', '#tasks .list');

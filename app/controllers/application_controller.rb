@@ -110,7 +110,7 @@ class ApplicationController < ActionController::Base
   end
 
   rescue_from ActionController::ParameterMissing do |exception|
-    render body:   "Required parameter missing: #{exception.param}",
+    render body:  "Required parameter missing: #{exception.param}",
            status: :bad_request
   end
 
@@ -530,7 +530,7 @@ class ApplicationController < ActionController::Base
     options = { status: :unprocessable_entity, layout: false }
     errors = case params[:format]
              when 'xml'
-               { xml:  object.errors }
+               { xml: object.errors }
              when 'json'
                { json: { 'errors' => object.errors } } # ActiveResource client compliance
              else

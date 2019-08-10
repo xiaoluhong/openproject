@@ -1,15 +1,15 @@
 zh-CN:
-  no_results_title_text: 目前没有什么可显示。
+  no_results_title_text: 当前没有内容显示。
   activities:
     index:
-      no_results_title_text: 在这个时间范围内没有任何项目的活动。
+      no_results_title_text: 在这个时间范围内没有任何项目的活动事件。
   admin:
     plugins:
       no_results_title_text: 目前没有插件可用。
     custom_styles:
       custom_colors: "自定义颜色"
-      customize: "使用您自己的徽标自定义 OpenProject 安装。注：此徽标可公开查看。"
-      enterprise_notice: "作为对为开发 OpenProject 提供财力支持的订阅者的特别“感谢”，这项小功能仅限企业版支持订阅者使用。"
+      customize: "使用您自己的徽标自定义安装OpenProject。注：此徽标可公开查看。"
+      enterprise_notice: "这项功能仅限企业版支持订阅者使用。"
       manage_colors: "编辑颜色选择选项"
       instructions:
         alternative_color: "浓重的主题色，通常用于屏幕上最重要的按钮。"
@@ -20,7 +20,7 @@ zh-CN:
         header_item_bg_hover_color: "鼠标悬停时可点击的标题的背景色。"
         header_item_font_color: "可点击标题的特定颜色。"
         header_item_font_hover_color: "鼠标悬停时可点击标题的特定颜色。"
-        header_border_bottom_color: "页眉下方法细线。如果你不想看到，将其留白。"
+        header_border_bottom_color: "页眉下方法细线。如果您不想看到，将其留白。"
         main_menu_bg_color: "左菜单的背景色。"
     enterprise:
       upgrade_to_ee: "升级到企业版"
@@ -31,9 +31,9 @@ zh-CN:
       required_for_feature: "此功能仅限具有活动企业版支持令牌的订阅者使用。"
       enterprise_link: "如需了解详细信息，请单击此处。"
   announcements:
-    show_until: 显示截至日期
-    is_active: 当前已显示
-    is_inactive: 当前未显示
+    show_until: 截至日期
+    is_active: 当前已开启
+    is_inactive: 当前未开启
   attribute_help_texts:
     text_overview: '在此视图中, 您可以为属性视图创建自定义帮助文本。定义后, 可以通过单击属性旁边的帮助图标来显示帮助文本。'
     label_plural: '属性帮助文本'
@@ -42,22 +42,22 @@ zh-CN:
     edit: "编辑%{attribute_caption} 的帮助文本"
   auth_sources:
     index:
-      no_results_content_title: 目前是非身份验证模式。
-      no_results_content_text: 创建一个新的身份验证模式
+      no_results_content_title: 目前是非LADP身份验证。
+      no_results_content_text: 创建一个新的LADP身份验证
   ldap_auth_sources:
     connection_encryption: '连接加密'
     tls_mode:
       plain: '无'
       simple_tls: 'simple_tls'
       start_tls: 'start_tls'
-      plain_description: "明文不加密的连接，无TLS协商。"
+      plain_description: "不加密的明文连接，无TLS认证。"
       simple_tls_description: "隐式 TLS 加密，但没有证书验证。请谨慎使用，并隐式信任 LDAP 连接。"
       start_tls_description: "包含完整验证的显式 TLS 加密。用于通过 TLS/SSL 的 LDAP。"
       section_more_info_link_html: >
         此部分涉及此LDAP认证源的连接安全。更多信息，访问 <a href="%{link}">网络::LDAP 文档</a>。
   forums:
     show:
-      no_results_title_text: 论坛中目前无发贴。
+      no_results_title_text: 当前论坛没有发贴。
   colors:
     index:
       no_results_title_text: 目前没有颜色。
@@ -142,7 +142,7 @@ zh-CN:
         no_results_content_text: 创建一个新的版本
   members:
     index:
-      no_results_title_text: 目前这个项目没有成员。
+      no_results_title_text: 当前项目没有成员。
       no_results_content_text: 将成员添加到该项目
   my:
     access_token:
@@ -201,9 +201,9 @@ zh-CN:
     overview:
       no_results_title_text: 目前没有工作包分配给此版本。
   wiki:
-    no_results_title_text: 目前没有 wiki 页面。
+    no_results_title_text: 目前没有wiki页面。
     index:
-      no_results_content_text: 添加一个新的 wiki 页面
+      no_results_content_text: 添加一个新的wiki页面
   work_flows:
     index:
       no_results_title_text: 目前没有工作流。
@@ -229,11 +229,11 @@ zh-CN:
         category:
           no_results_title_text: 目前有可用的任何类别。
         assigned_to:
-          no_results_title_text: 目前这个项目没有成员。
+          no_results_title_text: 当前项目没有成员。
         responsible:
-          no_results_title_text: 目前这个项目没有成员。
+          no_results_title_text: 当前项目没有成员。
         author:
-          no_results_title_text: 目前这个项目没有成员。
+          no_results_title_text: 当前项目没有成员。
         priority:
           no_results_title_text: 目前有可用的任何优先事项。
         type:
@@ -243,19 +243,19 @@ zh-CN:
   label_invitation: 邀请
   account:
     delete: "删除帐户"
-    delete_confirmation: "您确认想要删除您的账户？"
+    delete_confirmation: "您确定要删除账户吗？"
     deleted: "帐户已成功删除"
     deletion_info:
       data_consequences:
         other: "创建的用户数据 (如电子邮件，首选项，工作包，维基条目) 将尽可能的删除。但是，请注意不会删除像工作包和维基条目类这些会影响其他用户工作的数据。这种数据因此会重新分配到称为\"删除用户\"的帐户。因为每个已删除帐户的数据被重新分配给此帐户，所以不可能区分不同用户所创建的数据。"
-        self: "你创建的数据 (如电子邮件，首选项，工作包，维基条目) 将尽可能的删除。但是，请注意不会删除像工作包和维基条目类这些会影响其他用户工作的数据。这种数据因此会重新分配到称为\"删除用户\"的帐户。因为每个已删除帐户的数据被重新分配给此帐户，所以不可能区分不同用户所创建的数据。"
+        self: "您创建的数据 (如电子邮件，首选项，工作包，维基条目) 将尽可能的删除。但是，请注意不会删除像工作包和维基条目类这些会影响其他用户工作的数据。这种数据因此会重新分配到称为\"删除用户\"的帐户。因为每个已删除帐户的数据被重新分配给此帐户，所以不可能区分不同用户所创建的数据。"
       heading: "删除帐户 %{name}"
       info:
         other: "删除用户帐户是不可逆的动作。"
         self: "删除您的用户帐户是不可逆的动作。"
       login_consequences:
         other: "将从系统中删除该帐户。因此，用户将不再能够用他当前的凭据登录。用户可以选择由该应用程序允许的方式再次成为此应用程序的用户。"
-        self: "将从系统中删除您的帐户。因此，您将不再能够使用您的当前凭据登录。如果你选择再次成为此应用程序的用户，你可以通过此应用程序所允许的方式进行。"
+        self: "将从系统中删除您的帐户。因此，您将不再能够使用您的当前凭据登录。如果您选择再次成为此应用程序的用户，您可以通过此应用程序所允许的方式进行。"
       login_verification:
         other: "输入登录名 %{name} 以验证删除。提交后，系统将要求您确认您的密码。"
         self: "输入您的登录名 %{name} 以验证删除。提交后，系统将要求您确认您的密码。"
@@ -288,7 +288,7 @@ zh-CN:
         account: "帐户"
         attr_firstname: "名字属性"
         attr_lastname: "姓氏属性"
-        attr_login: "Username attribute"
+        attr_login: "登录属性"
         attr_mail: "电子邮件属性"
         base_dn: "基本 DN"
         host: "主机"
@@ -375,17 +375,17 @@ zh-CN:
         force_password_change: "强制在下次登录时更改密码"
         language: "语言"
         last_login_on: "上次登录"
-        mail_notification: "电子邮件通知"
+        mail_notification: "邮件通知"
         new_password: "新密码"
-        password_confirmation: "确认"
-        consented_at: "同意在"
+        password_confirmation: "确认密码"
+        consented_at: "同意"
       user_preference:
         comments_sorting: "显示评论"
-        hide_mail: "隐藏我的电子邮件地址"
+        hide_mail: "隐藏我的邮箱地址"
         impaired: "辅助功能模式"
         time_zone: "时区"
         auto_hide_popups: "自动隐藏成功通知"
-        warn_on_leaving_unsaved: "离开未保存更改的工作包时提示我"
+        warn_on_leaving_unsaved: "修改未保存时提示"
       version:
         effective_date: "完成日期"
         sharing: "分享"
@@ -420,7 +420,7 @@ zh-CN:
         secret: "客户端密钥"
         owner: "所有者"
         redirect_uri: "重定向 URI"
-        client_credentials_user_id: "客户端证书用户 ID"
+        client_credentials_user_id: "客户端证书用户ID"
         scopes: "范围"
         confidential: "保密"
     errors:
@@ -567,9 +567,9 @@ zh-CN:
           attributes:
             password:
               weak: "必须包含以下类字符 (至少 %{min_count} %{all_count}): %{rules}。"
-              lowercase: "小写字母 （如 'a')"
+              lowercase: "小写字母（如 'a')"
               uppercase: "大写字母 (如 ' A')"
-              numeric: "数值 （例如 ' 1')"
+              numeric: "数值（例如 ' 1')"
               special: "特殊字符 (例如 ' %')"
               reused:
                 other: "已被使用过。请选择一个与您过去使用的 %{count} 个密码不同的密码。"
@@ -633,7 +633,7 @@ zh-CN:
     base: "一般错误："
     blocks_ids: "被工作包屏蔽的IDs"
     category: "类别"
-    comment: "评论"
+    comment: "注释"
     comments: "评论"
     content: "内容"
     color: "颜色"
@@ -658,7 +658,7 @@ zh-CN:
     is_public: "公开"
     issue: "工作包"
     lastname: "姓氏"
-    login: "Username"
+    login: "用户名"
     mail: "电子邮件"
     name: "名称"
     password: "密码"
@@ -757,7 +757,7 @@ zh-CN:
     text_update_consent_time: 选中此框可强制用户再次同意。在更改上述同意信息的法律方面时启用。
     update_consent_last_time: "同意的最后更新: %{update_time}"
   copy_project:
-    started: "开始将项目“%{source_project_name}”复制到“%{target_project_name}“。“%{target_project_name}”可用后您将会立即收到电子邮件通知。"
+    started: "开始将项目“%{source_project_name}”复制到“%{target_project_name}“。“%{target_project_name}”可用后您将会立即收到邮件通知。"
     failed: "无法复制项目 %{source_project_name}"
     failed_internal: "Copying failed due to an internal error."
     succeeded: "创建的项目 %{target_project_name}"
@@ -905,7 +905,7 @@ zh-CN:
   description_active: "激活？"
   description_attachment_toggle: "显示/隐藏附件"
   description_autocomplete: >
-    此字段使用自动完成。在输入工作包标题时您将收到一份可能的候选名单。使用向上向下键选择它并且用tab或回车选择。或者你可以直接输入工作包编号。
+    此字段使用自动完成。在输入工作包标题时您将收到一份可能的候选名单。使用向上向下键选择它并且用tab或回车选择。或者您可以直接输入工作包编号。
   description_available_columns: "可用的列"
   description_choose_project: "项目"
   description_compare_from: "比较开始于"
@@ -942,7 +942,7 @@ zh-CN:
         rename_groups: "重命名属性群组"
       project_filters:
         description_html: "升级到 %{link} 以在自定义字段上筛选和排序"
-  enumeration_activities: "活动 （时间跟踪）"
+  enumeration_activities: "活动（时间跟踪）"
   enumeration_work_package_priorities: "工作包优先级"
   enumeration_system_activity: "系统活动"
   enumeration_reported_project_statuses: "报告的项目状态"
@@ -976,7 +976,7 @@ zh-CN:
   error_must_be_project_member: "必须是项目成员"
   error_migrations_are_pending: "您的 OpenProject 安装具有待定的数据库迁移。您可能在上次升级时错过了迁移。请查阅升级指南，正确升级您的安装。"
   error_migrations_visit_upgrade_guides: "请访问我们的升级指南文档"
-  error_no_default_work_package_status: "没有定义默认的工作包状态。请检查您的配置 （转到\"管理-> 工作包状态\"）。"
+  error_no_default_work_package_status: "没有定义默认的工作包状态。请检查您的配置（转到\"管理-> 工作包状态\"）。"
   error_no_type_in_project: "没有类型与此项目关联。请检查的项目设置。"
   error_omniauth_registration_timed_out: "通过外部身份验证提供程序注册超时。请再试一次。"
   error_scm_command_failed: "当试图访问该代码库时出现错误: %{value}"
@@ -1061,8 +1061,8 @@ zh-CN:
   links:
     configuration_guide: '配置指南'
   instructions_after_registration: "只要您的帐户已被激活您可以点击 %{signin} 登录。"
-  instructions_after_logout: "你可以点击 %{signin} 重新登录。"
-  instructions_after_error: "你可以尝试点击 %{signin} 重新登录。如果错误仍然存在，请向您的管理员寻求帮助。"
+  instructions_after_logout: "您可以点击 %{signin} 重新登录。"
+  instructions_after_error: "您可以尝试点击 %{signin} 重新登录。如果错误仍然存在，请向您的管理员寻求帮助。"
   my_account:
     access_tokens:
       no_results:
@@ -1113,7 +1113,7 @@ zh-CN:
   label_attribute: "属性"
   label_attribute_plural: "属性"
   label_auth_source: "身份验证模式"
-  label_auth_source_new: "新的身份验证模式"
+  label_auth_source_new: "添加身份验证"
   label_auth_source_plural: "身份验证模式"
   label_authentication: "身份验证"
   label_available_project_work_package_categories: '可用的工作包类别'
@@ -1234,7 +1234,7 @@ zh-CN:
   label_everywhere: "任何位置"
   label_example: "示例"
   label_import: "导入"
-  label_export_to: "在其中也可用："
+  label_export_to: "用其他方式打开："
   label_expanded_click_to_collapse: "展开。点击折叠"
   label_f_hour: "%{value} 小时"
   label_f_hour_plural: "%{value} 小时"
@@ -1344,7 +1344,7 @@ zh-CN:
   label_move_work_package: "移动工作包"
   label_my_account: "我的账户"
   label_my_account_data: "我的账户数据"
-  label_my_page: "我的页面"
+  label_my_page: "我的主页"
   label_my_projects: "我的项目"
   label_my_queries: "我的自定义查询"
   label_never: "永不"
@@ -1412,14 +1412,14 @@ zh-CN:
   label_profile: "配置文件"
   label_project_all: "所有项目"
   label_project_count: "项目总数"
-  label_project_copy_notifications: "在项目复制期间发送电子邮件通知"
+  label_project_copy_notifications: "在项目复制期间发送邮件通知"
   label_project_latest: "最新的项目"
   label_project_default_type: "允许为空类型"
   label_project_hierarchy: "项目层次结构"
   label_project_new: "新的项目"
   label_project_plural: "项目"
   label_project_settings: "项目设置"
-  label_projects_storage_information: "%{count} 项目使用 %{storage} 磁盘存储"
+  label_projects_storage_information: "%{count} 项目使用 %{storage}磁盘存储"
   label_project_view_all: "查看所有项目"
   label_project_show_details: "显示项目详细信息"
   label_project_hide_details: "隐藏项目详细信息"
@@ -1615,7 +1615,7 @@ zh-CN:
   label_keyboard_shortcut_some_pages_only: "特殊的快捷方式："
   label_keyboard_shortcut_search_global: "全局搜索"
   label_keyboard_shortcut_search_project: "查找项目"
-  label_keyboard_shortcut_go_my_page: "转到我的页面"
+  label_keyboard_shortcut_go_my_page: "转到我的主页"
   label_keyboard_shortcut_show_help: "显示此帮助消息"
   label_keyboard_shortcut_go_overview: "转到项目概述"
   label_keyboard_shortcut_go_work_package: "转到项目工作包"
@@ -1626,11 +1626,11 @@ zh-CN:
   label_keyboard_shortcut_go_timelines: "转到时间线"
   label_keyboard_shortcut_new_work_package: "创建新的工作包"
   label_keyboard_shortcut_details_package: "显示工作包的详细信息窗口"
-  label_keyboard_shortcut_go_edit: "转到要编辑当前项 （仅在详细信息页)"
-  label_keyboard_shortcut_open_more_menu: "打开更多菜单 （在详细信息页)"
-  label_keyboard_shortcut_go_preview: "转到预览当前编辑 （仅在编辑页)"
-  label_keyboard_shortcut_focus_previous_item: "聚焦前面的列表元素 （只有某些列表)"
-  label_keyboard_shortcut_focus_next_item: "聚焦下一个的列表元素 （只有某些列表)"
+  label_keyboard_shortcut_go_edit: "转到要编辑当前项（仅在详细信息页)"
+  label_keyboard_shortcut_open_more_menu: "打开更多菜单（在详细信息页)"
+  label_keyboard_shortcut_go_preview: "转到预览当前编辑（仅在编辑页)"
+  label_keyboard_shortcut_focus_previous_item: "聚焦前面的列表元素（只有某些列表)"
+  label_keyboard_shortcut_focus_next_item: "聚焦下一个的列表元素（只有某些列表)"
   auth_source:
     using_abstract_auth_source: "无法使用抽象的验证源。"
     ldap_error: "LDAP 错误：%{error_message}"
@@ -1642,7 +1642,7 @@ zh-CN:
     errors:
       missing_or_invalid_parameter: '缺少或无效的宏参数。'
     legacy_warning:
-      timeline: '此旧版时间轴宏已被删除，不再可用。 您可以使用嵌入式表格宏替换该功能。'
+      timeline: '此旧版时间轴宏已被删除，不再可用。您可以使用嵌入式表格宏替换该功能。'
     include_wiki_page:
       errors:
         page_not_found: "无法找到Wiki页“%{name}”。"
@@ -1657,14 +1657,14 @@ zh-CN:
     actions: '操作'
   mail_body_account_activation_request: "一个新的用户 (%{value}) 注册。该帐户正在等待您的批准："
   mail_body_account_information: "您的帐户信息"
-  mail_body_account_information_external: "你可以使用 %{value} 帐号登录。"
-  mail_body_lost_password: "若要更改你的密码，请单击下面的链接："
+  mail_body_account_information_external: "您可以使用 %{value} 帐号登录。"
+  mail_body_lost_password: "若要更改您的密码，请单击下面的链接："
   mail_body_register: "若要激活您的帐户，请单击下面的链接："
   mail_body_reminder: "%{count} 个分配给您的工作包将在 %{days} 天后到期："
   mail_body_wiki_content_added: "'%{id}' wiki页面已经由%{author} 添加。"
   mail_body_wiki_content_updated: "'%{id}' wiki页面已经由%{author} 更新。"
   mail_subject_account_activation_request: "%{value} 帐户激活请求"
-  mail_subject_lost_password: "你的 %{value} 密码"
+  mail_subject_lost_password: "您的 %{value} 密码"
   mail_subject_register: "您的%{value}帐户激活"
   mail_subject_reminder: "%{count} 个工作包在 %{days} 天内到期"
   mail_subject_wiki_content_added: "'%{id}' wiki页面已添加"
@@ -1687,7 +1687,7 @@ zh-CN:
   notice_account_invalid_token: 无效的激活标记
   notice_account_invalid_credentials: "无效的用户名或密码"
   notice_account_invalid_credentials_or_blocked: "无效的用户或密码或帐户由于多个失败的登录尝试被阻止。如果是这样，它将自动在短时间内解除。"
-  notice_account_lost_email_sent: "一个用来重置密码的电子邮件已经发送给你。"
+  notice_account_lost_email_sent: "一个用来重置密码的电子邮件已经发送给您。"
   notice_account_new_password_forced: "需要新的密码。"
   notice_account_password_expired: "您的密码将在 %{days} 天后过期。请设置新的密码。"
   notice_account_password_updated: "成功更新密码。"
@@ -1709,9 +1709,9 @@ zh-CN:
   notice_email_sent: "电子邮件被发送到 %{value}"
   notice_failed_to_save_work_packages: "%{total} 个选定工作包中的 %{count} 保存失败： %{ids} 。"
   notice_failed_to_save_members: "成员保存失败： %{errors} 。"
-  notice_file_not_found: "你想要访问的页面不存在或已被删除。"
+  notice_file_not_found: "您想要访问的页面不存在或已被删除。"
   notice_forced_logout: "%{ttl_time} 分钟不活动后，您已经被自动注销。"
-  notice_internal_server_error: "你想要访问的页面上出现错误。如果您继续遇到问题请联系您 %{app_title} 管理员寻求帮助。"
+  notice_internal_server_error: "您想要访问的页面上出现错误。如果您继续遇到问题请联系您 %{app_title} 管理员寻求帮助。"
   notice_work_package_done_ratios_updated: "工作包完成率已更新。"
   notice_locking_conflict: "信息已由至少一个其他用户同时更新。"
   notice_locking_conflict_additional_information: "更新来自 %{users}。"
@@ -1736,7 +1736,7 @@ zh-CN:
   notice_unable_delete_time_entry: "不能删除时间记录条目。"
   notice_user_missing_authentication_method: 用户尚未选择密码或另一种方式登录。
   notice_user_invitation_resent: 邀请已发送到 %{email}。
-  present_access_key_value: "你的 %{key_name} 是: %{value}"
+  present_access_key_value: "您的 %{key_name} 是: %{value}"
   notice_automatic_set_of_standard_type: "自动设置标准类型。"
   notice_logged_out: "您已被注销。"
   notice_wont_delete_auth_source: 不能删除身份验证模式，仍有用户正在使用。
@@ -1868,7 +1868,7 @@ zh-CN:
   repositories:
     at_identifier: '在 %{identifier}'
     atom_revision_feed: '原子修订种子'
-    autofetch_information: "选中此项，如果你想要访问存储库模块页面时自动更新资料库。这包括从存储库和刷新所需的磁盘存储提交的检索。"
+    autofetch_information: "选中此项，如果您想要访问存储库模块页面时自动更新资料库。这包括从存储库和刷新所需的磁盘存储提交的检索。"
     checkout:
       access:
         readwrite: '读取 + 写入'
@@ -1879,25 +1879,25 @@ zh-CN:
       base_url_text: "基准 URL用于生成签出 Url (例如: https://myserver.example.org/repos/) 。\n注: 基准 URL 仅用于管理存储库中的签出 Url 重写。其他存储库不会被更改。"
       default_instructions:
         git: |-
-          在此存储库中包含的数据通过Git可以下载到你的计算机。如果您需要更多签出流程和可用客户端的信息，请参阅 Git 的文档。
+          在此存储库中包含的数据通过Git可以下载到您的计算机。如果您需要更多签出流程和可用客户端的信息，请参阅 Git 的文档。
         subversion: |-
-          在此存储库中包含的数据通过Subversion可以下载到你的计算机。如果您需要更多签出流程和可用客户端的信息，请参阅 Subversion的文档。
+          在此存储库中包含的数据通过Subversion可以下载到您的计算机。如果您需要更多签出流程和可用客户端的信息，请参阅 Subversion的文档。
       enable_instructions_text: "显示签出说明在下面所有存储库相关的页面上。"
       instructions: "签出指令"
       show_instructions: "显示签出指令"
       text_instructions: "URL 旁边显示此文本是为了指导如何签出存储库 。"
-      not_available: "签出指令未定义此资源库。请与你的管理员联系，在系统设置中启用他们。"
+      not_available: "签出指令未定义此资源库。请与您的管理员联系，在系统设置中启用他们。"
     create_managed_delay: "请注意: 版本库已在管控中，它以异步方式在磁盘上创建并不久将处于可用状态。"
     create_successful: "版本库已被注册。"
     delete_sucessful: "版本库已被删除。"
     destroy:
-      confirmation: "如果你继续将永久删除管理的存储库。"
+      confirmation: "如果您继续将永久删除管理的存储库。"
       info: "删除存储库是一个不可逆转的操作。"
       info_not_managed: "注意: 这不会删除这个资料库的内容，它不由 OpenProject 管理。"
       managed_path_note: "以下目录将被删除: %{path}"
       repository_verification: "输入项目的标识符 %{identifier}，以确认其存储库中的删除。"
-      subtitle: "你真的想要删除的项目 %{project_name} %{repository_type} 吗?"
-      subtitle_not_managed: "你真的想要从项目 %{project_name} 删除链接的 %{repository_type} %{url}?"
+      subtitle: "您真的想要删除的项目 %{project_name} %{repository_type} 吗?"
+      subtitle_not_managed: "您真的想要从项目 %{project_name} 删除链接的 %{repository_type} %{url}?"
       title: "删除 %{repository_type}"
       title_not_managed: "删除链接的 %{repository_type} 吗?"
     errors:
@@ -1973,14 +1973,14 @@ zh-CN:
   setting_smtp_ssl: "使用 SSL 连接"
   setting_smtp_address: "SMTP 服务器"
   setting_smtp_port: "SMTP 端口"
-  setting_smtp_authentication: "SMTP 身份验证"
+  setting_smtp_authentication: "SMTP身份验证"
   setting_smtp_user_name: "SMTP 用户名"
   setting_smtp_password: "SMTP 密码"
   setting_smtp_domain: "SMTP HELLO 域"
-  setting_activity_days_default: "显示在项目活动上的天"
+  setting_activity_days_default: "显示项目多少天的操作记录"
   setting_app_subtitle: "应用副标题"
   setting_app_title: "应用程序标题"
-  setting_attachment_max_size: "最大的附件大小"
+  setting_attachment_max_size: "最大附件大小"
   setting_autofetch_changesets: "自动提取资源库更改"
   setting_autologin: "自动登录"
   setting_available_languages: "可用语言"
@@ -1988,7 +1988,7 @@ zh-CN:
   setting_brute_force_block_after_failed_logins: "登录失败的尝试次数多于该数字将用户阻止"
   setting_brute_force_block_minutes: "用户被阻止的时长"
   setting_cache_formatted_text: "缓存带格式的文本"
-  setting_use_wysiwyg_description: "选择为默认情况下为所有用户启用CKEditor5 所见即所得编辑器。 CKEditor对GFM Markdown的功能有限。"
+  setting_use_wysiwyg_description: "选择为默认情况下为所有用户启用CKEditor5 所见即所得编辑器。CKEditor对GFM Markdown的功能有限。"
   setting_column_options: "自定义工作包列表的外观"
   setting_commit_fix_keywords: "固定的关键字"
   setting_commit_logs_encoding: "提交消息编码"
@@ -2005,7 +2005,7 @@ zh-CN:
   setting_default_notification_option: "默认通知选项"
   setting_default_projects_modules: "新项目的默认启用模块"
   setting_default_projects_public: "新项目默认公开"
-  setting_diff_max_lines_displayed: "最大差异显示行数"
+  setting_diff_max_lines_displayed: "显示最大差异行数"
   setting_display_subprojects_work_packages: "默认在主项目上显示子项目工作包"
   setting_emails_footer: "电子邮件页脚"
   setting_emails_header: "电子邮件标头"
@@ -2019,7 +2019,7 @@ zh-CN:
   setting_work_package_done_ratio: "计算工作包完成比率"
   setting_work_package_done_ratio_field: "使用工作包字段"
   setting_work_package_done_ratio_status: "使用工作包状态"
-  setting_work_package_done_ratio_disabled: "禁用 （隐藏进度）"
+  setting_work_package_done_ratio_disabled: "禁用（隐藏进度）"
   setting_work_package_list_default_columns: "默认显示"
   setting_work_package_list_summable_columns: "可汇总"
   setting_work_package_properties: "工作包属性"
@@ -2068,8 +2068,8 @@ zh-CN:
   setting_user_default_timezone: "用户默认时区"
   setting_users_deletable_by_admins: "可由管理员删除用户帐户"
   setting_users_deletable_by_self: "允许用户删除其帐户"
-  setting_welcome_text: "欢迎块文本"
-  setting_welcome_title: "欢迎区块标题"
+  setting_welcome_text: "欢迎文本"
+  setting_welcome_title: "欢迎标题"
   setting_welcome_on_homescreen: "在主屏幕上显示欢迎信息"
   setting_wiki_compression: "Wiki 历史压缩"
   setting_work_package_group_assignment: "允许分配到组"
@@ -2104,7 +2104,7 @@ zh-CN:
       sentence_connector: "和"
       skip_last_comma: "非"
   text_accessibility_hint: "辅助功能模式设计用于失明、具有行动障碍或视力不佳的用户。为视力不佳的用户特别突出显示关注的元素。请注意，此模式不支持待办清单模块。"
-  text_access_token_hint: "访问令牌允许你授予外部应用程序对 OpenProject 资源的访问权限。"
+  text_access_token_hint: "访问令牌允许您授予外部应用程序对 OpenProject 资源的访问权限。"
   text_analyze: "进一步分析： %{subject}"
   text_are_you_sure: "是否确定？"
   text_are_you_sure_with_children: "删除工作包和所有子工作包吗？"
@@ -2115,7 +2115,7 @@ zh-CN:
   text_form_configuration_required_attribute: "属性是非常需要的，因此一直都会显示。"
   text_caracters_maximum: "最多 %{count} 字符。"
   text_caracters_minimum: "必须至少为 %{count} 个字符长。"
-  text_comma_separated: "允许有多个值 （逗号分隔）。"
+  text_comma_separated: "允许有多个值（逗号分隔）。"
   text_comment_wiki_page: "Wiki 页面（%{page}）的评论"
   text_custom_field_possible_values_info: "每个值一行"
   text_custom_field_hint_activate_per_project: >
@@ -2125,15 +2125,15 @@ zh-CN:
   text_custom_logo_instructions: >
     建议在透明背景上使用白色商标。请确保您的图片尺寸为460px ×60px，不管对传统显示屏和液晶显示屏都是最好的。
   text_custom_favicon_instructions: >
-    这是你的浏览窗口的页面图标旁边显示的小图标，需要PNG图像，像素为32×32，透明背景。
+    这是您的浏览窗口的页面图标旁边显示的小图标，需要PNG图像，像素为32×32，透明背景。
   text_custom_touch_icon_instructions: >
-    如果你在主屏幕上建立了一个标签，这个小图标将会显示在你的手机或平板电脑上。
+    如果您在主屏幕上建立了一个标签，这个小图标将会显示在您的手机或平板电脑上。
   text_database_allows_tsv: "数据库允许 TSVector (可选)"
   text_default_administrator_account_changed: "更改默认管理员帐户"
   text_default_encoding: "默认值： UTF-8"
   text_destroy: "删除"
   text_destroy_with_associated: "有额外的对象关联到要删除的工作包。这些对象是以下类型："
-  text_destroy_what_to_do: "你想做什么？"
+  text_destroy_what_to_do: "您想做什么？"
   text_diff_truncated: "...这个比较被截断，因为它超出了可显示的最大大小。"
   text_email_delivery_not_configured: "电子邮件未配置，通知已禁用。\n请修改 SMTP 服务器配置文件 config/configuration.yml 并重新启动应用程序以启用本功能。"
   text_enumeration_category_reassign_to: "重新分配以此值："
@@ -2145,10 +2145,10 @@ zh-CN:
   text_hours_between: "%{min} 到 %{max} 小时。"
   text_work_package_added: "工作包 %{id} 已经被 %{author} 报告。"
   text_work_package_category_destroy_assignments: "删除类别分配"
-  text_work_package_category_destroy_question: "一些工作包 (%{count}) 被分配到这个类别。你想做什么？"
+  text_work_package_category_destroy_question: "一些工作包 (%{count}) 被分配到这个类别。您想做什么？"
   text_work_package_category_reassign_to: "重新分配工作包到此类别"
   text_work_package_updated: "工作包 %{id} 已经被 %{author} 更新。"
-  text_work_package_watcher_added: "你已被 %{watcher_setter} 添加作为工作包 %{id} 的一个关注者。"
+  text_work_package_watcher_added: "您已被 %{watcher_setter} 添加作为工作包 %{id} 的一个关注者。"
   text_work_packages_destroy_confirmation: "确实要删除所选的工作包吗?"
   text_work_packages_ref_in_commit_messages: "引用和修复工作包中提交消息"
   text_journal_added: "%{label} %{value} 已添加"
@@ -2163,7 +2163,7 @@ zh-CN:
   text_journal_set_with_diff: "%{label} 设置 (%{link})"
   text_latest_note: "最新的注释是: %{note}"
   text_length_between: "长度介于 %{min} 和 %{max} 个字符。"
-  text_line_separated: "允许有多个值 （每行一个值）。"
+  text_line_separated: "允许有多个值（每行一个值）。"
   text_load_default_configuration: "加载默认配置"
   text_min_max_length_info: "0 表示没有限制"
   text_no_roles_defined: 没有定义的角色。
@@ -2193,10 +2193,10 @@ zh-CN:
   text_user_invited: 用户已被邀请，正在等待注册。
   text_user_wrote: "%{value} 写道："
   text_warn_on_leaving_unsaved: "此工作包包含未保存的文本，如果您离开此页面未保存的文本将会丢失。"
-  text_what_did_you_change_click_to_add_comment: "你做出了什么更改？点击添加注释"
+  text_what_did_you_change_click_to_add_comment: "您做出了什么更改？点击添加注释"
   text_wiki_destroy_confirmation: "确实要删除此 wiki 和它的所有内容吗?"
   text_wiki_page_destroy_children: "删除子页面和所有他们的派生页面"
-  text_wiki_page_destroy_question: "此页有 %{descendants} 子页面和派生页面。你想做什么？"
+  text_wiki_page_destroy_question: "此页有 %{descendants} 子页面和派生页面。您想做什么？"
   text_wiki_page_nullify_children: "保持子网页作为根页面"
   text_wiki_page_reassign_children: "重新分配到此父页的子网页"
   text_workflow_edit: "选择编辑工作流的角色和类型"
@@ -2320,7 +2320,7 @@ zh-CN:
     new_reporting: "新的报表"
     new_timeline: "新的时间线报表"
     no_projects_for_reporting_available: "没有任何项目可以创建报告关联。"
-    no_right_to_view_timeline: "你没有必须的权限来查看链接时间线。"
+    no_right_to_view_timeline: "您没有必须的权限来查看链接时间线。"
     no_timeline_for_id: "没有时间线的ID为 %{id} 。"
     notice_successful_deleted_all_elements: "成功地删除所有元素"
     outline: "重置大纲"
@@ -2386,7 +2386,7 @@ zh-CN:
     authentication_provider: "身份验证提供程序"
     authentication_settings_disabled_due_to_external_authentication: >
       此用户验证通过外部身份验证提供程序，所以在 OpenProject 中没有密码将被改变。
-    authorization_rejected: "你不允许登录。"
+    authorization_rejected: "您不允许登录。"
     assign_random_password: "分配随机密码 (通过电子邮件发送给用户)"
     blocked: "暂时锁定"
     blocked_num_failed_logins:
@@ -2403,7 +2403,7 @@ zh-CN:
     registered: "已注册"
     reset_failed_logins: "重置失败的帐户"
     settings:
-      mail_notifications: "发送电子邮件通知"
+      mail_notifications: "发送邮件通知"
       mail_project_explanaition: "对于未选中的项目，您将只能收到自己跟踪或参与的项目的通知（例如，您是作者或者被指派的工作包）。"
       mail_self_notified: "我想要自己的更改通知"
     status_user_and_brute_force: "%{user} 和 %{brute_force}"
@@ -2418,13 +2418,13 @@ zh-CN:
   warning: 警告
   warning_attachments_not_saved: "%{count} 文件不能被保存。"
   warning_imminent_user_limit: >
-    您邀请的用户数超过了当前计划支持的用户数。 受邀用户可能无法加入您的OpenProject环境。 请<a href="%{upgrade_url}">升级您的计划</a>或阻止现有用户，以允许受邀和注册用户加入。
+    您邀请的用户数超过了当前计划支持的用户数。受邀用户可能无法加入您的OpenProject环境。请<a href="%{upgrade_url}">升级您的计划</a>或阻止现有用户，以允许受邀和注册用户加入。
   warning_registration_token_expired: |
     激活邮件已过期，我们给您发送了一封新邮件到%{email}。请单击内部的链接以激活您的帐户。
   warning_user_limit_reached: >
-    达到用户限制。 您无法再激活任何用户。 请<a href="%{upgrade_url}">升级您的计划</a>或阻止会员以允许其他用户。
+    达到用户限制。您无法再激活任何用户。请<a href="%{upgrade_url}">升级您的计划</a>或阻止会员以允许其他用户。
   warning_user_limit_reached_instructions: >
-    您达到了用户限制（%{current}/%{max}活跃用户）。 请联系sales@openproject.com以升级您的Enterprise Edition计划并添加其他用户。
+    您达到了用户限制（%{current}/%{max}活跃用户）。请联系sales@openproject.com以升级您的Enterprise Edition计划并添加其他用户。
   menu_item: "菜单项"
   menu_item_setting: "可见性"
   mysql_deprecation:
@@ -2449,8 +2449,8 @@ zh-CN:
       lock_version: "锁版"
     errors:
       code_400: "错误的请求：%{message}"
-      code_401: "你需要被授权访问该资源。"
-      code_401_wrong_credentials: "你没有提供正确的凭据。"
+      code_401: "您需要被授权访问该资源。"
+      code_401_wrong_credentials: "您没有提供正确的凭据。"
       code_403: "您无权访问此资源。"
       code_404: "找不到所请求的资源。"
       code_409: "无法更新资源，因为发生冲突的修改。"
@@ -2481,7 +2481,7 @@ zh-CN:
         estimated_hours: "不能在父工作包中设置预估的小时数。"
         invalid_user_assigned_to_work_package: "所选的用户不允许为此工作包的 '%{property}'。"
         start_date: "不能在父工作包中设置开始日期。"
-      writing_read_only_attributes: "你不能写入只读属性。"
+      writing_read_only_attributes: "您不能写入只读属性。"
     resources:
       schema: '方案'
   doorkeeper:

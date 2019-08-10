@@ -47,10 +47,10 @@ module OpenProject::Backlogs::Patches::WorkPackagePatch
       register_on_journal_formatter(:decimal, 'story_points')
       register_on_journal_formatter(:decimal, 'position')
 
-      validates_numericality_of :story_points, only_integer:             true,
-                                               allow_nil:                true,
+      validates_numericality_of :story_points, only_integer:            true,
+                                               allow_nil:               true,
                                                greater_than_or_equal_to: 0,
-                                               less_than:                10_000,
+                                               less_than:               10_000,
                                                if: lambda { backlogs_enabled? }
 
       validates_numericality_of :remaining_hours, only_integer: false,

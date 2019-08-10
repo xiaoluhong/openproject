@@ -115,10 +115,10 @@ ja:
       受信メールの添付ファイルを処理するとき、無視する名前の一覧を指定します (例えば、署名またはアイコン)。1 行につき 1 つのファイル名を入力してください。
   projects:
     delete:
-      scheduled: "削除は予定されており、バックグラウンドで実行されます。 結果が通知されます。"
+      scheduled: "削除は予定されており、バックグラウンドで実行されます。結果が通知されます。"
       schedule_failed: "プロジェクトを削除できません: %{errors}"
       failed: "プロジェクト%{name} の削除に失敗しました"
-      failed_text: "プロジェクト%{name} の削除要求が失敗しました。 プロジェクトはアーカイブされたままです。"
+      failed_text: "プロジェクト%{name} の削除要求が失敗しました。プロジェクトはアーカイブされたままです。"
       completed: "プロジェクト%{name} の削除が完了しました"
       completed_text: "プロジェクト '%{name}'を削除要求は完了しました。"
     index:
@@ -212,7 +212,7 @@ ja:
     bulk:
       could_not_be_saved: "次の作業項目を保存できませんでした:"
     move:
-      no_common_statuses_exists: "選択されたすべての項目に利用可能なステータスはありません。 それらの状態は変更できません。"
+      no_common_statuses_exists: "選択されたすべての項目に利用可能なステータスはありません。それらの状態は変更できません。"
       unsupported_for_multiple_projects: '複数のプロジェクトから、作業項目の一括移動/コピーはサポートされていません'
     list_simple:
       assigned:
@@ -256,8 +256,8 @@ ja:
         other: "このアカウントはシステムから削除されます。したがって、このユーザは現在の認証情報でログイン不可能になります。再度このアプリケーションのユーザになることは可能です。"
         self: "自分のアカウントがシステムから削除されます。したがって、現在の認証情報ではログイン不可能になります。再度このアプリケーションのユーザになることは可能です。"
       login_verification:
-        other: "削除を確認するためログイン %{name} してください。 送信した後は、パスワードの確認が求められます。"
-        self: "削除を確認するためログイン %{name} してください。 一度提出すると、パスワードの確認を求められます。"
+        other: "削除を確認するためログイン %{name} してください。送信した後は、パスワードの確認が求められます。"
+        self: "削除を確認するためログイン %{name} してください。一度提出すると、パスワードの確認を求められます。"
     error_inactive_activation_by_mail: >
       アカウントが有効化されていません。アカウントを有効にするために、受信したメール内のリンクをクリックしてください。
     error_inactive_manual_activation: >
@@ -967,22 +967,22 @@ ja:
   error_invalid_query_column: "無効なクエリ列: %{value}"
   error_invalid_sort_criterion: "列を並べ替えできません: %{value}"
   error_journal_attribute_not_present: "ジャーナルには属性%{attribute}は含まれていません。"
-  error_pdf_export_too_many_columns: "PDF エクスポート用に選択された列が多すぎます。 列の数を減らしてください。"
+  error_pdf_export_too_many_columns: "PDF エクスポート用に選択された列が多すぎます。列の数を減らしてください。"
   error_pdf_failed_to_export: "PDFエクスポートを保存できませんでした： %{error}"
-  error_token_authenticity: 'クロスサイトリクエスト偽造トークンを確認できません。 複数のブラウザやタブでデータを送信しようとしましたか？ すべてのタブを閉じてもう一度やり直してください。'
+  error_token_authenticity: 'クロスサイトリクエスト偽造トークンを確認できません。複数のブラウザやタブでデータを送信しようとしましたか？ すべてのタブを閉じてもう一度やり直してください。'
   error_work_package_done_ratios_not_updated: "作業項目の進捗率が更新できません。"
   error_work_package_not_found_in_project: "作業項目が見つからないか、このプロジェクトに属してないかです。"
   error_must_be_project_member: "プロジェクトのメンバーである必要があります。"
   error_migrations_are_pending: "OpenProject のインストールはデータベースの移行が保留中です。前回のアップグレード時に移行の実行を行っていない可能性があります。アップグレードガイドを確認して、適切にインストールをアップグレードしてください。"
   error_migrations_visit_upgrade_guides: "アップグレードガイドのドキュメントをご覧ください"
-  error_no_default_work_package_status: "作業項目の既定のステータスが定義されていません。 設定をご確認してください（管理→作業項目ステータス）。"
+  error_no_default_work_package_status: "作業項目の既定のステータスが定義されていません。設定をご確認してください（管理→作業項目ステータス）。"
   error_no_type_in_project: "このプロジェクトには関連付けている作業項目の型がありません。プロジェクトの設定をご確認してください。"
   error_omniauth_registration_timed_out: "外部認証プロバイダーを経由して登録がタイムアウトしました。もう一度やり直してください。"
   error_scm_command_failed: "「%{value}」リポジトリにアクセスしようとしてエラーが発生しました。"
   error_scm_not_found: "リポジトリに、エントリ/リビジョンが存在しません。"
   error_unable_delete_status: "一つ以上の作業項目によって使用されているため、作業項目のステータスを削除できません。"
   error_unable_delete_default_status: "作業項目の既定のステータスを削除できません。削除する前に別の既定値を選択してください。"
-  error_unable_to_connect: "接続できません。 （%{value}）"
+  error_unable_to_connect: "接続できません。（%{value}）"
   error_unable_delete_wiki: "Wikiページを削除できません。"
   error_unable_update_wiki: "Wikiページを更新できません。"
   error_workflow_copy_source: "コピー元となる型またはロールを選択してください。"
@@ -1641,7 +1641,7 @@ ja:
     errors:
       missing_or_invalid_parameter: 'マクロパラメータがないか無効です。'
     legacy_warning:
-      timeline: 'このレガシータイムラインマクロは削除され、もう使用できなくなりました。 この機能を埋め込みテーブルマクロで置き換えることができます。'
+      timeline: 'このレガシータイムラインマクロは削除され、もう使用できなくなりました。この機能を埋め込みテーブルマクロで置き換えることができます。'
     include_wiki_page:
       errors:
         page_not_found: "Wikiページ'%{name}'が見つかりません。"
@@ -1675,7 +1675,7 @@ ja:
       ユーザーの制限に達しているため、ユーザーは自分のアカウントをアクティブ化できません。
     steps:
       label: "ユーザーがサインインできるようにするには、次のいずれかを行います: "
-      a: "お支払いプランをアップグレードします。 ([ここ](upgrade_url))"
+      a: "お支払いプランをアップグレードします。([ここ](upgrade_url))"
       b: "既存のユーザーをロックまたは削除する ([ここ](users_url))"
   more_actions: "他の機能"
   noscript_description: "OpenProjectを使用するためにJavaScriptを有効にする必要があります！"
@@ -1725,8 +1725,8 @@ ja:
   notice_not_authorized: "このページにアクセスする権限がありません。"
   notice_not_authorized_archived_project: "アクセスしようとしたプロジェクトはアーカイブされています。"
   notice_password_confirmation_failed: "パスワードが正しくありません。続行できません。"
-  notice_principals_found_multiple: "%{number} の検索結果があります。 \n タブで最初の結果へフォーカスします。"
-  notice_principals_found_single: "1 つの結果があります。 \n タブでフォーカスします。"
+  notice_principals_found_multiple: "%{number} の検索結果があります。\n タブで最初の結果へフォーカスします。"
+  notice_principals_found_single: "1 つの結果があります。\n タブでフォーカスします。"
   notice_project_not_deleted: "プロジェクトを削除していません。"
   notice_successful_connection: "正常に接続しました。"
   notice_successful_create: "正常に作成しました。"
@@ -1962,7 +1962,7 @@ ja:
       managed_url: "管理 URL"
       password: "リポジトリのパスワード"
       username: "リポジトリのユーザ名"
-    truncated: "申し訳ありません。 このディレクトリを %{limit} ファイルに切り捨てる必要がありました。%{truncated} エントリがリストから除外されました。"
+    truncated: "申し訳ありません。このディレクトリを %{limit} ファイルに切り捨てる必要がありました。%{truncated} エントリがリストから除外されました。"
     named_repository: "%{vendor_name} リポジトリ"
     update_settings_successful: "設定が保存されました。"
     url: "リポジトリの URL"
@@ -1990,7 +1990,7 @@ ja:
   setting_brute_force_block_after_failed_logins: "ユーザーをロックさせるログイン失敗回数"
   setting_brute_force_block_minutes: "ユーザーがロックされている期間"
   setting_cache_formatted_text: "書式化されたテキストをキャッシュする"
-  setting_use_wysiwyg_description: "すべてのユーザーに対してデフォルトで CKEditor5 WYSIWYGエディタ を有効にする場合に選択します。 CKEditor は GFM Markdown の機能が制限されています。"
+  setting_use_wysiwyg_description: "すべてのユーザーに対してデフォルトで CKEditor5 WYSIWYGエディタ を有効にする場合に選択します。CKEditor は GFM Markdown の機能が制限されています。"
   setting_column_options: "作業項目一覧の表示をカスタマイズする"
   setting_commit_fix_keywords: "修正用キーワード"
   setting_commit_logs_encoding: "メッセージのエンコードをコミット"
@@ -2114,7 +2114,7 @@ ja:
   text_form_configuration: >
     作業パッケージのフォームに表示されるフィールドをカスタマイズできます。自由にフィールドをグループ化して、あなたのドメインのニーズを反映できます。
   text_form_configuration_drag_to_activate: "ここからフィールドをドラッグして、有効にします"
-  text_form_configuration_required_attribute: "属性が必須とマークされています。 したがって常に示されます"
+  text_form_configuration_required_attribute: "属性が必須とマークされています。したがって常に示されます"
   text_caracters_maximum: "最大%{count}文字です。"
   text_caracters_minimum: "最低%{count}文字の長さが必要です。"
   text_comma_separated: "（カンマで区切ることで）複数の値を設定できます。"
@@ -2125,9 +2125,9 @@ ja:
   text_custom_field_hint_activate_per_project_and_type: >
     カスタムフィールドは、ワークパッケージタイプごと、およびプロジェクトごとにアクティブにする必要があります。
   text_custom_logo_instructions: >
-    透明な背景の白いロゴをお勧めします。 従来、および Retina ディスプレイの両方で最高の結果となるように、画像の寸法は、460px x 60px を確認してください。
+    透明な背景の白いロゴをお勧めします。従来、および Retina ディスプレイの両方で最高の結果となるように、画像の寸法は、460px x 60px を確認してください。
   text_custom_favicon_instructions: >
-    これは、ページタイトル横のブラウザーウィンドウ/タブに表示される小さなアイコンです。 32 × 32 ピクセルサイズの、背景が透明な PNG イメージファイルにする必要がありますは、。
+    これは、ページタイトル横のブラウザーウィンドウ/タブに表示される小さなアイコンです。32 × 32 ピクセルサイズの、背景が透明な PNG イメージファイルにする必要がありますは、。
   text_custom_touch_icon_instructions: >
     これは、携帯電話またはタブレットでホーム画面にブックマークを配置したときに表示されるアイコンです。180 x 180 ピクセルサイズの PNG イメージファイルにする必要があります。iOS での表示が悪くなるため、画像の背景を透明にしないでください。
   text_database_allows_tsv: "データベースはTSVectorが利用可能 (オプション)"
@@ -2141,7 +2141,7 @@ ja:
   text_enumeration_category_reassign_to: "次の値に割り当て直す:"
   text_enumeration_destroy_question: "%{count}件のオブジェクトがこの値に割り当てられています。"
   text_file_repository_writable: "添付ファイルのディレクトリが書き込み可能"
-  text_git_repo_example: "ローカルのリポジトリ （/gitrepo、c:\\gitrepo など）"
+  text_git_repo_example: "ローカルのリポジトリ（/gitrepo、c:\\gitrepo など）"
   text_hint_date_format: "YYYY-MM-DD の形式で日付を入力してください。他の形式は、予期しない日付に変更される可能性があります。"
   text_hint_disable_with_0: "注：0で無効になる"
   text_hours_between: "%{min} 〜 %{max} 時間。"
@@ -2175,7 +2175,7 @@ ja:
   text_notice_too_many_values_are_inperformant: "注: 1ページあたり100以上の項目を表示すると読み込み時間が増加することがあります。"
   text_notice_security_badge_displayed_html: >
     602/5000
-    注：有効にすると、<a href="%{information_panel_path}">%{information_panel_label}</a>管理パネルとホームページに、インストールステータスのバッジが表示されます。 管理者のみに表示されます。 <br/>バッジは、最新のOpenProjectバージョンを公式のOpenProjectリリースデータベースと照合して、アップデートや既知の脆弱性について警告します。 チェックの内容、利用可能なアップデートを提供するために必要なデータ、およびこのチェックを無効にする方法の詳細については、<a href="%{more_info_url}">設定ドキュメント</a>をご覧ください。
+    注：有効にすると、<a href="%{information_panel_path}">%{information_panel_label}</a>管理パネルとホームページに、インストールステータスのバッジが表示されます。管理者のみに表示されます。<br/>バッジは、最新のOpenProjectバージョンを公式のOpenProjectリリースデータベースと照合して、アップデートや既知の脆弱性について警告します。チェックの内容、利用可能なアップデートを提供するために必要なデータ、およびこのチェックを無効にする方法の詳細については、<a href="%{more_info_url}">設定ドキュメント</a>をご覧ください。
   text_own_membership_delete_confirmation: "一部またはすべての権限を自分自身から剥奪しようとしているため、このプロジェクトを編集できなくなる可能性があります。\n本当に続けますか？"
   text_plugin_assets_writable: "プラグインの「assets」ディレクトリが書き込み可能"
   text_powered_by: "Powered by %{link}"
@@ -2186,7 +2186,7 @@ ja:
   text_repository_usernames_mapping: "リポジトリのログから検出されたユーザ名をどのOpenProjectユーザに関連づけるかを選択してください。\nログ上のユーザ名またはメールアドレスがOpenProjectのユーザと一致する場合は自動的に関連づけます。"
   text_select_mail_notifications: "電子メール通知の送信対象とする操作を選択してください。"
   text_status_changed_by_changeset: "変更履歴%{value}で適用されました。"
-  text_table_difference_description: "この表には、単一の %{entries} が表示されています。 まず、表の対応するチェックボックスを選択して、両者の項目の違いを見ることができます。 表の下のボタンをクリックすると、違いが表示されます。"
+  text_table_difference_description: "この表には、単一の %{entries} が表示されています。まず、表の対応するチェックボックスを選択して、両者の項目の違いを見ることができます。表の下のボタンをクリックすると、違いが表示されます。"
   text_time_logged_by_changeset: "変更履歴%{value}で適用されました。"
   text_tip_work_package_begin_day: "この日に開始する作業"
   text_tip_work_package_begin_end_day: "この日に開始・終了する作業"
@@ -2393,7 +2393,7 @@ ja:
     assign_random_password: "ランダムパスワードを設定 (メールでユーザに送信されます)"
     blocked: "一時的ロック"
     blocked_num_failed_logins:
-      other: "一時的にロックされている （%{count}回失敗したログイン試行）"
+      other: "一時的にロックされている（%{count}回失敗したログイン試行）"
     confirm_status_change: "'%{name}' のステータスを変更しようとしています。続行してもよろしいですか?"
     deleted: "削除されたユーザー"
     error_status_change_failed: "次のエラーによりユーザのステータスの変更が失敗しました：%{errors}"
@@ -2421,18 +2421,18 @@ ja:
   warning: 注意
   warning_attachments_not_saved: "%{count} 件のファイルを保存できませんでした。"
   warning_imminent_user_limit: >
-    現在のプランでサポートされているユーザーよりも多くのユーザーを招待しました。 招待されたユーザーは、OpenProject環境に参加できない場合があります。 招待者と登録ユーザーが参加できるようにするには、<a href="%{upgrade_url}">プランをアップグレード</a>するか、既存のユーザーをブロックしてください。
+    現在のプランでサポートされているユーザーよりも多くのユーザーを招待しました。招待されたユーザーは、OpenProject環境に参加できない場合があります。招待者と登録ユーザーが参加できるようにするには、<a href="%{upgrade_url}">プランをアップグレード</a>するか、既存のユーザーをブロックしてください。
   warning_registration_token_expired: |
     アクティベーションメールの有効期限が切れています。%{email} に新しいメールを送りました。メール内のリンクをクリックして、アカウントを有効にしてください。
   warning_user_limit_reached: >
-    ユーザー制限に達しました。 これ以上ユーザーをアクティブにすることはできません。 追加のユーザーが参加できるように<a href="%{upgrade_url}">プランをアップグレード</a>するか、メンバーをブロックしてください。
+    ユーザー制限に達しました。これ以上ユーザーをアクティブにすることはできません。追加のユーザーが参加できるように<a href="%{upgrade_url}">プランをアップグレード</a>するか、メンバーをブロックしてください。
   warning_user_limit_reached_instructions: >
-    ユーザー制限（%{current}/%{max} アクティブユーザー）に達しました。 sales@openproject.com に連絡してEnterprise Editionプランをアップグレードし、ユーザーを追加してください。
+    ユーザー制限（%{current}/%{max} アクティブユーザー）に達しました。sales@openproject.com に連絡してEnterprise Editionプランをアップグレードし、ユーザーを追加してください。
   menu_item: "メニュー項目"
   menu_item_setting: "可視性"
   mysql_deprecation:
     notice: >
-      将来のバージョンのOpenProjectでは、MySQLおよびMariaDBデータベースのサポートが廃止または削減される可能性があります。 お使いのインストールはまだMySQL上で実行されているため、PostgreSQLに移行することをお勧めします。
+      将来のバージョンのOpenProjectでは、MySQLおよびMariaDBデータベースのサポートが廃止または削減される可能性があります。お使いのインストールはまだMySQL上で実行されているため、PostgreSQLに移行することをお勧めします。
       この手順は、移行ガイドに従って簡単にできます:
   wiki_menu_item_for: "Wikiページ\"%{title}\"のメニュー項目"
   wiki_menu_item_setting: "可視性"
@@ -2526,21 +2526,21 @@ ja:
       instructions:
         name: "アプリケーションの名前。これは承認時に他のユーザーに表示されます。"
         redirect_uri_html: >
-          許可されたURLで承認されたユーザーにリダイレクトできます。 1行に1エントリ。<br/>デスクトップアプリケーションを登録する場合は、次のURLを使用してください。
-        confidential: "クライアントシークレットを機密にできる場所でアプリケーションが使用されるかどうかを確認します。 ネイティブモバイルアプリとシングルページアプリは機密とはみなされません。"
-        client_credential_user_id: "クライアントがこのアプリケーションを使用するときに偽装するためのオプションのユーザーIDです。 パブリックアクセスのみを許可するには空のままにします"
+          許可されたURLで承認されたユーザーにリダイレクトできます。1行に1エントリ。<br/>デスクトップアプリケーションを登録する場合は、次のURLを使用してください。
+        confidential: "クライアントシークレットを機密にできる場所でアプリケーションが使用されるかどうかを確認します。ネイティブモバイルアプリとシングルページアプリは機密とはみなされません。"
+        client_credential_user_id: "クライアントがこのアプリケーションを使用するときに偽装するためのオプションのユーザーIDです。パブリックアクセスのみを許可するには空のままにします"
         register_intro: "OpenProject用のOAuth APIクライアントアプリケーションを開発している場合は、このフォームを使用してすべてのユーザーが使用できるように登録できます。"
         default_scopes: ""
     client_id: "クライアントID"
     client_secret_notice: >
-      クライアントシークレットを表示できる唯一の瞬間です。書き留めて安全に保管してください。 これはパスワードとして扱われるべきであり、後でOpenProjectによって検索することはできません。
+      クライアントシークレットを表示できる唯一の瞬間です。書き留めて安全に保管してください。これはパスワードとして扱われるべきであり、後でOpenProjectによって検索することはできません。
     authorization_dialog:
       authorize: "承認"
       cancel: "承認を取り消して拒否します。"
       prompt_html: "<strong>%{application_name}</strong>に自分のアカウント<em>%{login}</em>を使用する権限を与えますか？"
       title: "%{application_name}を承認します"
       wants_to_access_html: >
-        このアプリケーションはあなたのOpenProjectアカウントへのアクセスを要求します。 <br/> <strong>次の権限が要求されています：</strong>
+        このアプリケーションはあなたのOpenProjectアカウントへのアクセスを要求します。<br/> <strong>次の権限が要求されています：</strong>
     scopes:
       api_v3: "フルAPIアクセス"
       api_v3_text: "アプリケーションはあなたに代わってアクションを実行するためにOpenProject APIへの完全な読み書きアクセス権を受け取ります。"
@@ -2558,7 +2558,7 @@ ja:
     client_credentials_impersonation_set_to: "クライアントの資格情報をユーザーに設定"
     client_credentials_impersonation_warning: "注意：このアプリケーションで「クライアント認証情報」フローを使用しているクライアントは、このユーザーの権限を持ちます。"
     client_credentials_impersonation_html: >
-      デフォルトでは、OpenProjectは %{authorization_code_flow_link} を介してOAuth 2.0認証を提供します。 オプションで %{client_credentials_flow_link} を有効にすることもできますが、その代わりにユーザーに代わってリクエストが実行されるようにする必要があります。
+      デフォルトでは、OpenProjectは %{authorization_code_flow_link} を介してOAuth 2.0認証を提供します。オプションで %{client_credentials_flow_link} を有効にすることもできますが、その代わりにユーザーに代わってリクエストが実行されるようにする必要があります。
     authorization_error: "認証エラーが発生しました。"
     revoke_my_application_confirmation: "本当にこのアプリケーションを削除しますか？ これにより %{token_count} が無効になります。"
     my_registered_applications: "登録済みのOAuthアプリケーション"

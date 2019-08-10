@@ -1730,7 +1730,7 @@ ru:
   mail_subject_account_activation_request: "Запрос на активацию учетной записи %{value}"
   mail_subject_lost_password: "Ваш пароль %{value}"
   mail_subject_register: "Активация вашей учетной записи %{value}"
-  mail_subject_reminder: "%{count}  пакет(-ов) работ на  следующие %{days}"
+  mail_subject_reminder: "%{count} пакет(-ов) работ на  следующие %{days}"
   mail_subject_wiki_content_added: "'%{id}' wiki-страница добавлена"
   mail_subject_wiki_content_updated: "'%{id}' wiki страница была обновлена"
   mail_user_activation_limit_reached:
@@ -2245,7 +2245,7 @@ ru:
   text_powered_by: "С использованием %{link}"
   text_project_identifier_info: "Разрешены только строчные буквы (a-z), цифры, тире и знаки подчеркивания, начинать с буквы нижнего регистра."
   text_reassign: "Переназначить для пакета работ:"
-  text_regexp_info: "например:  ^[A-Z0-9]+$"
+  text_regexp_info: "например: ^[A-Z0-9]+$"
   text_regexp_multiline: 'Регулярное выражение применяется в многострочном режиме. Например: ^---\s+'
   text_repository_usernames_mapping: "Выберете или обновите пользователя OpenProject сопоставленного с именами пользователей найдеными в журнале репозитория. Пользователи с одинаковыми именами в OpenProject и в репозитории или почте будут сопоставлены автоматически."
   text_select_mail_notifications: "Выберите действия, для которых следует направлять уведомления по электронной почте."

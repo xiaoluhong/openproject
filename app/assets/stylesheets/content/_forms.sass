@@ -50,7 +50,7 @@ $form--field-types: (text-field, text-area, select, check-box, radio-button, ran
 %required-star
   @include default-transition
   @include varprop(color, primary-color-dark)
-  content:  '*'
+  content: '*'
   padding: 0 0.325rem
 
 form
@@ -215,21 +215,21 @@ hr
     opacity: 0.001
 
 %form--fieldset-or-section
-  padding:        1rem 0 0
-  margin-bottom:  1rem
-  border:         0
+  padding:       1rem 0 0
+  margin-bottom: 1rem
+  border:        0
   // Flexbox needs that parents of children with overflow set to have a width:
   min-width: 0
   word-break: break-word
 
 
 %form--fieldset-legend-or-section-title
-  color:          lighten($body-font-color, 10)
-  font-size:      1rem
-  font-weight:    bold
-  line-height:    1.8
+  color:         lighten($body-font-color, 10)
+  font-size:     1rem
+  font-weight:   bold
+  line-height:   1.8
   text-transform: uppercase
-  border-bottom:  1px solid $gray
+  border-bottom: 1px solid $gray
 
 // HACK. TODO: Remove fieldset element rules in various places.
 .form--fieldset,
@@ -238,11 +238,11 @@ fieldset.form--fieldset
 
 .form--fieldset-legend
   @extend %form--fieldset-legend-or-section-title
-  width:     100%
+  width:    100%
 
   .form--fieldset.-collapsible > &
     @include without-link-styling
-    cursor:  pointer
+    cursor: pointer
 
   &:before
     @include icon-common
@@ -250,24 +250,24 @@ fieldset.form--fieldset
 
     .form--fieldset.-collapsible > &
       @include icon-mixin-arrow-up1
-      padding:   0.625rem 0.25rem 0 0.25rem
+      padding:  0.625rem 0.25rem 0 0.25rem
 
     .form--fieldset.-collapsible.-collapsed > &,
     .form--fieldset.-collapsible.collapsed  > &
       @include icon-mixin-arrow-down1
-      padding:   0.625rem 0.25rem 0 0.25rem
+      padding:  0.625rem 0.25rem 0 0.25rem
 
 #sidebar .form--fieldset-legend
   @include varprop(color, main-menu-fieldset-header-color)
 
 .form--fieldset-control
-  float:          right
-  margin-top:     -2.8rem
-  text-align:     right
-  color:          lighten($body-font-color, 10)
-  font-size:      1rem
-  font-style:     italic
-  line-height:    1.8
+  float:         right
+  margin-top:    -2.8rem
+  text-align:    right
+  color:         lighten($body-font-color, 10)
+  font-size:     1rem
+  font-style:    italic
+  line-height:   1.8
   
   a:hover
     text-decoration: none
@@ -350,17 +350,17 @@ fieldset.form--fieldset
   @include grid-content(2)
   @extend %label-style
   // override max-width set by including grid-content
-  max-width:    100%
-  min-width:    100px
-  flex-grow:    1
+  max-width:   100%
+  min-width:   100px
+  flex-grow:   1
   overflow-x: hidden
   white-space: normal
   overflow-y: visible
-  padding:      0 1rem 0 0
+  padding:     0 1rem 0 0
   margin-bottom: 0
-  font-size:    $form-label-fontsize
-  line-height:  $base-line-height
-  color:        $form-label-color
+  font-size:   $form-label-fontsize
+  line-height: $base-line-height
+  color:       $form-label-color
 
   .form.-wide-labels &,
   .form--field.-wide-label &,
@@ -378,7 +378,7 @@ fieldset.form--fieldset
     &::before
       @include icon-common
       display: inline-block
-      line-height:  $base-line-height
+      line-height: $base-line-height
       padding-right: 0.325rem
 
   &.-top
@@ -438,10 +438,10 @@ fieldset.form--fieldset
 
 %form--field-after-container
   @include grid-content(10, 2)
-  padding:      0
-  font-size:    $form-label-fontsize
-  line-height:  1.4
-  color:        $form-label-color
+  padding:     0
+  font-size:   $form-label-fontsize
+  line-height: 1.4
+  color:       $form-label-color
 
   .form--field.-full-width &
     @include grid-size(12)
@@ -701,27 +701,27 @@ input[readonly].-clickable
   @include grid-content(2)
   @include grid-visible-overflow
   @extend %label-style
-  padding:      0 1rem 0.5rem 0
-  font-size:    $form-label-fontsize
-  line-height:  $base-line-height
-  color:        $form-label-color
+  padding:     0 1rem 0.5rem 0
+  font-size:   $form-label-fontsize
+  line-height: $base-line-height
+  color:       $form-label-color
   margin-bottom: 0.8rem
 
 .form--matrix
-  border:       $content-form-input-border
+  border:      $content-form-input-border
   border-radius: 2px
-  background:   none
-  margin:       0
-  font-size:    0.9rem
-  line-height:  1.5
+  background:  none
+  margin:      0
+  font-size:   0.9rem
+  line-height: 1.5
 
 .form--matrix-header-row
-  font-weight:      bold
-  border-bottom:    $content-form-input-border
+  font-weight:     bold
+  border-bottom:   $content-form-input-border
   background-color: $gray-light
 
 .form--matrix-header-cell
-  padding:          0 1rem
+  padding:         0 1rem
 
 .form--matrix-row
 
@@ -731,9 +731,9 @@ input[readonly].-clickable
     background-color: white
 
 .form--matrix-checkbox-cell
-  min-width:    1rem
-  max-width:    4rem
-  text-align:   center
+  min-width:   1rem
+  max-width:   4rem
+  text-align:  center
 
 .form--column
   @include grid-block
@@ -782,17 +782,17 @@ input[readonly].-clickable
           padding: 0
 
 .form--label-with-check-box
-  display:     block
-  clear:       both
+  display:    block
+  clear:      both
   line-height: $base-line-height
-  padding:  0 2rem 0 0
+  padding: 0 2rem 0 0
 
   &:not(.-no-ellipsis)
     @include text-shortener
 
   & > .form--check-box-container
-    display:  block
-    float:    left
+    display: block
+    float:   left
     padding-right: 0.5rem
 
     input[type="checkbox"]
@@ -802,27 +802,27 @@ input[readonly].-clickable
     @extend %required-star
 
 .form--field-affix
-  flex:           0 0 auto
-  display:        flex
-  font-size:      0.9rem
-  background:     $inlinelabel-background
-  color:          $inlinelabel-color
-  border:         $content-form-input-border
+  flex:          0 0 auto
+  display:       flex
+  font-size:     0.9rem
+  background:    $inlinelabel-background
+  color:         $inlinelabel-color
+  border:        $content-form-input-border
   // OR $inlinelabel-border
-  border-radius:  2px
-  padding:        0 $form-padding
-  margin-bottom:  0rem
-  align-items:    center
-  line-height:    1
+  border-radius: 2px
+  padding:       0 $form-padding
+  margin-bottom: 0rem
+  align-items:   center
+  line-height:   1
 
   &.icon, &.icon-context
-    padding:  5px
+    padding: 5px
     &:before
-      padding:  0
+      padding: 0
 
   %form--field-element-container + &
-    margin-left:  -1rem
-    border-left:  0
+    margin-left: -1rem
+    border-left: 0
 
   &.-transparent
     @include form--field-affix-mixin--transparent

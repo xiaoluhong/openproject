@@ -30,7 +30,7 @@
 ###############################################################################
 # The base activity provider class provides a default implementation for the  #
 # most common activity jobs. You may implement the following methods to set   #
-# the respective activity details:                                            #
+# the respective activity details:                                           #
 #  - event_name                                                               #
 #  - event_title                                                              #
 #  - event_type                                                               #

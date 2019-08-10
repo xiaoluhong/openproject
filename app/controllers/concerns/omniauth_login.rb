@@ -185,10 +185,10 @@ module Concerns::OmniauthLogin
     info = auth[:info]
 
     attribute_map = {
-      login:        info[:email],
-      mail:         info[:email],
-      firstname:    info[:first_name] || info[:name],
-      lastname:     info[:last_name],
+      login:       info[:email],
+      mail:        info[:email],
+      firstname:   info[:first_name] || info[:name],
+      lastname:    info[:last_name],
       identity_url: identity_url_from_omniauth(auth)
     }
 

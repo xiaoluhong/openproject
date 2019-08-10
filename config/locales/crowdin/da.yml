@@ -2365,7 +2365,7 @@ da:
       delete: "Status for sletning: %{comment}"
       edit: "Status for redigering: %{comment}"
       show: "Status: %{comment}"
-    planning_element_update: "Updatering:  %{title}"
+    planning_element_update: "Updatering: %{title}"
     type_could_not_be_saved: "Typen kan ikke gemmes"
     reporting_could_not_be_saved: "Rapportering kan ikke gemmes"
     properties: "Egenskaber"

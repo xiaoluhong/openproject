@@ -123,7 +123,7 @@ zh-TW:
     filter:
       description:
         text_open_filter: "使用 ALT 和方向鍵打開此篩選器。"
-        text_close_filter: "要選擇條目離開焦點例如按輸入。離開沒有篩選器的情況下選擇的第一個 （空） 條目。"
+        text_close_filter: "要選擇條目離開焦點例如按輸入。離開沒有篩選器的情況下選擇的第一個（空） 條目。"
       noneElement: "（無）"
       time_zone_converted:
         two_values: "%{from} - %{to}（以您的當地時間為基準）。"
@@ -336,10 +336,10 @@ zh-TW:
         members: '邀請新的 <b>會員</b> 加入您的專案。'
         project_selection: 'Please click on one of the projects with useful demo data to get started. <br> The <b>Demo project</b> suits best for classical project management, while the <b>Scrum project</b> is better for Agile project management.'
         sidebar_arrow: "使用箭頭, 您可以導航回專案的 <b>主功能表</b>。"
-        welcome: '觀看三分鐘的介紹導覽, 以瞭解最多 <b>重要功能</b>。 <br> 我們建議完成所有步驟直到結束。您可以隨時重新開始導覽。'
+        welcome: '觀看三分鐘的介紹導覽, 以瞭解最多 <b>重要功能</b>。<br> 我們建議完成所有步驟直到結束。您可以隨時重新開始導覽。'
         wiki: '在 <b>wiki</b> 中, 您可以與您的團隊一起記錄和分享知識。'
         backlogs:
-          overview: "在 <b>積壓工作</b> 視圖中管理您的工作。 <br> 在右邊, 你有產品積壓或錯誤積壓, 在左邊, 你將有各自的衝刺。在這裡, 您可以創建 <b>史詩、使用者故事和錯誤</b>, 通過拖動 ' n ' drop 進行優先排序, 並將它們添加到衝刺中。"
+          overview: "在 <b>積壓工作</b> 視圖中管理您的工作。<br> 在右邊, 您有產品積壓或錯誤積壓, 在左邊, 您將有各自的衝刺。在這裡, 您可以創建 <b>史詩、使用者故事和錯誤</b>, 通過拖動 ' n ' drop 進行優先排序, 並將它們添加到衝刺中。"
           task_board_arrow: '要查看您的 <b>任務板</b>, 請打開衝刺下拉式功能表..。'
           task_board_select: ', 然後選擇 <b>任務板</b> 條目。'
           task_board: "<b>任務板</b> 視覺化此衝刺的進度。使用使用者情景旁邊的 \"+\" 圖示添加新任務或障礙。通過拖放, 您可以更新狀態。"
@@ -350,7 +350,7 @@ zh-TW:
           drag: 'Drag & Drop your cards within a list to re-order, or to another list. A double click will open the details view.'
         wp:
           toggler: "現在, 讓我們來看看 <b>工作包</b> 部分, 它為您提供了更詳細的工作視圖。"
-          list: '這是 <b>工作包</b> 清單, 其中包含專案中的重要工作, 如任務、功能、里程碑、bug 等。 <br> 您可以直接在此清單中創建或編輯工作包。要查看其詳細資訊, 您可以按兩下一行。'
+          list: '這是 <b>工作包</b> 清單, 其中包含專案中的重要工作, 如任務、功能、里程碑、bug 等。<br> 您可以直接在此清單中創建或編輯工作包。要查看其詳細資訊, 您可以按兩下一行。'
           full_view: '在 <b>工作包詳細資訊</b> 中, 您可以找到所有相關資訊, 如描述、狀態和優先順序、活動、依賴項或注釋。'
           back_button: '使用箭頭, 您可以導航回工作包清單。'
           create_button: '<b>創建</b>按鍵將新增一個工作包至您的專案'
@@ -471,16 +471,16 @@ zh-TW:
         other: "您只能選擇 {{limit}} 個項目"
     project_menu_details: "詳細資料"
     sort:
-      sorted_asc: '已套用升冪排序， '
-      sorted_dsc: '已套用降冪排序， '
+      sorted_asc: '已套用升冪排序，'
+      sorted_dsc: '已套用降冪排序，'
       sorted_no: '已套用不排序, '
       sorting_disabled: '已禁用排序'
       activate_asc: '啟動以套用昇冪排序'
       activate_dsc: '啟動以套用降冪排序'
       activate_no: '啟動以移除排序'
-    text_work_packages_destroy_confirmation: "你確定要刪除選定的工作項目嗎？"
+    text_work_packages_destroy_confirmation: "您確定要刪除選定的工作項目嗎？"
     text_query_destroy_confirmation: "確實要刪除所選視圖嗎？"
-    text_attachment_destroy_confirmation: "你確定你想要刪除附件?"
+    text_attachment_destroy_confirmation: "您確定您想要刪除附件?"
     timelines:
       quarter_label: 'Q%{quarter_number}'
       gantt_chart: '甘特圖'

@@ -94,8 +94,8 @@ class UserMailer < BaseMailer
 
     @token = token
     @reset_password_url = url_for(controller: '/account',
-                                  action:     :lost_password,
-                                  token:      @token.value)
+                                  action:    :lost_password,
+                                  token:     @token.value)
 
     open_project_headers 'Type' => 'Account'
 
@@ -161,8 +161,8 @@ class UserMailer < BaseMailer
 
     @token = token
     @activation_url = url_for(controller: '/account',
-                              action:     :activate,
-                              token:      @token.value)
+                              action:    :activate,
+                              token:     @token.value)
 
     open_project_headers 'Type' => 'Account'
 
@@ -207,11 +207,11 @@ class UserMailer < BaseMailer
   def wiki_content_updated(user, wiki_content, author)
     @wiki_content  = wiki_content
     @wiki_diff_url = url_for(controller: '/wiki',
-                             action:     :diff,
+                             action:    :diff,
                              project_id: wiki_content.project,
-                             id:         wiki_content.page.slug,
+                             id:        wiki_content.page.slug,
                              # using wiki_content.version + 1 because at this point the journal is not saved yet
-                             version:    wiki_content.version + 1)
+                             version:   wiki_content.version + 1)
 
     open_project_headers 'Project'      => @wiki_content.project.identifier,
                          'Wiki-Page-Id' => @wiki_content.page.id,
@@ -268,9 +268,9 @@ class UserMailer < BaseMailer
   def account_activation_requested(admin, user)
     @user           = user
     @activation_url = url_for(controller: '/users',
-                              action:     :index,
-                              status:     'registered',
-                              sort:       'created_at:desc')
+                              action:    :index,
+                              status:    'registered',
+                              sort:      'created_at:desc')
 
     open_project_headers 'Type' => 'Account'
 
@@ -284,11 +284,11 @@ class UserMailer < BaseMailer
     @issues = issues
     @days   = days
 
-    @assigned_issues_url = url_for(controller:     :work_packages,
-                                   action:         :index,
-                                   set_filter:     1,
+    @assigned_issues_url = url_for(controller:    :work_packages,
+                                   action:        :index,
+                                   set_filter:    1,
                                    assigned_to_id: user.id,
-                                   sort:           'due_date:asc')
+                                   sort:          'due_date:asc')
 
     open_project_headers 'Type' => 'Issue'
 

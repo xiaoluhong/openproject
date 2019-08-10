@@ -43,7 +43,7 @@ See doc/COPYRIGHT.md for more details.
             id: 'meeting-form-start-date',
             class: '-augmented-datepicker',
             required: true,
-            size:     10,
+            size:    10,
             no_label: true,
             container_class: '-xslim' %>
       <label for="meeting-form-start-time" class="hidden-for-sighted">
@@ -56,10 +56,10 @@ See doc/COPYRIGHT.md for more details.
       <%= f.text_field :start_time_hour,
             id: 'meeting-form-start-time',
             required: true,
-            type:     'time',
+            type:    'time',
             no_label: true,
-            step:     5.minutes,
-            suffix:   Time.zone.to_s,
+            step:    5.minutes,
+            suffix:  Time.zone.to_s,
             container_class: '-xslim' %>
     </div>
   </div>
@@ -70,12 +70,12 @@ See doc/COPYRIGHT.md for more details.
       <%= f.number_field :duration,
             id: 'meeting-form-duration',
             required: true,
-            size:     5,
+            size:    5,
             no_label: true,
-            min:      0.00,
-            step:     0.25,
-            max:      168,
-            suffix:   t(:text_in_hours),
+            min:     0.00,
+            step:    0.25,
+            max:     168,
+            suffix:  t(:text_in_hours),
             container_class: '-xslim' %>
     </div>
   </div>

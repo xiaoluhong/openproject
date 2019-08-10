@@ -37,13 +37,13 @@ module BimSeeder
 
       def type_table
         { # position is_default color_id is_in_roadmap is_milestone
-          task:           [1, true, :default_color_blue,        true,  false, :default_type_task],
-          milestone:      [2, true, :default_color_green_light, false, true,  :default_type_milestone],
-          phase:          [3, true, :default_color_blue_dark,   false, false, :default_type_phase],
+          task:          [1, true, :default_color_blue,        true,  false, :default_type_task],
+          milestone:     [2, true, :default_color_green_light, false, true,  :default_type_milestone],
+          phase:         [3, true, :default_color_blue_dark,   false, false, :default_type_phase],
           building_model: [4, true, :default_color_blue,        true,  false, 'seeders.bim.default_type_building_model'],
-          defect:         [5, true, :default_color_red,         true,  false, 'seeders.bim.default_type_defect'],
-          approval:       [6, true, :default_color_grey_dark,   true,  false, 'seeders.bim.default_type_approval'],
-          bcf_issue:      [6, true, :default_color_grey_red,    true,  false, 'seeders.bim.default_type_bcf_issue']
+          defect:        [5, true, :default_color_red,         true,  false, 'seeders.bim.default_type_defect'],
+          approval:      [6, true, :default_color_grey_dark,   true,  false, 'seeders.bim.default_type_approval'],
+          bcf_issue:     [6, true, :default_color_grey_red,    true,  false, 'seeders.bim.default_type_bcf_issue']
         }
       end
     end

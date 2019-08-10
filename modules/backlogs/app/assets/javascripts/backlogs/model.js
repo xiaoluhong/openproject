@@ -133,10 +133,10 @@ RB.Model = (function ($) {
           }
         },
         dialogClass: this.getType().toLowerCase() + '_editor_dialog',
-        modal:       true,
-        position:    { my: 'center', at: 'center', of: window },
-        resizable:   false,
-        title:       (this.isNew() ? this.newDialogTitle() : this.editDialogTitle())
+        modal:      true,
+        position:   { my: 'center', at: 'center', of: window },
+        resizable:  false,
+        title:      (this.isNew() ? this.newDialogTitle() : this.editDialogTitle())
       });
       editor.find(".editor").first().focus();
       $('.button').removeClass(baseClasses);

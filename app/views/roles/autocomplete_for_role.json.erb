@@ -33,7 +33,7 @@ See docs/COPYRIGHT.rdoc for more details.
     "items":[
   <% @roles.each_with_index do |role, ix| %>
   {
-      "id":   <%= role.id.to_json.html_safe %>,
+      "id":  <%= role.id.to_json.html_safe %>,
       "name": <%= role.name.to_json.html_safe %>
   } <%= "," unless ix == @roles.length - 1 %>
 <% end %> ],

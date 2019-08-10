@@ -43,7 +43,7 @@ export class BcfWpSingleViewComponent implements OnInit, OnDestroy {
   ngOnInit():void {
     this.viewpoints = this.workPackage.bcf.viewpoints.map((vp:ViewPointOriginal):ViewPoint => {
       return {
-        id:       vp.id,
+        id:      vp.id,
         fileName: vp.file_name,
         fullPath: this.pathHelper.attachmentDownloadPath(vp.id, vp.file_name)
       };
@@ -90,9 +90,9 @@ export class BcfWpSingleViewComponent implements OnInit, OnDestroy {
 
     this.galleryImages = this.viewpoints.map((vp:ViewPoint) => {
       return {
-        small:  vp.fullPath,
+        small: vp.fullPath,
         medium: vp.fullPath,
-        big:    vp.fullPath,
+        big:   vp.fullPath,
       };
     });
   }

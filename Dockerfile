@@ -1,5 +1,4 @@
 FROM ruby:2.6-stretch
-MAINTAINER operations@openproject.com
 
 ENV NODE_VERSION "10.15.0"
 ENV BUNDLER_VERSION "2.0.1"
@@ -18,7 +17,7 @@ ENV OPENPROJECT_INSTALLATION__TYPE docker
 ENV NEW_RELIC_AGENT_ENABLED false
 ENV ATTACHMENTS_STORAGE_PATH $APP_DATA_PATH/files
 
-ENV PGLOADER_DEPENDENCIES "libsqlite3-dev make curl gawk freetds-dev libzip-dev"
+ENV PGLOADER_DEPENDENCIES "libsqlite3-dev make curl gawk freetds-dev libzip-dev vim telnet jq htop"
 
 # Set a default key base, ensure to provide a secure value in production environments!
 ENV SECRET_KEY_BASE OVERWRITE_ME
@@ -26,8 +25,8 @@ ENV SECRET_KEY_BASE OVERWRITE_ME
 # install node + npm
 RUN curl https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.gz | tar xzf - -C /usr/local --strip-components=1
 
-RUN apt-get update -qq && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y  \
+RUN apt-get update -qq \
+&& DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y  \
     postgresql-client \
     mysql-client \
     poppler-utils \
@@ -39,8 +38,10 @@ RUN apt-get update -qq && \
     postgresql \
     $PGLOADER_DEPENDENCIES \
     apache2 \
-    supervisor && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
+    supervisor \
+&&  apt-get clean \
+&&  apt-get autoremove \
+&&  rm -rf /var/lib/apt/lists/*
 
 # pgloader
 ENV CCL_DEFAULT_DIRECTORY /opt/ccl

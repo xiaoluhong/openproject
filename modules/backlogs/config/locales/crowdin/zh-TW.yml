@@ -94,7 +94,7 @@ zh-TW:
   label_back_to_project: "返回專案頁面"
   label_backlog: "待辦事項"
   label_backlogs: "待辦事項"
-  label_backlogs_unconfigured: "您尚未設定待辦事項。請前往 '%{administration} -> %{plugins}' 然後在 %{configure} 連結上按一下。當你設定欄位後，再返回這個頁面使用這個工具。"
+  label_backlogs_unconfigured: "您尚未設定待辦事項。請前往 '%{administration} -> %{plugins}' 然後在 %{configure} 連結上按一下。當您設定欄位後，再返回這個頁面使用這個工具。"
   label_blocks_ids: "已被限制的工作項目 IDs"
   label_burndown: "完成"
   label_column_in_backlog: "待辦事項的欄位"

@@ -128,7 +128,7 @@ describe WorkPackage, type: :model do
       @project.types = [FactoryBot.build(:type_feature)]
 
       @work_package = FactoryBot.build(:work_package, project: @project,
-                                                       status:  @status_open,
+                                                       status: @status_open,
                                                        type: FactoryBot.build(:type_feature))
     end
 

@@ -19,7 +19,7 @@ describe User, 'allowed to' do
   let(:role) { FactoryBot.build(:role) }
   let(:role2) { FactoryBot.build(:role) }
   let(:anonymous_role) { FactoryBot.build(:anonymous_role) }
-  let(:member) { FactoryBot.build(:member, project:  project,
+  let(:member) { FactoryBot.build(:member, project: project,
                                             roles: [role]) }
 
   let(:action) { :the_one }

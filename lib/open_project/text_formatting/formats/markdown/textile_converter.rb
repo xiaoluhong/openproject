@@ -417,7 +417,7 @@ module OpenProject::TextFormatting::Formats
             \{\{                        # opening tag
             ([\w\\_]+)                  # macro name
             (\(([^\}]*)\))?             # optional arguments
-            \}\}                        # closing tag
+            \}\}                       # closing tag
             )
           /x
 

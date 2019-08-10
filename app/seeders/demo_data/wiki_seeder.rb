@@ -60,16 +60,16 @@ module DemoData
 
     def create_wiki_page!(data, project:, user:, parent: nil)
       wiki_page = WikiPage.create!(
-        wiki:  project.wiki,
+        wiki: project.wiki,
         title: data[:title],
         parent: parent
       )
 
       print '.'
       WikiContent.create!(
-        page:   wiki_page,
+        page:  wiki_page,
         author: user,
-        text:   data[:content]
+        text:  data[:content]
       )
 
       if data[:children]

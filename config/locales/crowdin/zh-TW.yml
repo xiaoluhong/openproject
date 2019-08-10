@@ -20,7 +20,7 @@ zh-TW:
         header_item_bg_hover_color: "當滑鼠移動到可點選的標題項目的背景顏色"
         header_item_font_color: "可點擊的標題項目的文字顏色"
         header_item_font_hover_color: "當滑鼠移動到可點選的標題項目的文字顏色"
-        header_border_bottom_color: "標題下方的細線。如果你不想要任何線段，請保持此欄位空白。"
+        header_border_bottom_color: "標題下方的細線。如果您不想要任何線段，請保持此欄位空白。"
         main_menu_bg_color: "左側選單的背景顏色"
     enterprise:
       upgrade_to_ee: "升級到企業版"
@@ -35,7 +35,7 @@ zh-TW:
     is_active: 當前已顯示
     is_inactive: 當前未顯示
   attribute_help_texts:
-    text_overview: '在此頁面，你可以替屬性頁面建立自訂說明文字。當建立完成後，這些文字在點擊相關屬性旁的求助圖示時顯示。'
+    text_overview: '在此頁面，您可以替屬性頁面建立自訂說明文字。當建立完成後，這些文字在點擊相關屬性旁的求助圖示時顯示。'
     label_plural: '屬性說明文字'
     show_preview: '預覽文字'
     add_new: '新增說明文字'
@@ -83,7 +83,7 @@ zh-TW:
     is_enabled_globally: '已全域啟用'
     enabled_in_project: '已在專案中啟用'
     contained_in_type: '已包含在類型中'
-    confirm_destroy_option: "刪除一個項目將會一併刪除所有出現這個項目的地方 (例如：在工作項目中)。你確定要刪除它嗎？"
+    confirm_destroy_option: "刪除一個項目將會一併刪除所有出現這個項目的地方 (例如：在工作項目中)。您確定要刪除它嗎？"
     tab:
       no_results_title_text: 目前沒有自定義的欄位
       no_results_content_text: 建立一個新的自定義欄位
@@ -115,7 +115,7 @@ zh-TW:
       Specify a list of names to ignore when processing attachments for incoming mails (e.g., signatures or icons). Enter one filename per line.
   projects:
     delete:
-      scheduled: "刪除已經排程並且會在背景執行。你將會收到結果通知。"
+      scheduled: "刪除已經排程並且會在背景執行。您將會收到結果通知。"
       schedule_failed: "專案無法刪除: %{errors}"
       failed: "專案 %{name} 的刪除失敗"
       failed_text: "刪除專案 %{name} 的請求失敗。該專案已封存。"
@@ -248,12 +248,12 @@ zh-TW:
     deleted: "成功刪除帳號"
     deletion_info:
       data_consequences:
-        other: "您創建的資料 （例如電子郵件、 我的最愛、 工作項目，維基條目） 一樣可能會被刪除。但是請注意像工作項目和維基條目的資料刪除可能導致阻礙其他使用者的工作。這種資料因此重新分配到稱為\"刪除使用者\"的帳戶。由每筆被刪除而分配到這帳戶將不可能再從刪除帳戶中分配資料給你創建。"
-        self: "您創建的資料 （例如電子郵件、 我的最愛、 工作項目，維基條目） 一樣可能會被刪除。但是請注意像工作項目和維基條目的資料刪除可能導致阻礙其他使用者的工作。這種資料因此重新分配到稱為\"刪除使用者\"的帳戶。由每筆被刪除而分配到這帳戶將不可能再從刪除帳戶中分配資料給你創建。"
+        other: "您創建的資料（例如電子郵件、 我的最愛、 工作項目，維基條目） 一樣可能會被刪除。但是請注意像工作項目和維基條目的資料刪除可能導致阻礙其他使用者的工作。這種資料因此重新分配到稱為\"刪除使用者\"的帳戶。由每筆被刪除而分配到這帳戶將不可能再從刪除帳戶中分配資料給您創建。"
+        self: "您創建的資料（例如電子郵件、 我的最愛、 工作項目，維基條目） 一樣可能會被刪除。但是請注意像工作項目和維基條目的資料刪除可能導致阻礙其他使用者的工作。這種資料因此重新分配到稱為\"刪除使用者\"的帳戶。由每筆被刪除而分配到這帳戶將不可能再從刪除帳戶中分配資料給您創建。"
       heading: "刪除帳號 %{name}"
       info:
         other: "刪除使用者帳號是不可逆轉的動作。"
-        self: "刪除你的帳號是不可逆轉的動作。"
+        self: "刪除您的帳號是不可逆轉的動作。"
       login_consequences:
         other: "將從系統中刪除該帳號。因此，使用者將不再能夠用他當前的帳密登錄。未來必須重新申請，才能再度成為使用者。"
         self: "您的帳號將從系統中刪除。因此，您將不再能夠使用當前的帳密登錄。未來必需重新申請，才能再度成為使用者。"
@@ -473,7 +473,7 @@ zh-TW:
           only_one_allowed: "(%{name}) 只允許一個值。"
           empty: "(%{name}) 不可以為空值。"
           inclusion: "(%{name}) 沒有被設定為一個允許的值。"
-          not_logged_in: "(%{name}) 的值不可以被設定，因為你還沒有登入。"
+          not_logged_in: "(%{name}) 的值不可以被設定，因為您還沒有登入。"
           not_an_integer: "(%{name}) 不是一個整數。"
           smaller_than_or_equal_to: "(%{name}) 必須小於等於 %{count}。"
           greater_than_or_equal_to: "(%{name}) 必須大於等於 %{count}。"
@@ -906,7 +906,7 @@ zh-TW:
   description_active: "啟用？"
   description_attachment_toggle: "顯示/隱藏附件"
   description_autocomplete: >
-    這個欄位使用自動完成的功能。當你在輸入工作項目的標題的時候，你將會收到可能的候選清單。請使用上下鍵移動游標並且按下 Tab 鍵或 Enter 鍵選擇。或者您可直接輸入工作項目編號。
+    這個欄位使用自動完成的功能。當您在輸入工作項目的標題的時候，您將會收到可能的候選清單。請使用上下鍵移動游標並且按下 Tab 鍵或 Enter 鍵選擇。或者您可直接輸入工作項目編號。
   description_available_columns: "可用欄"
   description_choose_project: "專案"
   description_compare_from: "比較："
@@ -971,7 +971,7 @@ zh-TW:
   error_journal_attribute_not_present: "Journal 不含有屬性 %{attribute}。"
   error_pdf_export_too_many_columns: "為 PDF 匯出選擇的列太多。請減少列數。"
   error_pdf_failed_to_export: "無法保存 pdf 匯出: %{error}"
-  error_token_authenticity: '無法驗證跨網域請求權杖。你是不是試圖在多個瀏覽器或者分頁上傳送資料？請關閉所有的分頁後再試一次。'
+  error_token_authenticity: '無法驗證跨網域請求權杖。您是不是試圖在多個瀏覽器或者分頁上傳送資料？請關閉所有的分頁後再試一次。'
   error_work_package_done_ratios_not_updated: "工作項目完成比例未更新"
   error_work_package_not_found_in_project: "工作項目找不到或是不屬於這個專案"
   error_must_be_project_member: "必須是專案的成員"
@@ -1063,7 +1063,7 @@ zh-TW:
     configuration_guide: '設定指南'
   instructions_after_registration: "帳號啟用後即可點擊 %{signin} 登入"
   instructions_after_logout: "您可點擊 %{signin} 再次登入。"
-  instructions_after_error: "你可以試著再按一次 %{signin} 來嘗試登入。如果持續發生錯誤，請向您的管理員尋求幫助。"
+  instructions_after_error: "您可以試著再按一次 %{signin} 來嘗試登入。如果持續發生錯誤，請向您的管理員尋求幫助。"
   my_account:
     access_tokens:
       no_results:
@@ -1384,7 +1384,7 @@ zh-TW:
   label_overview: "概要"
   label_page_title: "網頁標題"
   label_part_of: "部份於"
-  label_password_lost: "忘記你的密碼?"
+  label_password_lost: "忘記您的密碼?"
   label_password_rule_lowercase: "小寫"
   label_password_rule_numeric: "數字字元"
   label_password_rule_special: "特殊字元"
@@ -1665,8 +1665,8 @@ zh-TW:
   mail_body_wiki_content_added: "Wiki 頁面 '%{id}' 已經被 %{author} 增加"
   mail_body_wiki_content_updated: "Wiki 頁面 '%{id}' 已經被 %{author} 更新"
   mail_subject_account_activation_request: "帳號 %{value} 啟用請求"
-  mail_subject_lost_password: "你的 %{value} 密碼"
-  mail_subject_register: "你的帳號 %{value} 啟用"
+  mail_subject_lost_password: "您的 %{value} 密碼"
+  mail_subject_register: "您的帳號 %{value} 啟用"
   mail_subject_reminder: "%{count} 個工作項目將在 %{days} 天後到期"
   mail_subject_wiki_content_added: "Wiki 頁面 '%{id}' 已經被增加"
   mail_subject_wiki_content_updated: "Wiki 頁面 '%{id}' 已經被更新"
@@ -1688,12 +1688,12 @@ zh-TW:
   notice_account_invalid_token: 無效的啟動權杖
   notice_account_invalid_credentials: "不正確的使用者或密碼"
   notice_account_invalid_credentials_or_blocked: "不正確的使用者或密碼。又或者這個帳號由於多次登入失敗已經被禁用。如果是這樣，它會在一段時間後被自動解禁。"
-  notice_account_lost_email_sent: "一封包含選擇新密碼的說明的電子郵件已經傳送給你。"
+  notice_account_lost_email_sent: "一封包含選擇新密碼的說明的電子郵件已經傳送給您。"
   notice_account_new_password_forced: "必須輸入一組新密碼"
   notice_account_password_expired: "您的密碼已經過期了 %{days} 天。請設定一組新的密碼。"
   notice_account_password_updated: "成功更新密碼"
   notice_account_pending: "您的帳號已建立，現在正在等待管理員核准。"
-  notice_account_register_done: "帳號已成功建立。欲啟用您的帳號，請點擊通過電子郵件發送給你的連結。"
+  notice_account_register_done: "帳號已成功建立。欲啟用您的帳號，請點擊通過電子郵件發送給您的連結。"
   notice_account_unknown_email: "未知的使用者"
   notice_account_update_failed: "無法儲存帳戶設置。請檢查您的帳戶頁面。"
   notice_account_updated: "帳號更新成功。"
@@ -1712,7 +1712,7 @@ zh-TW:
   notice_failed_to_save_members: "無法保存成員: %{errors}。"
   notice_file_not_found: "您試圖存取的頁面不存在或已被移除。"
   notice_forced_logout: "由於超過 %{ttl_time} 分鐘沒有操作，您已被自動登出。"
-  notice_internal_server_error: "你試圖前往的頁面發生一個錯誤。如果你一直遇到問題，請聯絡你的 %{app_title} 管理員以得到協助！"
+  notice_internal_server_error: "您試圖前往的頁面發生一個錯誤。如果您一直遇到問題，請聯絡您的 %{app_title} 管理員以得到協助！"
   notice_work_package_done_ratios_updated: "工作項目完成比例已更新"
   notice_locking_conflict: "在此同時，資訊已經被至少一個使用者更新"
   notice_locking_conflict_additional_information: "更新來自於 %{users}"
@@ -1723,11 +1723,11 @@ zh-TW:
   notice_member_deleted: "%{user} 已經從專案移除並刪除了"
   notice_no_principals_found: "沒有找到結果"
   notice_bad_request: "錯誤的請求"
-  notice_not_authorized: "你沒有存取此頁面的權限"
-  notice_not_authorized_archived_project: "你欲存取的專案已被封存"
+  notice_not_authorized: "您沒有存取此頁面的權限"
+  notice_not_authorized_archived_project: "您欲存取的專案已被封存"
   notice_password_confirmation_failed: "您的密碼不正確。無法繼續。"
   notice_principals_found_multiple: "找到 %{number} 條結果。\n Tab鍵以轉到第一條結果。"
-  notice_principals_found_single: "有一個結果。 \n Tab鍵轉到該結果。"
+  notice_principals_found_single: "有一個結果。\n Tab鍵轉到該結果。"
   notice_project_not_deleted: "專案沒有被刪除"
   notice_successful_connection: "連接成功"
   notice_successful_create: "建立成功"
@@ -1837,7 +1837,7 @@ zh-TW:
     default: "-"
   project:
     destroy:
-      confirmation: "如果你確定繼續，這個專案 %{identifier} 和所有與其相關的資料將會被永久刪除"
+      confirmation: "如果您確定繼續，這個專案 %{identifier} 和所有與其相關的資料將會被永久刪除"
       info: "刪除這個專案是不可逆的動作"
       project_verification: "輸入專案的名稱 %{name} 來確認刪除"
       subprojects_confirmation: "它的子專案: %{value} 將會一併刪除"
@@ -1869,22 +1869,22 @@ zh-TW:
   repositories:
     at_identifier: '在 %{identifier}'
     atom_revision_feed: '單一修訂串流'
-    autofetch_information: "如果你想要版本庫在存取版本庫模組頁面的時候自動更新，請打勾。\n這包含了從版本庫讀取 Commits 然後更新所需的磁碟空間 。"
+    autofetch_information: "如果您想要版本庫在存取版本庫模組頁面的時候自動更新，請打勾。\n這包含了從版本庫讀取 Commits 然後更新所需的磁碟空間 。"
     checkout:
       access:
         readwrite: '讀取 + 寫入'
         read: '唯讀'
         none: '無法 Checkout, 您可能只能透過這個應用程式檢視版本庫'
-      access_permission: '你在這個版本庫的權限'
+      access_permission: '您在這個版本庫的權限'
       url: "Checkout URL"
       base_url_text: "要用於生成 Checkout Url (例如，HTTPs://myserver.example.org/repos/) 的 Base URL。註釋: Base URL 僅用於託管的版本庫中的 Checkout URLs 重寫。其他版本庫不會被更改。"
       default_instructions:
         git: |-
           這個版本庫的資料可以透過您電腦的 Git 下載。
-          如果你需要更多關於 Checkout 步驟和可用的客戶端，請查閱 Git 的使用文件。
+          如果您需要更多關於 Checkout 步驟和可用的客戶端，請查閱 Git 的使用文件。
         subversion: |-
           這個版本庫的資料可以透過您電腦的 Subversion 下載。
-          如果你需要更多關於 Checkout 步驟和可用的客戶端，請查閱 Subversion 的使用文件。
+          如果您需要更多關於 Checkout 步驟和可用的客戶端，請查閱 Subversion 的使用文件。
       enable_instructions_text: "顯示以下的 Checkout 說明在所有版本庫相關的頁面"
       instructions: "Checkout 步驟說明"
       show_instructions: "顯示 Checkout 指令說明"
@@ -1894,13 +1894,13 @@ zh-TW:
     create_successful: "這個版本庫已經被註冊了"
     delete_sucessful: "這個版本庫已被刪除"
     destroy:
-      confirmation: "如果你要繼續，這將會永久刪除這個託管的版本庫"
+      confirmation: "如果您要繼續，這將會永久刪除這個託管的版本庫"
       info: "刪除這個版本庫是不可逆的動作"
       info_not_managed: "注意: 這將\"不會\"刪除版本庫的內容，因為他不是由 OpenProject 所託管的"
       managed_path_note: "以下的資料夾將會被刪除: %{path}"
       repository_verification: "輸入這個專案的識別碼 %{identifier} 以確認刪除它的版本庫"
-      subtitle: "你真的想要刪除專案 %{project_name} 的 %{repository_type} 嗎？"
-      subtitle_not_managed: "你真的想要從專案 %{project_name} 移除 %{repository_type} 的連結 %{url} 嗎？"
+      subtitle: "您真的想要刪除專案 %{project_name} 的 %{repository_type} 嗎？"
+      subtitle_not_managed: "您真的想要從專案 %{project_name} 移除 %{repository_type} 的連結 %{url} 嗎？"
       title: "刪除 %{repository_type}"
       title_not_managed: "刪除連結的 %{repository_type}?"
     errors:
@@ -1912,7 +1912,7 @@ zh-TW:
       filesystem_access_failed: "在檔案系統中存取版本庫時發生錯誤: %{message}"
       not_manageable: "此版本庫的提供者不能被 OpenProject 所管理"
       path_permission_failed: "嘗試建立以下路徑(%{path})時發生錯誤。請確保 OpenProject 可以寫入到該資料夾。"
-      unauthorized: "你沒有被授權存取這個版本庫，或者你的憑證已經失效。"
+      unauthorized: "您沒有被授權存取這個版本庫，或者您的憑證已經失效。"
       unavailable: "版本褲無法使用"
       exception_title: "無法存取這個版本庫: %{message}"
       disabled_or_unknown_type: "這個選取的類型 %{type} 已被停用或者版本供應商 %{vendor} 已經不再使用。"
@@ -1924,11 +1924,11 @@ zh-TW:
       instructions:
         managed_url: "這是託管(本機)的 Git 版本庫的 URL"
         path: >-
-          指定路徑到您本機的 Git 儲存庫 (例如：%{example_path} )。你也可以藉由輸入開頭是 http(s):// or file:// 來使用被複製到本機的遠端儲存庫。
+          指定路徑到您本機的 Git 儲存庫 (例如：%{example_path} )。您也可以藉由輸入開頭是 http(s):// or file:// 來使用被複製到本機的遠端儲存庫。
         path_encoding: "複寫 Git 路徑編碼 (預設: UTF-8)"
       local_title: "連結現有的本機 Git 版本庫"
       local_url: "本地 URL"
-      local_introduction: "如果你已經有一個現有的本機 Git 版本庫，你可以連結它以便在 OpenProject 中存取"
+      local_introduction: "如果您已經有一個現有的本機 Git 版本庫，您可以連結它以便在 OpenProject 中存取"
       managed_introduction: "讓 OpenProject 自動建立和製作一個本機 Git 版本庫"
       managed_title: "Git 版本庫套用到 OpenProject"
       managed_url: "託管的 URL"
@@ -1953,7 +1953,7 @@ zh-TW:
       update_timeout: "替一個版本庫維持最後需要的磁碟空間資訊 N 分鐘。\n計算一個版本庫的所需磁碟空間也許要消耗很多效能，增加這個值來降低效能的影響。"
     subversion:
       existing_title: "現有的 Subversion 版本庫"
-      existing_introduction: "如果你已經有一個現有的本機 Subversion 版本庫，你可以連結它以便在 OpenProject 中存取"
+      existing_introduction: "如果您已經有一個現有的本機 Subversion 版本庫，您可以連結它以便在 OpenProject 中存取"
       existing_url: "現有的 URL"
       instructions:
         managed_url: "這是託管(本機)的 Subversion 版本庫的 URL"
@@ -2022,7 +2022,7 @@ zh-TW:
   setting_work_package_done_ratio: "計算工作項目的完成比例"
   setting_work_package_done_ratio_field: "使用工作項目欄位"
   setting_work_package_done_ratio_status: "使用工作項目狀態"
-  setting_work_package_done_ratio_disabled: "禁用 （隱藏進度）"
+  setting_work_package_done_ratio_disabled: "禁用（隱藏進度）"
   setting_work_package_list_default_columns: "預設顯示"
   setting_work_package_list_summable_columns: "可加總"
   setting_work_package_properties: "工作項目屬性"
@@ -2107,7 +2107,7 @@ zh-TW:
       sentence_connector: "和"
       skip_last_comma: "否"
   text_accessibility_hint: "輔助功能模式設計用於失明、具有行動障礙或視力不佳的用戶。為視力不佳的用戶特別突出顯示關注的元素。請注意，此模式不支援待辦清單模塊。"
-  text_access_token_hint: "存取權杖讓你能夠允許外部程式存取在 OpenProject 內的資源"
+  text_access_token_hint: "存取權杖讓您能夠允許外部程式存取在 OpenProject 內的資源"
   text_analyze: "進一步分析: %{subject}"
   text_are_you_sure: "是否確定？"
   text_are_you_sure_with_children: "刪除工作項目以及所有子工作項目?"
@@ -2148,11 +2148,11 @@ zh-TW:
   text_hours_between: "在 %{min} 到 %{max} 小時。"
   text_work_package_added: "%{author} 報告了工作項目 %{id}。"
   text_work_package_category_destroy_assignments: "刪除類別分配"
-  text_work_package_category_destroy_question: "一些工作項目(%{count})被分配給此類別。你想要做什麼？"
+  text_work_package_category_destroy_question: "一些工作項目(%{count})被分配給此類別。您想要做什麼？"
   text_work_package_category_reassign_to: "重新分配工作項目到這個類別"
   text_work_package_updated: "%{author} 更新了工作項目 %{id}。"
-  text_work_package_watcher_added: "你已經被 %{watcher_setter} 以觀察者的身份加入到工作項目 %{id}"
-  text_work_packages_destroy_confirmation: "你確定要刪除選定的工作項目嗎？"
+  text_work_package_watcher_added: "您已經被 %{watcher_setter} 以觀察者的身份加入到工作項目 %{id}"
+  text_work_packages_destroy_confirmation: "您確定要刪除選定的工作項目嗎？"
   text_work_packages_ref_in_commit_messages: "在提交訊息中引用和修復工作項目"
   text_journal_added: "%{label} %{value} 已增加"
   text_journal_aggregation_time_explanation: "合併日誌顯示，如果他們的建立時間差小於某固定時間。這也會減慢郵件通知相同時間。"
@@ -2196,7 +2196,7 @@ zh-TW:
   text_user_invited: 這個使用者已經被邀請而且正在等待註冊。
   text_user_wrote: "%{value} 寫道："
   text_warn_on_leaving_unsaved: "若離開當前頁面，則此工作包內未儲存的內容將遺失。"
-  text_what_did_you_change_click_to_add_comment: "你改變了甚麼？點擊來新增說明"
+  text_what_did_you_change_click_to_add_comment: "您改變了甚麼？點擊來新增說明"
   text_wiki_destroy_confirmation: "您是否確定要刪除此 wiki 和它所有的內容？"
   text_wiki_page_destroy_children: "刪除子頁面和所有他們的派生頁面"
   text_wiki_page_destroy_question: "此頁有 %{descendants} 子頁面和派生頁面。您想進行何種操作？"
@@ -2389,7 +2389,7 @@ zh-TW:
     authentication_provider: "驗證提供者"
     authentication_settings_disabled_due_to_external_authentication: >
       此使用者通過外部身份檢查器提供者進行身份驗證, 因此 OpenProject 中沒有要更改的密碼。
-    authorization_rejected: "你不被允許登入。"
+    authorization_rejected: "您不被允許登入。"
     assign_random_password: "指定亂數密碼 (通過電子郵件寄送給使用者)"
     blocked: "暫時鎖定"
     blocked_num_failed_logins:
@@ -2421,14 +2421,14 @@ zh-TW:
   warning: 警告
   warning_attachments_not_saved: "無法儲存 %{count} 檔。"
   warning_imminent_user_limit: >
-    您邀請的用戶數超過了當前計劃支持的用戶數。受邀用戶可能無法加入您的OpenProject環境。 請<a href="%{upgrade_url}">升級您的計劃</a>或阻止現有用戶，以允許受邀和注冊用戶加入。
+    您邀請的用戶數超過了當前計劃支持的用戶數。受邀用戶可能無法加入您的OpenProject環境。請<a href="%{upgrade_url}">升級您的計劃</a>或阻止現有用戶，以允許受邀和注冊用戶加入。
   warning_registration_token_expired: |
     帳號啟用 email 已經逾期。我們已經寄了一封新的 email 至您的 %{email}。
     請點擊 email 內的連結來啟用您的帳號。
   warning_user_limit_reached: >
-    達到用戶限制。 您無法再激活任何用戶。 請<a href="%{upgrade_url}">升級您的計劃</a>或阻止會員以允許其他用戶。
+    達到用戶限制。您無法再激活任何用戶。請<a href="%{upgrade_url}">升級您的計劃</a>或阻止會員以允許其他用戶。
   warning_user_limit_reached_instructions: >
-    您達到了用戶限制（%{current}/%{max}活躍用戶）。 請聯係sales@openproject.com以升級Enterprise Edition計劃並添加其他用戶。
+    您達到了用戶限制（%{current}/%{max}活躍用戶）。請聯係sales@openproject.com以升級Enterprise Edition計劃並添加其他用戶。
   menu_item: "選單項目"
   menu_item_setting: "可見度"
   mysql_deprecation:
@@ -2527,10 +2527,10 @@ zh-TW:
       instructions:
         name: "您的應用程式名稱。它將會在其他使用者認證時顯示。"
         redirect_uri_html: >
-          允許的 URLs 可被授權使用者轉址。一行一個URL。<br/> 如果你視註冊一個桌面應用程式，請使用下面的URL。
+          允許的 URLs 可被授權使用者轉址。一行一個URL。<br/> 如果您視註冊一個桌面應用程式，請使用下面的URL。
         confidential: "檢查是否這個應用程式能夠保存客戶端密鑰的隱密性。原生行動應用程式和一頁式應用程式被認定是非保密的。"
         client_credential_user_id: "可選擇的 user id 使用戶端在使用此應用程式時保持唯一。保留空白表示只允許公眾訪問"
-        register_intro: "如果你在開發一個 OAuth API 客戶端應用程式給 OpenProject，你可以用這個格式註冊它以便給所有使用者使用。"
+        register_intro: "如果您在開發一個 OAuth API 客戶端應用程式給 OpenProject，您可以用這個格式註冊它以便給所有使用者使用。"
         default_scopes: ""
     client_id: "用戶端 ID"
     client_secret_notice: >

@@ -89,7 +89,7 @@ ja:
     cost_object: "予算の編集"
   group_by_others: "どのグループにもない"
   help_click_to_edit: "編集するにはここをクリックしてください。"
-  help_currency_format: "表示される通貨値の形式です。 %n は通貨の値に置き換えられ、%u は通貨の単位に置き換えられます。"
+  help_currency_format: "表示される通貨値の形式です。%n は通貨の値に置き換えられ、%u は通貨の単位に置き換えられます。"
   help_override_rate: "デフォルトレートを上書きするにはここに値を入力します。"
   label_between: "次の範囲内"
   label_cost_filter_add: "コストフィルタの追加"

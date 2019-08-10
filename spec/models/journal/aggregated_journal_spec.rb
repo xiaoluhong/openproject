@@ -43,7 +43,7 @@ RSpec::Matchers.define :be_equivalent_to_journal do |expected|
     expected_attributes = get_normalized_attributes expected
     actual_attributes = actual.attributes.symbolize_keys
     ["expected attributes: #{display_sorted_hash(expected_attributes.except(*ignored_attributes))}",
-     "actual attributes:   #{display_sorted_hash(actual_attributes.except(*ignored_attributes))}"]
+     "actual attributes:  #{display_sorted_hash(actual_attributes.except(*ignored_attributes))}"]
       .join($/)
   end
 

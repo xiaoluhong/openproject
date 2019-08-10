@@ -292,7 +292,7 @@ Next we configure email notifications (this example uses a gmail account) by cre
 Now we edit the `configuration.yml` file to suit our needs.
 
 ```yaml
-production:                          #main level
+production:                         #main level
   email_delivery_method: :smtp       #settings for the production environment
   smtp_address: smtp.gmail.com
   smtp_port: 587

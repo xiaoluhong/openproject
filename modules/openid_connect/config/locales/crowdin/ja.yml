@@ -1,6 +1,6 @@
 ja:
   logout_warning: >
-    ログアウトしています。送信したフォームの内容は失われる可能性があります。 [ログイン] してください。
+    ログアウトしています。送信したフォームの内容は失われる可能性があります。[ログイン] してください。
   activemodel:
     attributes:
       openid_connect/provider:

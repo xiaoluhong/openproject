@@ -184,8 +184,8 @@ describe 'edit work package', js: true do
         :work_package_custom_field,
         field_format: 'string',
         default_value: nil,
-        is_required:  true,
-        is_for_all:   true
+        is_required: true,
+        is_for_all:  true
       )
     end
     let!(:type2) { FactoryBot.create(:type, custom_fields: [custom_field]) }

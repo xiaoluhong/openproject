@@ -40,17 +40,17 @@ describe Attachment, type: :model do
   let(:attachment) do
     FactoryBot.build(
       :attachment,
-      author:       author,
-      container:    container,
+      author:      author,
+      container:   container,
       content_type: nil, # so that it is detected
-      file:         file
+      file:        file
     )
   end
   let(:stubbed_attachment) do
     FactoryBot.build_stubbed(
       :attachment,
-      author:       stubbed_author,
-      container:    container
+      author:      stubbed_author,
+      container:   container
     )
   end
 

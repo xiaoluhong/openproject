@@ -51,13 +51,13 @@ module RandomData
       rand(50).times do
         print '.'
         work_package = WorkPackage.create!(
-          project:      project,
-          author:       user,
-          subject:      Faker::Lorem.words(8).join(' '),
-          status:       statuses.sample,
-          type:         types.sample,
-          start_date:   s = Date.today - (25 - rand(50)).days,
-          due_date:     s + (1 + rand(120)).days
+          project:     project,
+          author:      user,
+          subject:     Faker::Lorem.words(8).join(' '),
+          status:      statuses.sample,
+          type:        types.sample,
+          start_date:  s = Date.today - (25 - rand(50)).days,
+          due_date:    s + (1 + rand(120)).days
         )
         work_package.priority = IssuePriority.all.sample
         work_package.description = Faker::Lorem.paragraph(5, true, 3)
@@ -80,14 +80,14 @@ module RandomData
       2.times do |changeset_count|
         print '.'
         changeset = Changeset.create(
-          repository:     repository,
-          user:           user,
-          revision:       work_package.id * 10 + changeset_count,
-          scmid:          work_package.id * 10 + changeset_count,
-          work_packages:  [work_package],
-          committer:      Faker::Name.name,
-          committed_on:   Date.today,
-          comments:       Faker::Lorem.words(8).join(' ')
+          repository:    repository,
+          user:          user,
+          revision:      work_package.id * 10 + changeset_count,
+          scmid:         work_package.id * 10 + changeset_count,
+          work_packages: [work_package],
+          committer:     Faker::Name.name,
+          committed_on:  Date.today,
+          comments:      Faker::Lorem.words(8).join(' ')
         )
 
         5.times do
@@ -120,12 +120,12 @@ module RandomData
     def add_time_entries(work_package)
       5.times do |time_entry_count|
         time_entry = TimeEntry.create(
-          project:       project,
-          user:          user,
-          work_package:  work_package,
-          spent_on:      Date.today + time_entry_count,
-          activity:      time_entry_activities.sample,
-          hours:         time_entry_count
+          project:      project,
+          user:         user,
+          work_package: work_package,
+          spent_on:     Date.today + time_entry_count,
+          activity:     time_entry_activities.sample,
+          hours:        time_entry_count
         )
         work_package.time_entries << time_entry
       end
@@ -136,8 +136,8 @@ module RandomData
         file = OpenProject::Files.create_uploaded_file(name: Faker::Lorem.words(8).join(' '))
         attachment = Attachment.new(
           container: work_package,
-          author:    user,
-          file:      file
+          author:   user,
+          file:     file
         )
         attachment.save!
 

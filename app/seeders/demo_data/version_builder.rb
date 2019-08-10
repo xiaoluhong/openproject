@@ -55,8 +55,8 @@ module DemoData
 
     def version
       version = Version.create!(
-        name:    config[:name],
-        status:  config[:status],
+        name:   config[:name],
+        status: config[:status],
         sharing: config[:sharing],
         project: project
       )

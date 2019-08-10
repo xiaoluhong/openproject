@@ -2176,7 +2176,7 @@ pt-BR:
   text_work_package_watcher_added: "Você foi adicionado como um observador do pacote de trabalho %{id} por %{watcher_setter}."
   text_work_packages_destroy_confirmation: "Tem certeza que deseja excluir o(s) pacote(s) de trabalho selecionado(s)?"
   text_work_packages_ref_in_commit_messages: "Referenciando e corrigindo pacotes de trabalho nas mensagens de commit"
-  text_journal_added: "%{label} %{value}  adicionado"
+  text_journal_added: "%{label} %{value} adicionado"
   text_journal_aggregation_time_explanation: "Combine diários para exibir se a diferença de tempo for menor que o intervalo de tempo especificado. Isso também vai atrasar as notificações de email pela mesma quantidade de tempo."
   text_journal_changed: "%{label} alterado de %{old} <br/><strong>para</strong> %{new}"
   text_journal_changed_plain: "%{label} alterado de %{old} \npara %{new}"

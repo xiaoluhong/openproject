@@ -36,7 +36,7 @@ ja:
     label_2fa_enabled: '2要素認証が有効です'
     label_2fa_disabled: '2要素認証が有効ではありません'
     text_otp_delivery_message_sms: "あなたの %{app_title} のワンタイムパスワードは %{token} です"
-    text_otp_delivery_message_voice: "あなたの %{app_title} のワンタイムパスワード: %{pause} %{token}。 %{pause} 繰り返します: %{pause} %{token}"
+    text_otp_delivery_message_voice: "あなたの %{app_title} のワンタイムパスワード: %{pause} %{token}。%{pause} 繰り返します: %{pause} %{token}"
     text_enter_2fa: 'あなたのデバイスからワンタイムパスワードを入力してください。'
     text_2fa_enabled: 'ログインごとに、規定の2FAデバイスからOTPトークンを入力するよう要求されます。'
     text_2fa_disabled: '2要素証を有効にするには、上記のボタンを使用して新しい2FAデバイスを登録します。既にデバイスがある場合は、規定にする必要があります。'
@@ -62,7 +62,7 @@ ja:
     admin:
       self_edit_path: '独自の2FAデバイスを追加または変更するには、こちら %{self_edit_link} をご覧ください。'
       self_edit_link_name: 'アカウントページの2要素認証'
-      self_edit_forbidden: 'このパスで自分の2FAデバイスを編集することはできません。 マイアカウント > 2要素認証 の順に選択します。'
+      self_edit_forbidden: 'このパスで自分の2FAデバイスを編集することはできません。マイアカウント > 2要素認証 の順に選択します。'
       no_devices_for_user: 'このユーザーには2FAデバイスが登録されていません。'
       all_devices_deleted: 'このユーザーの2FAデバイスはすべて削除されています'
       delete_all_are_you_sure: 'このユーザーの2FAデバイスをすべて削除してもよろしいですか？'
@@ -136,7 +136,7 @@ ja:
       sms_delivery_failed: 'MessageBird SMSの配信に失敗しました。'
       voice_delivery_failed: 'MessageBirdの音声通話に失敗しました。'
     restdt:
-      delivery_failed_with_code: 'トークンの配信に失敗しました。 (エラーコード %{code})'
+      delivery_failed_with_code: 'トークンの配信に失敗しました。(エラーコード %{code})'
     strategies:
       totp: '認証システムアプリケーション'
       sns: 'Amazon SNS'

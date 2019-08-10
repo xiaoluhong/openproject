@@ -54,12 +54,12 @@ module BasicData
 
       type_table.map do |_name, values|
         {
-          name:                 I18n.t(values[5]),
-          position:             values[0],
-          is_default:           values[1],
-          color_id:             colors[I18n.t(values[2])],
-          is_in_roadmap:        values[3],
-          is_milestone:         values[4]
+          name:                I18n.t(values[5]),
+          position:            values[0],
+          is_default:          values[1],
+          color_id:            colors[I18n.t(values[2])],
+          is_in_roadmap:       values[3],
+          is_milestone:        values[4]
         }
       end
     end

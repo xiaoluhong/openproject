@@ -36,7 +36,7 @@ module RandomData
       rand(5).times do
         print '.'
         wiki_page = WikiPage.create(
-          wiki:  project.wiki,
+          wiki: project.wiki,
           title: Faker::Lorem.words(5).join(' ')
         )
 
@@ -44,9 +44,9 @@ module RandomData
         rand(5).times do
           print '.'
           wiki_content = WikiContent.create(
-            page:    wiki_page,
-            author:  user,
-            text:    Faker::Lorem.paragraph(5, true, 3)
+            page:   wiki_page,
+            author: user,
+            text:   Faker::Lorem.paragraph(5, true, 3)
           )
 
           ## create some journal entries

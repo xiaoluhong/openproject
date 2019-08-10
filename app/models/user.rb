@@ -31,11 +31,11 @@ require 'digest/sha1'
 
 class User < Principal
   USER_FORMATS_STRUCTURE = {
-    firstname_lastname:       [:firstname, :lastname],
-    firstname:                [:firstname],
-    lastname_firstname:       [:lastname, :firstname],
-    lastname_coma_firstname:  [:lastname, :firstname],
-    username:                 [:login]
+    firstname_lastname:      [:firstname, :lastname],
+    firstname:               [:firstname],
+    lastname_firstname:      [:lastname, :firstname],
+    lastname_coma_firstname: [:lastname, :firstname],
+    username:                [:login]
   }.freeze
 
   USER_MAIL_OPTION_ALL            = ['all', :label_user_mail_option_all].freeze
@@ -55,8 +55,8 @@ class User < Principal
   ].freeze
 
   has_and_belongs_to_many :groups,
-                          join_table:   "#{table_name_prefix}group_users#{table_name_suffix}",
-                          after_add:    ->(user, group) { group.user_added(user) },
+                          join_table:  "#{table_name_prefix}group_users#{table_name_suffix}",
+                          after_add:   ->(user, group) { group.user_added(user) },
                           after_remove: ->(user, group) { group.user_removed(user) }
 
   has_many :categories, foreign_key: 'assigned_to_id',

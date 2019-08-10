@@ -96,14 +96,14 @@ module DemoData
 
     def base_work_package_attributes(attributes)
       {
-        project:       project,
-        author:        user,
-        assigned_to:   user,
-        subject:       attributes[:subject],
-        description:   attributes[:description],
-        status:        find_status(attributes),
-        type:          find_type(attributes),
-        priority:      find_priority(attributes) || IssuePriority.default
+        project:      project,
+        author:       user,
+        assigned_to:  user,
+        subject:      attributes[:subject],
+        description:  attributes[:description],
+        status:       find_status(attributes),
+        type:         find_type(attributes),
+        priority:     find_priority(attributes) || IssuePriority.default
       }
     end
 
@@ -162,7 +162,7 @@ module DemoData
     def create_relations(attributes)
       Array(attributes[:relations]).each do |relation|
         create_relation(
-          to:   WorkPackage.find_by!(subject: relation[:to]),
+          to:  WorkPackage.find_by!(subject: relation[:to]),
           from: WorkPackage.find_by!(subject: attributes[:subject]),
           type: relation[:type]
         )

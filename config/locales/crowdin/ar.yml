@@ -845,7 +845,7 @@ ar:
     distance_in_words:
       about_x_hours:
         zero: "حوالي %{count} ساعات"
-        one: "منذ %{count}  ساعه"
+        one: "منذ %{count} ساعه"
         two: "حوالي %{count} ساعات"
         few: "حوالي %{count} ساعات"
         many: "حوالي %{count} ساعات"

@@ -228,7 +228,7 @@ zh-CN:
     label_filename: "文件"
     label_filesize: "大小"
     label_greater_or_equal: ">="
-    label_group_by: "分组依据"
+    label_group_by: "分组按照"
     label_hide_attributes: "隐藏显示"
     label_hide_column: "隐藏列"
     label_hide_project_menu: "折叠项目菜单"
@@ -244,7 +244,7 @@ zh-CN:
     label_menu_collapse: "折叠"
     label_menu_expand: "展开"
     label_more_than_ago: "更多天前"
-    label_my_page: "我的页面"
+    label_my_page: "我的主页"
     label_next: "下一个"
     label_no_color: "无颜色"
     label_no_data: "没有要显示的数据"
@@ -372,7 +372,7 @@ zh-CN:
       relation_description: '点击为此关系添加描述'
     project:
       required_outside_context: >
-        请选择要创建工作包的项目以查看所有属性。 您只能选择已激活上述类型的项目。
+        请选择要创建工作包的项目以查看所有属性。您只能选择已激活上述类型的项目。
       context: '项目上下文'
       work_package_belongs_to: '此工作包属于项目%{projectname}。'
       click_to_switch_context: '在该项目中打开此工作包。'
@@ -472,16 +472,16 @@ zh-CN:
         other: "您可以只选择 {{limit}} 个条目"
     project_menu_details: "详细信息"
     sort:
-      sorted_asc: '升序排列已应用， '
-      sorted_dsc: '降序排列已应用， '
-      sorted_no: '无序已应用， '
+      sorted_asc: '升序排列已应用，'
+      sorted_dsc: '降序排列已应用，'
+      sorted_no: '无序已应用，'
       sorting_disabled: '排序被禁用'
       activate_asc: '激活以进行升序排序'
       activate_dsc: '激活以进行降序排序'
       activate_no: '激活以移除排序'
     text_work_packages_destroy_confirmation: "确实要删除所选的工作包吗?"
     text_query_destroy_confirmation: "确定要删除所选视图吗？"
-    text_attachment_destroy_confirmation: "你确定要删除这个附件?"
+    text_attachment_destroy_confirmation: "您确定要删除这个附件?"
     timelines:
       quarter_label: '第 %{quarter_number} 季度'
       gantt_chart: '甘特图'
@@ -520,7 +520,7 @@ zh-CN:
         level5: "展开 5 级"
         all: "全部显示"
       project_status: "项目状态"
-      really_close_dialog: "你真的想要关闭对话框并丢失输入的数据吗？"
+      really_close_dialog: "您真的想要关闭对话框并丢失输入的数据吗？"
       responsible: "责任人"
       save: 保存
       start_date: "开始日期"
@@ -594,7 +594,6 @@ zh-CN:
       message_successful_show_in_fullscreen: "单击此处以全屏视图打开此工作包。"
       message_view_spent_time: "显示这个工作包所花费的时间"
       message_work_package_read_only: "工作包被锁定在此状态。除状态外，其他属性均不可更改。"
-      message_work_package_status_blocked: "Work package status is not writable due to closed status and closed version being assigned."
       no_value: "无值"
       placeholder_filter_by_text: "主题, 描述, 评论,..。"
       inline_create:
@@ -603,7 +602,7 @@ zh-CN:
         title: '新工作包'
         header: '新 %{type}'
         header_no_type: '新工作包(类型尚未设置)'
-        header_with_parent: '新的 %{type} （%{parent_type} #%{id} 子）'
+        header_with_parent: '新的 %{type}（%{parent_type} #%{id} 子）'
         button: '创建'
       copy:
         title: '复制工作包'
@@ -665,7 +664,7 @@ zh-CN:
       query:
         column_names: "列"
         group_by: "汇总结果根据"
-        group: "分组依据"
+        group: "分组按照"
         group_by_disabled_by_hierarchy: "分组依据已禁用，因为层次结构模式处于活动状态。"
         hierarchy_disabled_by_group_by: "层次结构模式已禁用，因为结果依据 %{column} 分组。"
         sort_ascending: "升序排序"
@@ -699,9 +698,9 @@ zh-CN:
         display_settings: '显示设置'
         default_mode: "扁平列表"
         hierarchy_mode: "层次结构"
-        hierarchy_hint: "所有过滤的表结果都将使用其上级进行扩充。 可以展开和折叠层次结构。"
+        hierarchy_hint: "所有过滤的表结果都将使用其上级进行扩充。可以展开和折叠层次结构。"
         display_sums_hint: "在表结果下方一行中显示所有可累加属性的总和。"
-        show_timeline_hint: "在表格的右侧显示交互式甘特图。 您可以通过拖动表格和甘特图之间的分隔线来更改其宽度。"
+        show_timeline_hint: "在表格的右侧显示交互式甘特图。您可以通过拖动表格和甘特图之间的分隔线来更改其宽度。"
         highlighting: '突出显示'
         highlighting_mode:
           description: "使用颜色突出显示"
@@ -712,7 +711,7 @@ zh-CN:
           status: '状态'
           priority: '优先级'
           type: '类型'
-        columns_help_text: "使用上面的输入向表视图添加或删除列。 您可以拖放列以重新排序它们。"
+        columns_help_text: "使用上面的输入向表视图添加或删除列。您可以拖放列以重新排序它们。"
         upsale:
           attribute_highlighting: '需要特定的工作包以脱颖而出？'
           relation_columns: '需要查看工作包列表中的关系吗？'

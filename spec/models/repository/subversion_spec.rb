@@ -273,8 +273,8 @@ describe Repository::Subversion, type: :model do
             assert_equal s1.encode('UTF-8'), s2
           end
           c = Changeset.new(repository: instance,
-                            comments:   s2,
-                            revision:   '123',
+                            comments:  s2,
+                            revision:  '123',
                             committed_on: Time.now)
           expect(c.save).to be true
           expect(c.comments).to eq(s2)

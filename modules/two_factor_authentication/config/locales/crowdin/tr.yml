@@ -36,7 +36,7 @@ tr:
     label_2fa_enabled: 'İki faktörlü kimlik doğrulama aktif'
     label_2fa_disabled: 'İki faktörlü kimlik doğrulama aktif değil'
     text_otp_delivery_message_sms: "Senin %{app_title} one-time şifre %{token}"
-    text_otp_delivery_message_voice: "%{app_title} bir kerelik parolanız:  %{pause} %{token}. %{pause} Tekrar ediyorum: %{pause} %{token}"
+    text_otp_delivery_message_voice: "%{app_title} bir kerelik parolanız: %{pause} %{token}. %{pause} Tekrar ediyorum: %{pause} %{token}"
     text_enter_2fa: 'Lütfen cihazınızdaki tek kullanımlık şifreyi giriniz.'
     text_2fa_enabled: 'Her girişte, varsayılan 2FA cihazınızdan bir OTP jetonu girmeniz talep edilir.'
     text_2fa_disabled: 'İki faktörlü kimlik doğrulamayı etkinleştirmek için yukarıdaki düğmeyi kullanarak yeni bir 2FA aygıtı kaydedin. zaten bir cihazınız varsa, onu bir varsayılan yapmanız gerekir.'

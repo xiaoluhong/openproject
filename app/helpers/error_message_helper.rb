@@ -73,7 +73,7 @@ module ErrorMessageHelper
       render partial: 'common/validation_error',
              locals: { error_messages: messages,
                        classes: options[:classes],
-                       object_name:  options[:object].class.model_name.human }
+                       object_name: options[:object].class.model_name.human }
     end
   end
 end

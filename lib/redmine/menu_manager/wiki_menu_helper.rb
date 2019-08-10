@@ -50,7 +50,7 @@ module Redmine::MenuManager::WikiMenuHelper
               caption: main_item.title,
               after: :repository,
               icon: 'icon2 icon-wiki',
-              html:    { class: 'wiki-menu--main-item' }
+              html:   { class: 'wiki-menu--main-item' }
 
     if project.wiki.pages.any?
       push_wiki_menu_partial(main_item, menu)
@@ -65,7 +65,7 @@ module Redmine::MenuManager::WikiMenuHelper
               { controller: '/wiki', action: 'show', id: child.slug },
               param: :project_id,
               caption: child.title,
-              html:    { class: 'wiki-menu--sub-item' },
+              html:   { class: 'wiki-menu--sub-item' },
               parent: main_item.menu_identifier
   rescue ArgumentError => e
     Rails.logger.error "Failed to add wiki item #{child.slug} to wiki menu: #{e}. Deleting it."

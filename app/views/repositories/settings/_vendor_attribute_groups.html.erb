@@ -11,11 +11,11 @@
       <% if type === 'managed' %>
         <%= link_to l(:button_delete), destroy_info_project_repository_path(repository.project),
             method: :get,
-            class:  'icon icon-delete' %>
+            class: 'icon icon-delete' %>
       <% else %>
         <%= link_to l(:button_remove), destroy_info_project_repository_path(repository.project),
             method: :get,
-            class:  'icon icon-remove' %>
+            class: 'icon icon-remove' %>
       <% end %>
     </div>
     <% end %>

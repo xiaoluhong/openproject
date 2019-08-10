@@ -56,7 +56,7 @@ describe SettingsController, type: :controller do
          params: {
            settings: {
              mail_from: 'functional@test.foo',
-             bcc_recipients:  '0',
+             bcc_recipients: '0',
              notified_events: %w(work_package_added work_package_updated news_added),
              emails_footer: 'Test footer'
            }

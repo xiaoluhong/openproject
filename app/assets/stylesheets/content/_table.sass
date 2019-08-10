@@ -35,9 +35,9 @@
 $input-elements: input, 'input.form--text-field', select, 'select.form--select', '.form--field-affix', 'a.button'
 
 .generic-table--container
-  position:     relative
-  height:       100%
-  width:        100%
+  position:    relative
+  height:      100%
+  width:       100%
   overflow:
     x: hidden
     y: hidden
@@ -46,7 +46,7 @@ $input-elements: input, 'input.form--text-field', select, 'select.form--select',
     padding-bottom: $generic-table--footer-height
 
 .generic-table--results-container
-  height:       100%
+  height:      100%
   overflow:
     x: auto
     y: auto
@@ -67,14 +67,14 @@ $input-elements: input, 'input.form--text-field', select, 'select.form--select',
 
 table.generic-table
   border-collapse: collapse
-  width:  100%
+  width: 100%
   margin: 0
   font-size: $generic-table--font-size
 
   col
     &:hover,
     &.hover
-      background:   #f8f8f8
+      background:  #f8f8f8
 
   thead
     height: $generic-table--header-height
@@ -104,9 +104,9 @@ table.generic-table
 
       .-required:after
         @include default-transition
-        content:  '*'
-        color:    $primary-color-dark
-        padding:  0 0.2rem
+        content: '*'
+        color:   $primary-color-dark
+        padding: 0 0.2rem
 
     .sort
       &.asc:after
@@ -127,13 +127,13 @@ table.generic-table
     tr
       background: #f6f7f8
       border:
-        top:    0
+        top:   0
         bottom: 0
-      height:   0
+      height:  0
     td
-      height:   0
+      height:  0
       padding:
-        top:    0
+        top:   0
         bottom: 0
       font-weight: bold
 
@@ -204,28 +204,28 @@ thead.-sticky th
 
 
 .generic-table--footer-outer
-  padding:      0 6px
-  line-height:  $generic-table--footer-height
-  width:        100%
-  height:       $generic-table--footer-height
+  padding:     0 6px
+  line-height: $generic-table--footer-height
+  width:       100%
+  height:      $generic-table--footer-height
 
 .generic-table--header-outer,
 .generic-table--sort-header-outer
-  padding:      0 12px 0 6px
-  line-height:  $generic-table--header-height
-  height:  $generic-table--header-height
-  z-index:      1
+  padding:     0 12px 0 6px
+  line-height: $generic-table--header-height
+  height: $generic-table--header-height
+  z-index:     1
   border-bottom: 1px solid $table-row-border-color
 
   &:hover,
   &.hover
-    background:   #f8f8f8
+    background:  #f8f8f8
 
 .generic-table--empty-header
-  padding:       0 6px
-  height:        $generic-table--header-height
+  padding:      0 6px
+  height:       $generic-table--header-height
   border-bottom: 1px solid $table-row-border-color
-  z-index:       1
+  z-index:      1
 
   // In case the table header contains invisible content for screen readers
   .generic-table--header,
@@ -235,17 +235,17 @@ thead.-sticky th
     max-width: 40px
 
 .generic-table--column-spacer
-  white-space:  nowrap
-  padding:      0 6px
-  visibility:   hidden
-  height:       0px
-  line-height:  0px
+  white-space: nowrap
+  padding:     0 6px
+  visibility:  hidden
+  height:      0px
+  line-height: 0px
 
 .generic-table--header,
 .generic-table--sort-header
   white-space: nowrap
-  width:   100%
-  clear:   both
+  width:  100%
+  clear:  both
   min-width: 40px
   display: flex
 
@@ -273,34 +273,34 @@ thead.-sticky th
     visibility: visible
 
 .generic-table--no-results-container
-  background:   $gray-light
-  border:       1px solid $gray
+  background:  $gray-light
+  border:      1px solid $gray
   border-radius: $global-radius
-  padding:      14px 14px 14px 36px
-  display:      block
+  padding:     14px 14px 14px 36px
+  display:     block
 
   > i,
   .generic-table--no-results-title
-    display:        inline-block
-    font-size:      rem-calc(17)
-    line-height:    1.4
+    display:       inline-block
+    font-size:     rem-calc(17)
+    line-height:   1.4
     vertical-align: top
 
   > i
-    margin:       1px 0 0 -24px
-    width:        20px
+    margin:      1px 0 0 -24px
+    width:       20px
 
 .generic-table--no-results-title
-  border:         0
-  margin:         0
-  padding:        0
+  border:        0
+  margin:        0
+  padding:       0
   text-transform: none
-  width:          99%
+  width:         99%
 
 .generic-table--no-results-description
-  font-size:      rem-calc(15)
-  line-height:    1.4
-  margin-top:     4px
+  font-size:     rem-calc(15)
+  line-height:   1.4
+  margin-top:    4px
 
   p:last-child
     margin-bottom: 0

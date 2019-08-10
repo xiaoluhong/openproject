@@ -117,7 +117,7 @@ uk:
     delete:
       scheduled: "Видалення заплановано і виконується у фоновому режимі. Ви отримаєте сповіщення про результат."
       schedule_failed: "Проект не можна видалити: %{errors}"
-      failed: "Видалення проекту %{name}  не вдалося"
+      failed: "Видалення проекту %{name} не вдалося"
       failed_text: "Запит видалення проекту %{name} не вдало. Проект залишився в архіві."
       completed: "Видалення проекту %{name} завершено."
       completed_text: "Запит видалення проекту '%{name}' завершено."
@@ -1769,7 +1769,7 @@ uk:
   notice_auth_stage_wrong_stage: "Передбачається завершити етап аутентифікації%{expected}, але %{actual} returned."
   notice_auth_stage_error: "Етап автентифікації %{stage} не вдався."
   notice_can_t_change_password: "Для даного облікового запису використовується джерело зовнішньої аутентифікації. Неможливо змінити пароль."
-  notice_custom_options_deleted: "Варіант %{option_value}  і його %{num_deleted} вилучень було видалено."
+  notice_custom_options_deleted: "Варіант %{option_value} і його %{num_deleted} вилучень було видалено."
   notice_email_error: "Під час відправки листа відбулася помилка (%{value})"
   notice_email_sent: "Відправлено листа %{value}"
   notice_failed_to_save_work_packages: "Не вдалося зберегти %{count} робочих пакетів на %{total} вибрано: %{ids}."
@@ -2224,7 +2224,7 @@ uk:
   text_journal_added: "%{label} %{value} доданий"
   text_journal_aggregation_time_explanation: "Об'єднати журнали для відображення, якщо їх різниця у віці менше зазначеного періоду часу. Це також затримає повідомлення про пошту на стільки ж часу."
   text_journal_changed: "%{label} змінено з %{old} <br/><strong>to</strong> %{new}"
-  text_journal_changed_plain: "%{label} змінено з %{old}  в %{new}"
+  text_journal_changed_plain: "%{label} змінено з %{old} в %{new}"
   text_journal_changed_no_detail: "%{label} оновлено"
   text_journal_changed_with_diff: "%{label} змінено (%{link})"
   text_journal_deleted: "%{label} видалено (%{old})"
@@ -2492,11 +2492,11 @@ uk:
   note: Замітка
   note_password_login_disabled: "Вхід до пароля вимкнено користувачем %{configuration}"
   warning: Попередження
-  warning_attachments_not_saved: "%{count}  Не вдалося зберегти файл (файли)."
+  warning_attachments_not_saved: "%{count} Не вдалося зберегти файл (файли)."
   warning_imminent_user_limit: >
     Ви запросили більше користувачів, ніж підтримується вашим поточним планом. Запрошені користувачі можуть не мати змоги приєднатися до вашого середовища OpenProject. Будь ласка <a href="%{upgrade_url}"> оновіть свій план </a> або заблокувати існуючих користувачів, щоб дозволити запрошені та зареєстровані користувачі приєднатися.
   warning_registration_token_expired: |
-    Термін дії електронної пошти для активації минув. Ми надіслали вам нову %{email}  Натисніть посилання в ньому, щоб активувати свій обліковий запис.
+    Термін дії електронної пошти для активації минув. Ми надіслали вам нову %{email} Натисніть посилання в ньому, щоб активувати свій обліковий запис.
   warning_user_limit_reached: >
     Досягнуто обмеження користувача. Не можна активувати більше користувачів. Будь ласка <a href="%{upgrade_url}"> оновіть свій план </a> або заблокувати учасників для додаткових користувачів.
   warning_user_limit_reached_instructions: >
@@ -2614,14 +2614,14 @@ uk:
       title: "Авторизувати  %{application_name}"
       wants_to_access_html: >
         Ця програма запитує доступ до вашого облікового запису OpenProject.   <br/> <strong> 
-        Він подав запит на такі дозволи:  </strong>
+        Він подав запит на такі дозволи: </strong>
     scopes:
       api_v3: "Повний доступ до API"
       api_v3_text: "Програма отримає повний доступ для читання та запису до API OpenProject, щоб виконувати дії від вашого імені."
     grants:
       created_date: "Затверджено"
       scopes: "Дозволи"
-      successful_application_revocation: "Відкликання заявки  %{application_name}  успішне."
+      successful_application_revocation: "Відкликання заявки  %{application_name} успішне."
       none_given: "Жодних програм OAuth не було надано доступ до вашого облікового запису користувача."
     x_active_tokens:
       one: 'один активний маркер'

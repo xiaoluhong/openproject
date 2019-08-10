@@ -210,17 +210,17 @@ Redmine::MenuManager.map :admin_menu do |menu|
 
   menu.push :custom_style,
             { controller: '/custom_styles', action: 'show' },
-            caption:    :label_custom_style,
+            caption:   :label_custom_style,
             icon: 'icon2 icon-design'
 
   menu.push :colors,
             { controller: '/colors', action: 'index' },
-            caption:    :'timelines.admin_menu.colors',
+            caption:   :'timelines.admin_menu.colors',
             icon: 'icon2 icon-status'
 
   menu.push :enterprise,
             { controller: '/enterprises', action: 'show' },
-            caption:    :label_enterprise_edition,
+            caption:   :label_enterprise_edition,
             icon: 'icon2 icon-headset',
             if: proc { OpenProject::Configuration.ee_manager_visible? }
 end

@@ -52,10 +52,10 @@
         <%= select_tag 'member[role_ids][]', options_for_select(options),
                        multiple: false,
                        no_label: true,
-                       title:    l(:label_role_search),
+                       title:   l(:label_role_search),
                        tabIndex: 0,
-                       class:    'form--select',
-                       id:       'member_role_ids' %>
+                       class:   'form--select',
+                       id:      'member_role_ids' %>
       <input type="radio">No, import as <i>anonymous</i> user (not recommended)
     <% else %>
       <p>

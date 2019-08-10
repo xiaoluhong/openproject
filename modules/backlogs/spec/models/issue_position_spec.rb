@@ -39,10 +39,10 @@ describe WorkPackage, type: :model do
   describe 'Story positions' do
     def build_work_package(options)
       FactoryBot.build(:work_package, options.reverse_merge(fixed_version_id: sprint_1.id,
-                                                             priority_id:      priority.id,
-                                                             project_id:       project.id,
-                                                             status_id:        status.id,
-                                                             type_id:       story_type.id))
+                                                             priority_id:     priority.id,
+                                                             project_id:      project.id,
+                                                             status_id:       status.id,
+                                                             type_id:      story_type.id))
     end
 
     def create_work_package(options)

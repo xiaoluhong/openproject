@@ -39,7 +39,7 @@ See docs/COPYRIGHT.rdoc for more details.
     "items":[
       <% @principals.each_with_index do |principal, ix| %>
         {
-          "id":   <%= principal.id.to_json.html_safe %>,
+          "id":  <%= principal.id.to_json.html_safe %>,
           "name": <%= principal.name.to_json.html_safe %>
         } <%= "," unless !@email && ix == @principals.length - 1 %>
       <% end %>

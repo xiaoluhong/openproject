@@ -119,7 +119,7 @@ tr:
       schedule_failed: "Proje silinemiyor: %{errors}"
       failed: "%{name} projesinin silinmesi başarısız oldu"
       failed_text: "%{name} projesini silme isteği başarısız oldu. Proje arşivlendi."
-      completed: " %{name}  projesinin silinmesi tamamlandı"
+      completed: " %{name} projesinin silinmesi tamamlandı"
       completed_text: "'%{name}' projesini silme isteği tamamlandı."
     index:
       no_results_title_text: Şu anda hiç proje bulunmamakta
@@ -1938,7 +1938,7 @@ tr:
       unauthorized: "Depolama alanına erişim yetkiniz yok ya da kimlik bilgileri geçersiz."
       unavailable: "Depo kullanılamaz."
       exception_title: "Depoya erişilemiyor:% {message} %{message}"
-      disabled_or_unknown_type: "Seçilen% {type} türü devre dışı veya artık SCM satıcısı% {satıcı} için kullanılamıyor. %{type}  %{vendor}"
+      disabled_or_unknown_type: "Seçilen% {type} türü devre dışı veya artık SCM satıcısı% {satıcı} için kullanılamıyor. %{type} %{vendor}"
       disabled_or_unknown_vendor: "SCM satıcısı% {satıcı} devre dışı bırakıldı veya artık mevcut değil. %{vendor}."
       remote_call_failed: "Yönetilen uzaktan çağırma işlemi '% {message}' mesajıyla başarısız oldu (Kod:% {code}) %{message} %{code}"
       remote_invalid_response: "Yönetilen uzaktan kumandadan geçersiz bir yanıt alındı."
@@ -2331,7 +2331,7 @@ tr:
       project_time_filter_historical_from: "başlangıç"
       project_time_filter_historical_to: "bitiş"
       project_time_filter_historical: "%{start_label} %{startdate} %{end_label} %{enddate}"
-      project_time_filter_relative: "%{start_label}  %{startspan} %{startspanunit} önce, %{end_label}  %{endspan} %{endspanunit} bundan sonra"
+      project_time_filter_relative: "%{start_label} %{startspan} %{startspanunit} önce, %{end_label} %{endspan} %{endspanunit} bundan sonra"
       project_filters: "Projeleri filtrele"
       project_responsible: "Sorumlularıyla birlikte projeleri göster"
       project_status: "Proje durumunu göster"

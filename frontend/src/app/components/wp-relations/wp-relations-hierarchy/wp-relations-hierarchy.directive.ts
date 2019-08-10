@@ -68,7 +68,7 @@ export class WorkPackageRelationsHierarchyComponent implements OnInit, OnDestroy
     this.canAddRelation = !!this.workPackage.addRelation;
 
     this.childrenQueryProps = {
-      filters: JSON.stringify([{ parent: { operator: '=', values: [this.workPackage.id] }  }]),
+      filters: JSON.stringify([{ parent: { operator: '=', values: [this.workPackage.id] } }]),
       'columns[]': ['id', 'type', 'subject', 'status'],
       showHierarchies: false
     };

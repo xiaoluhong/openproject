@@ -1680,7 +1680,7 @@ hu:
   mail_body_account_information_external: "A %{value} fiók használatával jelentkezzen be."
   mail_body_lost_password: "A jelszó módosításához kattintson az alábbi linkre:"
   mail_body_register: "A fiók aktiválásához kattintson az alábbi linkre:"
-  mail_body_reminder: "Ön rendelt  %{count} munkacsomag(ok) a következő  %{days}  napokon esedékesek:"
+  mail_body_reminder: "Ön rendelt  %{count} munkacsomag(ok) a következő  %{days} napokon esedékesek:"
   mail_body_wiki_content_added: "A '%{id}' wiki oldal hozzáadva %{author} által."
   mail_body_wiki_content_updated: "A '%{id}' wiki oldal frissítve %{author} által."
   mail_subject_account_activation_request: "%{value} fiók aktiválásának kérése"

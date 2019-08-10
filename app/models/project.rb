@@ -701,7 +701,7 @@ class Project < ActiveRecord::Base
     project_tree(projects) do |project, level|
       element = {
         project: project,
-        level:   level
+        level:  level
       }
 
       element.merge!(yield(project)) if block_given?

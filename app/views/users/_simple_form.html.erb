@@ -37,10 +37,10 @@ See docs/COPYRIGHT.rdoc for more details.
   <div class="form--field -required"><%= f.text_field :firstname, required: true, container_class: '-middle' %></div>
   <div class="form--field -required"><%= f.text_field :lastname, required: true, container_class: '-middle' %></div>
 
-  <%= render partial:     'customizable/field',
-             collection:  @user.custom_field_values,
-             as:          :value,
-             locals:      { form: f, input_size: "middle" } %>
+  <%= render partial:    'customizable/field',
+             collection: @user.custom_field_values,
+             as:         :value,
+             locals:     { form: f, input_size: "middle" } %>
 
   <% unless @auth_sources.empty? || OpenProject::Configuration.disable_password_login? %>
       <div class="form--field">

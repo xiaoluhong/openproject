@@ -40,7 +40,7 @@ See doc/COPYRIGHT.rdoc for more details.
     <div class="v"><%= id_or_empty(sprint) %></div>
   </div>
 
-  <% User.current.allowed_to?(:update_sprints, @project) ? editable = "editable" :  editable = "" %>
+  <% User.current.allowed_to?(:update_sprints, @project) ? editable = "editable" : editable = "" %>
   <div class="effective_date date <%= editable %>" fieldname="effective_date" field_id=<%= sprint.id %>>
     <%= sprint.effective_date %>
   </div>

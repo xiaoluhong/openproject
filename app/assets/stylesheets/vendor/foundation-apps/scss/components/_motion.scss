@@ -118,10 +118,10 @@ $motion-delay-long: 700ms !default;
 // enter/leave class, chained to the parent selector
 // Define the end state of a transition here
 @mixin transition-end($dir) {
-  $sel1:  map-get($motion-class, $dir);
+  $sel1: map-get($motion-class, $dir);
   $sel1A: map-get($motion-class-active, $dir);
 
-  $sel2:  map-get($motion-class-showhide, $dir);
+  $sel2: map-get($motion-class-showhide, $dir);
   $sel2A: map-get($motion-class-showhide-active, $dir);
 
   &.#{$sel1}.#{$sel1A},
@@ -150,10 +150,10 @@ $motion-delay-long: 700ms !default;
   $delay: $motion-delay-default
 ) {
   $slideDirections: (
-    top:    translateY(-100%),
-    right:  translateX(100%),
+    top:   translateY(-100%),
+    right: translateX(100%),
     bottom: translateY(100%),
-    left:   translateX(-100%),
+    left:  translateX(-100%),
   );
   $start: '';
   $end: '';

@@ -59,11 +59,11 @@ RB.Backlog = (function ($) {
       this.getList().sortable({
         connectWith: '.stories',
         dropOnEmpty: true,
-        start:   this.dragStart,
-        stop:    this.dragStop,
-        update:  this.dragComplete,
+        start:  this.dragStart,
+        stop:   this.dragStop,
+        update: this.dragComplete,
         receive: this.dragChanged,
-        remove:  this.dragChanged,
+        remove: this.dragChanged,
         containment: $('#backlogs_container'),
         scroll: true,
         helper: function(event, ui){

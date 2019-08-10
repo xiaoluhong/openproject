@@ -168,11 +168,11 @@ module OpenProject::Plugins
       #
       # Uses Gem specification for plugin name, author etc.
       #
-      # gem_name:      The gem name, used for querying the gem for metadata like author
-      # options:       An options Hash, at least :requires_openproject is recommended to
+      # gem_name:     The gem name, used for querying the gem for metadata like author
+      # options:      An options Hash, at least :requires_openproject is recommended to
       #                define the minimal version of OpenProject the plugin is compatible with
       #                Another common option is :author_url.
-      # block:         Pass a block to the plugin (for defining permissions, menu items and the like)
+      # block:        Pass a block to the plugin (for defining permissions, menu items and the like)
       def register(gem_name, options, &block)
         self.class.initializer "#{engine_name}.register_plugin" do
           spec = Bundler.environment.specs[gem_name][0]
@@ -260,9 +260,9 @@ module OpenProject::Plugins
       # This is important for cache invalidation e.g. when another schema needs
       # to be returned depending on whether a module is active or not.
       #
-      # path:          The fully namespaced representer name, excluding 'API' at the
+      # path:         The fully namespaced representer name, excluding 'API' at the
       #                beginning and 'Representer' at the end.
-      # keys:          The block to be executed when the cache key is queried for. The block's
+      # keys:         The block to be executed when the cache key is queried for. The block's
       #                results will be appended to the original cache key if a cache key is already
       #                defined. If no cache key was defined before, the block's result makes up
       #                the whole cache key.

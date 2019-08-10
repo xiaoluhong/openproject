@@ -48,7 +48,7 @@ describe 'users/index', type: :view do
   it 'renders the user table' do
     render
 
-    is_expected.to have_text("#{admin.firstname}   #{admin.lastname}")
+    is_expected.to have_text("#{admin.firstname}  #{admin.lastname}")
     is_expected.to have_text("Scarlet   Scallywag")
   end
 

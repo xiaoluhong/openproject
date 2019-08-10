@@ -136,7 +136,7 @@ describe WorkPackagesController, type: :controller do
         allow(controller).to receive(:retrieve_query).and_return(query)
 
         # Note: Stubs for methods used to build up the json query results.
-        # TODO RS:  Clearly this isn't testing anything, but it all needs to be moved to an API controller anyway.
+        # TODO RS: Clearly this isn't testing anything, but it all needs to be moved to an API controller anyway.
         allow(query).to receive(:results).and_return(results)
         allow(results).to receive_message_chain(:sorted_work_packages, :page, :per_page).and_return(work_packages)
       end

@@ -80,8 +80,8 @@ describe News, type: :model do
         FactoryBot.create(:news, project: project)
       end
 
-      expect(News.latest(user: User.current, count:  2).size).to eq(2)
-      expect(News.latest(user: User.current, count:  6).size).to eq(6)
+      expect(News.latest(user: User.current, count: 2).size).to eq(2)
+      expect(News.latest(user: User.current, count: 6).size).to eq(6)
       expect(News.latest(user: User.current, count: 15).size).to eq(10)
     end
 

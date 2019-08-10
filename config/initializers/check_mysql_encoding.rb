@@ -50,7 +50,7 @@ if OpenProject::Database.mysql?
          and UTF-8mb4 beyond that. Please ensure having set
      *                                                                       *
              #{Rails.env}:
-     *         encoding: #{expected}                                         *
+     *         encoding: #{expected}                                        *
 
      *   in config/database.yml.                                             *
          Otherwise, you WILL run into encoding issue when using 4 byte
