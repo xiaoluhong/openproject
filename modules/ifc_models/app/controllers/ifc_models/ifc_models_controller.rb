@@ -30,21 +30,19 @@
 
 module ::IFCModels
   class IFCModelsController < BaseController
-    include IFCModelsHelper
+    helper_method :gon
 
     before_action :find_project_by_project_id, only: %i[index new create show show_defaults edit update destroy]
     before_action :find_ifc_model_object, except: %i[index new create]
-    before_action :find_all_ifc_models, only: %i[show show_defaults]
+    before_action :find_all_ifc_models, only: %i[show show_defaults index]
 
     before_action :authorize
 
     menu_item :ifc_models
 
     def index
-      @ifc_models = @project
-        .ifc_models
-        .order('created_at ASC')
-        .includes(:uploader, :project)
+      @ifc_models = @ifc_models
+                    .includes(:project, :uploader)
     end
 
     def new
@@ -53,9 +51,7 @@ module ::IFCModels
 
     def edit; end
 
-    def show
-      provision_gon([@ifc_model])
-    end
+    def show; end
 
     def show_defaults
       if @ifc_models.empty?
@@ -63,7 +59,6 @@ module ::IFCModels
       end
 
       @default_ifc_models = @project.ifc_models.defaults
-      provision_gon(@default_ifc_models)
     end
 
     def create
@@ -116,46 +111,18 @@ module ::IFCModels
     def find_all_ifc_models
       @ifc_models = @project
                       .ifc_models
+                      .includes(:attachments)
                       .order('created_at ASC')
-    end
-
-    def provision_gon(models_to_load = [])
-      all_converted_models = converted_ifc_models(@ifc_models)
-      converted_models_to_load = converted_ifc_models(models_to_load)
-
-      models_to_load = Hash[converted_models_to_load.map { |ifc_model| [ifc_model.id, true] }]
-      gon.ifc_models = {
-        models: all_converted_models.map do |ifc_model|
-          model = {}
-          model[:id] = ifc_model.id
-          model[:name] = ifc_model.title
-          model[:default] = (!!models_to_load[ifc_model.id])
-
-          model
-        end,
-        projects: [{ id: @project.identifier, name: @project.name }],
-        xkt_attachment_ids: Hash[all_converted_models.map { |ifc_model| [ifc_model.id, ifc_model.xkt_attachment.id] }],
-        metadata_attachment_ids: Hash[
-          all_converted_models.map do |ifc_model|
-            [ifc_model.id,
-             ifc_model.metadata_attachment.id]
-          end
-        ]
-      }
     end
 
     def permitted_model_params
       params
-        .fetch(:ifc_models_ifc_model, {})
+        .require(:ifc_models_ifc_model)
         .permit('title', 'ifc_attachment', 'is_default')
     end
 
     def find_ifc_model_object
       @ifc_model = IFCModels::IFCModel.find_by(id: params[:id])
-    end
-
-    def converted_ifc_models(ifc_models)
-      ifc_models.select { |ifc_model| ifc_model.xkt_attachment.present? && ifc_model.metadata_attachment.present? }
     end
   end
 end

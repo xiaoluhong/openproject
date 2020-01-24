@@ -14,7 +14,7 @@ module IFCModels
         end
       end
 
-      def is_default
+      def default?
         if model.is_default?
           op_icon 'icon icon-checkmark'
         end
@@ -55,7 +55,7 @@ module IFCModels
         link_to '',
                 ifc_models_project_ifc_model_path(model.project, model),
                 class: 'icon icon-delete',
-                data: {confirm: I18n.t(:text_are_you_sure)},
+                data: { confirm: I18n.t(:text_are_you_sure) },
                 method: :delete
       end
 

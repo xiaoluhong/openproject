@@ -29,18 +29,41 @@
 FactoryBot.define do
   factory :ifc_model, class: ::IFCModels::IFCModel do
     title { 'My IFC model' }
+    project factory: :project
     uploader factory: :user
-    ifc_attachment {
-      FileHelpers.mock_uploaded_file name: "model.ifc", content_type: 'application/binary', binary: true
-    }
+    is_default { true }
+    ifc_attachment do
+      Rack::Test::UploadedFile.new(
+        File.join(Rails.root, "modules/ifc_models/spec/fixtures/files/minimal.ifc"),
+        'application/binary'
+      )
+    end
 
     factory :ifc_model_converted do
-      xkt_attachment {
-        FileHelpers.mock_uploaded_file name: "model.xkt", content_type: 'application/binary', binary: true
-      }
-      metadata_attachment {
-        FileHelpers.mock_uploaded_file name: "model.json", content_type: 'application/json', binary: true
-      }
+      title { 'My IFC model' }
+      project factory: :project
+      uploader factory: :user
+      is_default { true }
+      ifc_attachment do
+        Rack::Test::UploadedFile.new(
+          File.join(Rails.root, "modules/ifc_models/spec/fixtures/files/minimal.ifc"),
+          'application/binary'
+        )
+      end
+
+      xkt_attachment do
+        Rack::Test::UploadedFile.new(
+          File.join(Rails.root, "modules/ifc_models/spec/fixtures/files/minimal.xkt"),
+          'application/binary'
+        )
+      end
+
+      metadata_attachment do
+        Rack::Test::UploadedFile.new(
+          File.join(Rails.root, "modules/ifc_models/spec/fixtures/files/minimal.json"),
+          'application/json'
+        )
+      end
     end
   end
 end
