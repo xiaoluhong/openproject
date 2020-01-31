@@ -52,6 +52,8 @@ import {ConfirmDialogModal} from "core-components/modals/confirm-dialog/confirm-
 import {ConfirmDialogService} from "core-components/modals/confirm-dialog/confirm-dialog.service";
 import {DynamicContentModal} from "core-components/modals/modal-wrapper/dynamic-content.modal";
 import {PasswordConfirmationModal} from "core-components/modals/request-for-confirmation/password-confirmation.modal";
+import {EnterpriseComponent} from "core-components/enterprise/enterprise.component";
+import {EnterpriseTrialModal} from "core-components/enterprise/enterprise-modal/enterprise-trial.modal";
 import {OpTitleService} from 'core-components/html/op-title.service';
 import {OpenprojectFieldsModule} from "core-app/modules/fields/openproject-fields.module";
 import {OpenprojectCommonModule} from "core-app/modules/common/openproject-common.module";
@@ -166,6 +168,7 @@ import {KeyboardShortcutService} from "core-app/modules/a11y/keyboard-shortcut-s
     DynamicContentModal,
     PasswordConfirmationModal,
     WpPreviewModal,
+    EnterpriseTrialModal,
 
     // Main menu
     MainMenuResizerComponent,
@@ -183,12 +186,12 @@ import {KeyboardShortcutService} from "core-app/modules/a11y/keyboard-shortcut-s
     ProjectMenuAutocompleteComponent,
 
     // Modals
-
     DynamicContentModal,
     ConfirmDialogModal,
     PasswordConfirmationModal,
     AttributeHelpTextModal,
     WpPreviewModal,
+    EnterpriseTrialModal,
 
     // Main menu
     MainMenuResizerComponent,
