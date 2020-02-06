@@ -52,7 +52,7 @@ cs:
   backlogs:
     add_new_story: "New Story"
     any: "any"
-    backlog_settings: "Backlog Settings"
+    backlog_settings: "Backlogs settings"
     burndown_graph: "Burndown Graph"
     card_paper_size: "Paper size for card printing"
     chart_options: "Možnosti grafu"
@@ -83,7 +83,7 @@ cs:
     task_color: "Task color"
     unassigned: "Unassigned"
     x_more: "%{count} more..."
-  backlogs_active: "active"
+  backlogs_active: "aktivní"
   backlogs_any: "any"
   backlogs_card_specification: "Label types for card printing"
   backlogs_inactive: "Project shows no activity"
