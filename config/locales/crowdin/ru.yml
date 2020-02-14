@@ -1695,7 +1695,7 @@ ru:
   label_workflow_plural: "Рабочие потоки"
   label_workflow_summary: "Сводка"
   label_x_closed_work_packages_abbr:
-    zero: "0 закрыто"
+    zero: "0 закрытых"
     one: "1 закрыто"
     few: "%{count} закрыто"
     many: "%{count} закрыто"

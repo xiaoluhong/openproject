@@ -1661,19 +1661,19 @@ es:
   label_workflow_plural: "Flujos de trabajo"
   label_workflow_summary: "Resumen"
   label_x_closed_work_packages_abbr:
-    zero: "0 closed"
+    zero: "0 cerrados"
     one: "1 cerrado"
     other: "%{count} cerrados"
   label_x_comments:
-    zero: "no comments"
+    zero: "sin comentarios"
     one: "un comentario"
     other: "%{count} comentarios"
   label_x_open_work_packages_abbr:
-    zero: "0 open"
+    zero: "0 abiertos"
     one: "1 abierto"
     other: "%{count} abiertos"
   label_x_projects:
-    zero: "no projects"
+    zero: "sin proyectos"
     one: "1 proyecto"
     other: "%{count} projectos"
   label_year: "Año"
@@ -2231,8 +2231,8 @@ es:
   text_work_package_category_destroy_question: "Algunos paquetes de trabajo (%{count}) están asignados a esta categoría. ¿Que desea hacer?"
   text_work_package_category_reassign_to: "Resignando paquetes de trabajo a esta categoria"
   text_work_package_updated: "Los paquetes de trabajo %{id} han sido actualizados por %{author}."
-  text_work_package_watcher_added: "You have been added as a watcher to Work package %{id} by %{watcher_changer}."
-  text_work_package_watcher_removed: "You have been removed from watchers of Work package %{id} by %{watcher_changer}."
+  text_work_package_watcher_added: "%{watcher_changer} le agregó como observador en el paquete de trabajo %{id}."
+  text_work_package_watcher_removed: "%{watcher_changer} le ha quitado como observador del paquete de trabajo %{id}."
   text_work_packages_destroy_confirmation: "¿Esta usted seguro que desea eliminar paquete(s) de trabajo seleccionado(s)?"
   text_work_packages_ref_in_commit_messages: "Referenciando y reparando paquetes de trabajo en mensajes de commit"
   text_journal_added: "%{label} %{value} añadido"
@@ -2564,8 +2564,8 @@ es:
         invalid_user_assigned_to_work_package: "El usuario elegido no tiene permiso para ser '%{property}' para este paquete de trabajo."
         start_date: "La fecha de inicio no puede ser establecida en paquetes de trabajo padres."
       eprops:
-        invalid_gzip: "is invalid gzip: %{message}"
-        invalid_json: "is invalid json: %{message}"
+        invalid_gzip: "es un archivo gzip no válido: %{message}"
+        invalid_json: "es un archivo JSON no válido: %{message}"
     resources:
       schema: 'Esquema'
   doorkeeper:

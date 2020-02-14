@@ -505,7 +505,7 @@ pt-BR:
       no_matches: "Encontrado nenhum resultado"
       searching: "Pesquisando ..."
       selection_too_big:
-        zero: "Não pode selecionar nenhum item"
+        zero: "Você não pode selecionar nenhum item"
         one: "Você pode selecionar somente um item"
         other: "Você pode selecionar somente {{limit}} itens"
     project_menu_details: "Detalhes"

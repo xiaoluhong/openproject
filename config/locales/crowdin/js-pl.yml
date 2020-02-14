@@ -499,7 +499,7 @@ pl:
     field_value_enter_prompt: "Wprowadź wartość dla '%{field}'"
     select2:
       input_too_short:
-        zero: "Please enter more characters"
+        zero: "Wprowadź więcej znaków"
         one: "Wprowadź jeszcze jeden znak"
         few: "Proszę wpisać jeszcze {{count}} znaków"
         many: "Proszę wpisać jeszcze {{count}} znaków"
@@ -508,7 +508,7 @@ pl:
       no_matches: "Nie znaleziono dopasowań"
       searching: "Wyszukiwanie ..."
       selection_too_big:
-        zero: "You cannot select any items"
+        zero: "Nie możesz wybrać elementów"
         one: "Możesz wybrać tylko jeden element"
         few: "Możesz wybrać tylko {{limit}} elementy"
         many: "Możesz wybrać tylko {{limit}} elementy"
