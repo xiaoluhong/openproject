@@ -67,12 +67,12 @@ hu:
       no_results_content_text: Új autentikációs mód létrehozása
   ldap_auth_sources:
     technical_warning_html: |
-      This LDAP form requires technical knowledge of your LDAP / Active Directory setup.
+      Ehhez az LDAP űrlaphoz az Ön LDAP / Acitive Directory beállításainak ismerete szükséges.
       <br/>
-      <a href="https://www.openproject.org/help/administration/manage-ldap-authentication/">Please visit our documentation for detailed instructions</a>.
+      <a href="https://www.openproject.org/help/administration/manage-ldap-authentication/">Részletes útmutatásért kérjük olvassa el a dokumentációt</a>.
     attribute_texts:
       name: Arbitrary name of the LDAP connection
-      host: LDAP host name or IP address
+      host: LDAP Kiszolgáló neve vagy IP címe
       login_map: The attribute key in LDAP that is used to identify the unique user login. Usually, this will be `uid` or `samAccountName`.
       generic_map: The attribute key in LDAP that is mapped to the OpenProject `%{attribute}` attribute
       admin_map_html: "Optional: The attribute key in LDAP that <strong>if present</strong> marks the OpenProject user an admin. Leave empty when in doubt."
@@ -94,11 +94,10 @@ hu:
     system_account_legend: |
       OpenProject requires read-only access through a system account to lookup users and groups in your LDAP tree.
       Please specify the bind credentials for that system user in the following section.
-    ldap_details: 'LDAP details'
+    ldap_details: 'LDAP részletek'
     user_settings: 'Attribútum-leképezés'
     user_settings_legend: |
-      The following fields are related to how users are created in OpenProject from LDAP entries and
-      what LDAP attributes are used to define the attributes of an OpenProject user (attribute mapping).
+      Az alábbi mezők a felhasználók létrehozásához kapcsolódnak LDAP bejegyzések alapján az OpenProject-ben, és ahhoz mely LDAP tulajdonságok lesznek felhasználva OpenProject felhasználó tulajdonságainak deffiniálásakor (tulajdonság társítás).
     tls_mode:
       plain: 'Egyik sem'
       simple_tls: 'Egyszerű_TLS'
@@ -477,7 +476,7 @@ hu:
         could_not_be_copied: "nem lehet (teljesen) másolni."
         does_not_exist: "nem létezik."
         error_unauthorized: "lehet, hogy nem érhető el."
-        error_readonly: "was attempted to be written but is not writable."
+        error_readonly: "írása megkísérelve, de nem írható."
         empty: "nem lehet üres."
         even: "kell még."
         exclusion: "foglalt."
@@ -1662,19 +1661,19 @@ hu:
   label_workflow_plural: "A munkafolyamatok"
   label_workflow_summary: "Összegzés"
   label_x_closed_work_packages_abbr:
-    zero: "0 closed"
+    zero: "0 lezárt"
     one: "1 zárva"
     other: "%{count} zárva"
   label_x_comments:
-    zero: "no comments"
+    zero: "nincsenek hozzászólások"
     one: "1 komment"
     other: "%{count} komment"
   label_x_open_work_packages_abbr:
-    zero: "0 open"
+    zero: "0 nyitott"
     one: "1 nyitott"
     other: "%{count} nyitott"
   label_x_projects:
-    zero: "no projects"
+    zero: "nincsenek projektek"
     one: "1 projekt"
     other: "%{count} projekt"
   label_year: "Év"
@@ -1925,7 +1924,7 @@ hu:
       title: Módosítsa a projekt azonosítóját
     archive:
       are_you_sure: "Biztosan szeretnéd arhiválni a projektet '%{name}'?"
-      archived: "Archived"
+      archived: "Archiválva"
   project_module_activity: "Tevékenység"
   project_module_forums: "Fórumok"
   project_module_calendar: "Naptár"
@@ -2231,8 +2230,8 @@ hu:
   text_work_package_category_destroy_question: "Egyes feladatcsoportok (%{count}) ehhez a kategóriához vannak társítva. Mit akarsz csinálni?"
   text_work_package_category_reassign_to: "A feladatcsoport ismételt hozzárendelése ehhez a kategóriához"
   text_work_package_updated: "feladatcsoport %{id} jelentés %{author} által készitve."
-  text_work_package_watcher_added: "You have been added as a watcher to Work package %{id} by %{watcher_changer}."
-  text_work_package_watcher_removed: "You have been removed from watchers of Work package %{id} by %{watcher_changer}."
+  text_work_package_watcher_added: "Hozzá lett adva megfigyelőként a %{id} munkacsomaghoz %{watcher_changer} által."
+  text_work_package_watcher_removed: "El lett távolítva a %{id} munkacsomag megfigyelői közül %{watcher_changer} által."
   text_work_packages_destroy_confirmation: "Biztosan törli a kijelölt feladatcsoportot?"
   text_work_packages_ref_in_commit_messages: "Viszonyítandó és elintézendő feladatcsoportok a véglegesítési üzenetekben"
   text_journal_added: "%{label} %{value} hozzáadva"
@@ -2565,8 +2564,8 @@ hu:
         invalid_user_assigned_to_work_package: "A kiválasztott felhasználó '%{property}'-ként való beállítása nem engedélyezett ehhez a feladatcsoporthoz."
         start_date: "Kezdés dátuma nem állítható a szülő feladatcsoportokon."
       eprops:
-        invalid_gzip: "is invalid gzip: %{message}"
-        invalid_json: "is invalid json: %{message}"
+        invalid_gzip: "érvénytelen gzip: %{message}"
+        invalid_json: "érvénytelen json: %{message}"
     resources:
       schema: 'Séma'
   doorkeeper:
@@ -2629,7 +2628,7 @@ hu:
       wants_to_access_html: >
         This application requests access to your OpenProject account. <br/> <strong>It has requested the following permissions:</strong>
     scopes:
-      api_v3: "Full API v3 access"
+      api_v3: "Teljes API v2 hozzáférés"
       api_v3_text: "Application will receive full read & write access to the OpenProject API v3 to perform actions on your behalf."
     grants:
       created_date: "Approved on"
