@@ -9,9 +9,10 @@ keywords: backlogs, scrum
 
 # Working with Backlogs
 
-The starting point for effective work in Scrum teams is a  well-maintained and prioritized product backlog as well as the creation  of sprint backlogs. In OpenProject, you can easily record and specify  requirements represented by user stories. Moreover, you can respond to  inquiries and sort them by priority for implementation.
+The starting point for effective work in Scrum teams is a well-maintained and prioritized product backlog as well as the creation of sprint backlogs. In OpenProject, you can easily record and specify requirements represented by user stories. Moreover, you can respond to  inquiries and sort them by priority for implementation.
 
-Moreover, please note that the backlogs module is not available in  the accessibility mode, since it uses drag&drop functionalities  which are not accessible. If you use the accessibility mode you can  however perform the same actions (like viewing and editing work packages such as user stories and epics) from the work package list view.
+Moreover, please note that the backlogs module is not available in the accessibility mode, since it uses drag&drop functionalities which are not accessible. If you use the accessibility mode you can however perform the same actions (like viewing and editing work packages such as user stories and epics) from the work package list view.
+
 | Feature                                             | Documentation for                                            |
 | --------------------------------------------------- | ------------------------------------------------------------ |
 | [Create a new backlog](#create-a-new-backlog)       | How to create a new product backlog or sprint?               |
@@ -25,7 +26,7 @@ Moreover, please note that the backlogs module is not available in  the accessib
 
 ## Create a new backlog
 
-The first thing you will do is to **create a new backlog version** (product backlog or sprints). Read here on [creating a new backlogs version or a sprint](../../project-settings/versions/versions-backlogs). You can always manage the backlog versions under project settings, if you have the necessary administrator rights.
+The first thing you will do is to **create a new backlog version** (product backlog or sprints). Read here on [creating a new backlogs version or a sprint](../manage-sprints). You can always manage the backlog versions under project settings, if you have the necessary administrator rights.
 
 The versions (product backlog or sprint) will then appear in the module Backlogs either on the left or on the right side.
 
@@ -73,6 +74,12 @@ You can prioritize different work packages within the product backlog using drag
 
 In a sprint, you can directly document necessary effort as story points. The overall effort for a sprint is automatically calculated,  whereby the sum of story points is displayed in the top row.
 
+<div class="glossary">
+
+**Story points** are definded as numbers assigned to a work package used to estimate (relatively) the size of the work.
+
+</div>
+
 ![User-guide-backlogs-estimate-story-points](User-guide-backlogs-estimate-story-points.png)
 
 You can easily edit story points directly from the backlogs view. In order to do so, simply click in the line of the work package you want to edit, and make the desired changes.
@@ -97,7 +104,7 @@ Moreover, you can adjust the start and end date of a backlog in the backlogs vie
 
 ## Burndown chart
 
-**Burndown charts** are a helpful tool to visualize a sprint’s progress. With  OpenProject, you can generate sprint and task burndown charts  automatically. As a precondition, the sprint’s start and end date must be entered in the title and the information on story points is well maintained.
+**Burndown charts** are a helpful tool to visualize a sprint’s progress. With OpenProject, you can generate sprint and task burndown charts  automatically. As a precondition, the sprint’s start and end date must be entered in the title and the information on story points is well maintained.
 
 ![User-guide-backlogs-burndown-chart](User-guide-backlogs-burndown-chart.png)
 

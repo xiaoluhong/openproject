@@ -8,7 +8,13 @@ keywords: enumerations
 ---
 # Manage Enumerations
 
-The **Enumerations** settings allow adapting of Activities (for time  tracking), work package priorities and document categories. To get an overview of existing enumeration values for all of these categories, navigate to the -> *Administration* -> *Enumerations*. You will see the enumerations overview, divided into respective sections.
+The **Enumerations** settings allow adapting of Activities (for time  tracking), work package priorities and document categories. 
+
+<div class="glossary“>
+**Enumerations** are defined as a menu item in admin settings that allows the configuration of Activities (for time tracking), project status and work package priorities.
+</div>
+
+To get an overview of existing enumeration values for all of these categories, navigate to the -> *Administration* -> *Enumerations*. You will see the enumerations overview, divided into respective sections.
 
 ![enumerations](image-20200122161732016.png)
 
@@ -32,6 +38,6 @@ You will then be able to name the value, activate it and choose if it should be 
 
 ![Sys-admin-enumerations](Sys-admin-enumerations.png)
 
-**Note**: To activate the [Activities (for time tracking)](../../user-guide/project-settings/activities-time-tracking) in a certain project, navigate to -> *Project settings* -> *Activities (time tracking)*.
+**Note**: To activate the [Activities (for time tracking)](../../user-guide/projects/project-settings/activities-time-tracking) in a certain project, navigate to -> *Project settings* -> *Activities (time tracking)*.
 </div>
 

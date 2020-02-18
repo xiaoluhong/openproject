@@ -125,7 +125,7 @@ gem 'secure_headers', '~> 6.3.0'
 gem 'browser', '~> 2.6.1'
 
 # Providing health checks
-gem 'okcomputer', '~> 1.17.3'
+gem 'okcomputer', '~> 1.18.1'
 
 gem 'gon', '~> 6.2.1'
 
@@ -215,7 +215,7 @@ group :test do
   gem 'capybara', '~> 3.29.0'
   gem 'capybara-screenshot', '~> 1.0.17'
   gem 'capybara-select2', git: 'https://github.com/goodwill/capybara-select2', ref: '585192e'
-  gem 'webdrivers', '~> 4.1.2', require: false
+  gem 'webdrivers', '~> 4.2.0', require: false
   gem 'selenium-webdriver', '~> 3.14'
 
   gem 'fuubar', '~> 2.3.2'
@@ -234,6 +234,8 @@ group :ldap do
 end
 
 group :development do
+  gem 'listen', '~> 3.2.1' # Use for event-based reloaders
+
   gem 'faker'
   gem 'letter_opener'
   gem 'livingstyleguide', '~> 2.1.0'

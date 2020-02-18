@@ -29,6 +29,7 @@
 import {Injectable, Injector} from '@angular/core';
 import {StateService, Transition} from "@uirouter/core";
 import {KeepTabService} from "core-components/wp-single-view-tabs/keep-tab/keep-tab.service";
+import {TransitionOptions} from "@uirouter/core/lib/transition/interface";
 
 interface BackRouteOptions {
   name:string;
@@ -52,7 +53,7 @@ export class BackRoutingService {
       this.$state.go('work-packages.list', this.$state.params);
     } else {
       if (this.keepTab.isDetailsState(this.backRoute.parent)) {
-        if(preferListOverSplit) {
+        if (preferListOverSplit) {
           this.$state.go('work-packages.list', this.$state.params);
         } else {
           this.$state.go(this.keepTab.currentDetailsState, this.$state.params);

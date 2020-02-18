@@ -1688,15 +1688,19 @@ da:
   label_workflow_plural: "Arbejdsprocesser"
   label_workflow_summary: "Opsummering"
   label_x_closed_work_packages_abbr:
+    zero: "0 closed"
     one: "1 lukket"
     other: "%{count} lukkede"
   label_x_comments:
+    zero: "no comments"
     one: "1 kommetar"
     other: "%{count} kommetarer"
   label_x_open_work_packages_abbr:
+    zero: "0 open"
     one: "1 åbne"
     other: "%{count} åbne"
   label_x_projects:
+    zero: "no projects"
     one: "%{count} projekter"
     other: "%{count} projekter"
   label_year: "År"
@@ -2239,7 +2243,7 @@ da:
   text_destroy_with_associated: "Der er yderligere objekter tilknyttet arbejdspakken/-kerne som skal slettes. Disse er af følgende art:"
   text_destroy_what_to_do: "Hvad vil du lave?"
   text_diff_truncated: "... Denne afvigelse blev undertrykt da den overstiger den længde, der kan vises."
-  text_email_delivery_not_configured: "Email levering er ikke indstillet og påmindelser er inaktive.\nOpsæt din SMTP-server i config/configuration.yml og genstart appen for at aktivere dette."
+  text_email_delivery_not_configured: "Email delivery is not configured, and notifications are disabled.\nConfigure your SMTP server to enable them."
   text_enumeration_category_reassign_to: "Genindsæt dem med denne værdi:"
   text_enumeration_destroy_question: "%{count} objekter er tilknyttet denne værdi."
   text_file_repository_writable: "Arkiv for vedhæftninger er skrivbart"
@@ -2533,6 +2537,17 @@ da:
     User limit reached. You cannot activate any more users. Please <a href="%{upgrade_url}">upgrade your plan</a> or block members to allow for additional users.
   warning_user_limit_reached_instructions: >
     You reached your user limit (%{current}/%{max} active users). Please contact sales@openproject.com to upgrade your Enterprise Edition plan and add additional users.
+  0: >
+
+  warning_bar:
+    protocol_mismatch:
+      title: 'Protocol setting mismatch'
+      text_html: >
+        Your application is running with its protocol setting set to <code>%{set_protocol}</code>, but the request is an <code>%{actual_protocol}</code> request. This will result in errors! Go to <a href="%{setting_path}">System settings</a> and change the "Protocol" setting to correct this.
+    hostname_mismatch:
+      title: 'Hostname setting mismatch'
+      text_html: >
+        Your application is running with its host name setting set to <code>%{set_hostname}</code>, but the request is a <code>%{actual_hostname}</code> hostname. This will result in errors! Go to <a href="%{setting_path}">System settings</a> and change the "Host name" setting to correct this.
   menu_item: "Menupunkt"
   menu_item_setting: "Synlighed"
   wiki_menu_item_for: "Menupunkt for wikipage \"%{title}\""
