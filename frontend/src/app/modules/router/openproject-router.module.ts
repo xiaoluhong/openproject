@@ -35,14 +35,14 @@ import {
   OPENPROJECT_ROUTES,
   uiRouterConfiguration
 } from "core-app/modules/router/openproject.routes";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   imports: [
-    UIRouterModule.forRoot({
-      states: OPENPROJECT_ROUTES,
-      useHash: false,
-      config: uiRouterConfiguration,
-    } as any),
+    RouterModule.forRoot(
+      OPENPROJECT_ROUTES,
+      { enableTracing: true }
+    )
   ],
   providers: [
     {

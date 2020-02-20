@@ -26,31 +26,20 @@
 // See docs/COPYRIGHT.rdoc for more details.
 // ++
 
-import {StateDeclaration, StateService, Transition, TransitionService, UIRouter, UrlService} from '@uirouter/core';
 import {INotification, NotificationsService} from "core-app/modules/common/notifications/notifications.service";
 import {CurrentProjectService} from "core-components/projects/current-project.service";
 import {Injector} from "@angular/core";
 import {FirstRouteService} from "core-app/modules/router/first-route-service";
-import {StatesModule} from "@uirouter/angular";
 import {appBaseSelector, ApplicationBaseComponent} from "core-app/modules/router/base/application-base.component";
 import {BackRoutingService} from "core-app/modules/common/back-routing/back-routing.service";
+import {Navigation, NavigationEnd, NavigationStart, Router, Routes} from "@angular/router";
+import {filter} from "rxjs/operators";
 
-export const OPENPROJECT_ROUTES = [
+export const OPENPROJECT_ROUTES:Routes = [
   {
-    name: 'root',
-    url: '/{projects}/{projectPath}',
-    component: ApplicationBaseComponent,
-    abstract: true,
-    params: {
-      // value: null makes the parameter optional
-      // squash: true avoids duplicate slashes when the parameter is not provided
-      projectPath: {type: 'path', value: null, squash: true},
-      projects: {type: 'path', value: null, squash: true},
-
-      // Allow passing of flash messages after routes load
-      flash_message: { dynamic: true, value: null, inherit: false }
-    }
-  },
+    path: '/:projects/:projectPath',
+    component: ApplicationBaseComponent
+  }
   // We could lazily load work packages module already,
   // but e.g., the plugin context requires service from it.
   // {
@@ -78,12 +67,13 @@ export function bodyClass(className:string[]|string|null|undefined, action:'add'
     }
   }
 }
+
 export function updateMenuItem(menuItemClass:string|undefined, action:'add'|'remove' = 'add') {
   if (!menuItemClass) {
     return;
   }
 
-  let menuItem = jQuery('#main-menu .' +  menuItemClass)[0];
+  let menuItem = jQuery('#main-menu .' + menuItemClass)[0];
 
   if (!menuItem) {
     return;
@@ -101,29 +91,9 @@ export function updateMenuItem(menuItemClass:string|undefined, action:'add'|'rem
   menuItem.setAttribute('title', menuItemTitle);
 }
 
-export function uiRouterConfiguration(uiRouter:UIRouter, injector:Injector, module:StatesModule) {
-  // Allow optional trailing slashes
-  uiRouter.urlService.config.strictMode(false);
-
-  // Register custom URL params type
-  // to ensure query props are correctly set
-  uiRouter.urlService.config.type(
-    'opQueryString',
-    {
-      encode: encodeURIComponent,
-      decode: decodeURIComponent,
-      raw: true,
-      dynamic: true,
-      is: (val:unknown) => typeof(val) === 'string',
-      equals: (a:any, b:any) => _.isEqual(a, b),
-    }
-  );
-}
-
 export function initializeUiRouterListeners(injector:Injector) {
   return () => {
-    const $transitions:TransitionService = injector.get(TransitionService);
-    const stateService = injector.get(StateService);
+    const router:Router = injector.get(Router);
     const notificationsService:NotificationsService = injector.get(NotificationsService);
     const currentProject:CurrentProjectService = injector.get(CurrentProjectService);
     const firstRoute:FirstRouteService = injector.get(FirstRouteService);
@@ -138,18 +108,29 @@ export function initializeUiRouterListeners(injector:Injector) {
     // but since AOT doesn't allow anonymous functions, we can't re-use them now.
     // The transition will only return the target state on `transition.to()`,
     // however the second parameter has the currently (e.g., parent) entering state chain.
-    $transitions.onEnter({}, function(transition:Transition, state:StateDeclaration) {
-      // Add body class when entering this state
-      bodyClass(_.get(state, 'data.bodyClasses'), 'add');
-      if (transition.from().data && _.get(state, 'data.menuItem') !== transition.from().data.menuItem) {
-        updateMenuItem(_.get(state, 'data.menuItem'), 'add');
-      }
+    router.events
+      .pipe(
+        filter(evt => evt instanceof NavigationStart)
+      )
+      .subscribe((event:NavigationEnd) => {
+        const state = this.router.activatedRoute;
+        // Add body class when entering this state
+        bodyClass(_.get(state, 'data.bodyClasses'), 'add');
+        if (state.data && _.get(state, 'data.menuItem') !== state.data.menuItem) {
+          updateMenuItem(_.get(state, 'data.menuItem'), 'add');
+        }
 
-      // Reset scroll position, mostly relevant for mobile
-      window.scrollTo(0, 0);
-    });
+        // Reset scroll position, mostly relevant for mobile
+        window.scrollTo(0, 0);
 
-    $transitions.onExit({}, function(transition:Transition, state:StateDeclaration) {
+      });
+
+    router.events
+      .pipe(
+        filter(evt => evt instanceof NavigationEnd)
+      )
+      .subscribe((event:NavigationStart) => {
+    $transitions.onExit({}, function (transition:Transition, state:StateDeclaration) {
       // Remove body class when leaving this state
       bodyClass(_.get(state, 'data.bodyClasses'), 'remove');
       if (transition.to().data && _.get(state, 'data.menuItem') !== transition.to().data.menuItem) {
@@ -157,7 +138,7 @@ export function initializeUiRouterListeners(injector:Injector) {
       }
     });
 
-    $transitions.onStart({}, function(transition:Transition) {
+    $transitions.onStart({}, function (transition:Transition) {
       const $state = transition.router.stateService;
       const toParams = transition.params('to');
       const fromState = transition.from();

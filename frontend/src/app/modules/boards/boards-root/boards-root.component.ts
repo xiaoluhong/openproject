@@ -3,7 +3,7 @@ import {BoardCacheService} from "core-app/modules/boards/board/board-cache.servi
 
 @Component({
   selector: 'boards-entry',
-  template: '<ui-view></ui-view>',
+  template: '<router-outlet></router-outlet>',
   providers: [
     BoardCacheService
   ]

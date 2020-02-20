@@ -56,6 +56,7 @@ import {DynamicModule} from "ng-dynamic-component";
 import {BoardStatusActionService} from "core-app/modules/boards/board/board-actions/status/status-action.service";
 import {BoardVersionActionService} from "core-app/modules/boards/board/board-actions/version/version-action.service";
 import {QueryUpdatedService} from "core-app/modules/boards/board/query-updated/query-updated.service";
+import {RouterModule} from "@angular/router";
 
 const menuItemClass = 'board-view-menu-item';
 
@@ -139,6 +140,7 @@ export function registerBoardsModule(injector:Injector) {
       states: BOARDS_ROUTES,
       config: uiRouterBoardsConfiguration
     }),
+    RouterModule,
   ],
   providers: [
     BoardService,

@@ -26,14 +26,7 @@
 // See docs/COPYRIGHT.rdoc for more details.
 // ++
 
-import {
-  APP_INITIALIZER,
-  ApplicationRef,
-  Injector,
-  NgModule,
-  NgModuleFactoryLoader,
-  SystemJsNgModuleLoader
-} from '@angular/core';
+import {APP_INITIALIZER, ApplicationRef, Injector, NgModule} from '@angular/core';
 import {OpenprojectHalModule} from 'core-app/modules/hal/openproject-hal.module';
 
 import {OpContextMenuTrigger} from 'core-components/op-context-menu/handlers/op-context-menu-trigger.directive';
@@ -61,7 +54,6 @@ import {OpenprojectPluginsModule} from "core-app/modules/plugins/openproject-plu
 import {ConfirmFormSubmitController} from "core-components/modals/confirm-form-submit/confirm-form-submit.directive";
 import {ProjectMenuAutocompleteComponent} from "core-components/projects/project-menu-autocomplete/project-menu-autocomplete.component";
 import {OpenProjectFileUploadService} from "core-components/api/op-file-upload/op-file-upload.service";
-import {AttributeHelpTextModal} from "./modules/common/help-texts/attribute-help-text.modal";
 import {LinkedPluginsModule} from "core-app/modules/plugins/linked-plugins.module";
 import {HookService} from "core-app/modules/plugins/hook-service";
 import {ModalWrapperAugmentService} from "core-app/globals/augmenting/modal-wrapper.augment.service";
@@ -159,9 +151,6 @@ import {TimeEntryCacheService} from "core-components/time-entries/time-entry-cac
       deps: [Injector],
       multi: true
     },
-    // Provide a factory loaded for lazily loaded modules
-    // https://ui-router.github.io/guide/lazyloading#angular
-    { provide: NgModuleFactoryLoader, useClass: SystemJsNgModuleLoader },
     OpTitleService,
     UrlParamsHelperService,
     ProjectCacheService,
