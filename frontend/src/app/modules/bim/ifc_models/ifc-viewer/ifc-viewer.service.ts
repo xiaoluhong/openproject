@@ -10,9 +10,14 @@ export interface XeokitElements {
 }
 
 export interface BCFCreationOptions {
-  spacesVisible:boolean;
-  spaceBoundariesVisible:boolean;
-  openingsVisible:boolean;
+  spacesVisible?:boolean;
+  spaceBoundariesVisible?:boolean;
+  openingsVisible?:boolean;
+}
+export interface BCFLoadOptions {
+  rayCast?:boolean;
+  immediate?:boolean;
+  duration?:number;
 }
 
 @Injectable()
@@ -51,9 +56,18 @@ export class IFCViewerService {
     }
 
     this.viewer.viewer.scene.destroy();
+    this.viewer = undefined;
   }
 
-  public saveBCFViewpoint(options:BCFCreationOptions):JSON {
+  public saveBCFViewpoint(options:BCFCreationOptions = {}):JSON {
     return this.viewer.saveBCFViewpoint(options);
+  }
+
+  public loadBCFViewpoint(viewpoint:JSON, options:BCFLoadOptions = {}) {
+    this.viewer.loadBCFViewpoint(viewpoint, options);
+  }
+
+  public viewerVisible():boolean {
+    return !!this.viewer;
   }
 }
