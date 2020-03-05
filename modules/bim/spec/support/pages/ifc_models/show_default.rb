@@ -75,6 +75,22 @@ module Pages
         end
       end
 
+      def select_sidebar_tab(tab)
+        selector = '.xeokit-tab'
+        page.find(selector, text: tab).click
+      end
+
+      def expect_tree_panel_selected(selected, tab = 'Models')
+        within (".xeokit-#{tab.downcase}.xeokit-tree-panel") do
+          if selected
+            expect(page.find('input', match: :first)).to be_checked
+          else
+            expect(page.find('input', match: :first)).not_to be_checked
+          end
+
+        end
+      end
+
       def page_shows_a_toolbar(visible)
         toolbar_items.each do |button|
           element_visible? visible, '.toolbar-item', button
