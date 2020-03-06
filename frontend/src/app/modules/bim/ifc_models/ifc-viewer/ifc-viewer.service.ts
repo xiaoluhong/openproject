@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {XeokitServer} from "core-app/modules/bim/ifc_models/xeokit/xeokit-server";
+import {BcfViewpointInterface} from "core-app/modules/bim/bcf/api/viewpoints/bcf-viewpoint.interface";
 
 export interface XeokitElements {
   canvasElement:HTMLElement;
@@ -14,6 +15,7 @@ export interface BCFCreationOptions {
   spaceBoundariesVisible?:boolean;
   openingsVisible?:boolean;
 }
+
 export interface BCFLoadOptions {
   rayCast?:boolean;
   immediate?:boolean;
@@ -59,11 +61,11 @@ export class IFCViewerService {
     this.viewer = undefined;
   }
 
-  public saveBCFViewpoint(options:BCFCreationOptions = {}):JSON {
+  public saveBCFViewpoint(options:BCFCreationOptions = {}):BcfViewpointInterface {
     return this.viewer.saveBCFViewpoint(options);
   }
 
-  public loadBCFViewpoint(viewpoint:JSON, options:BCFLoadOptions = {}) {
+  public loadBCFViewpoint(viewpoint:BcfViewpointInterface, options:BCFLoadOptions = {}) {
     this.viewer.loadBCFViewpoint(viewpoint, options);
   }
 
