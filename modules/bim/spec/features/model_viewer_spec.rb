@@ -44,7 +44,7 @@ describe 'model viewer', type: :feature, js: true do
   end
 
   let(:model) do
-    FactoryBot.create(:ifc_model_converted,
+    FactoryBot.create(:ifc_model_minimal_converted,
                       project: project,
                       uploader: user)
   end
@@ -70,18 +70,6 @@ describe 'model viewer', type: :feature, js: true do
     it 'shows a work package list as cards next to the viewer' do
       show_model_page.model_viewer_visible true
       card_view.expect_work_package_listed work_package
-    end
-
-    it 'loads an associated viewpoint when clicking on a card' do
-      card_view.expect_work_package_listed work_package
-      card_view.select_work_package work_package
-
-      card_view.expect_work_package_selected work_package, true
-
-      # Idea: Check whether the storeys are correctly set and thus the viewpoint correctly loaded
-      # For convenience only, our viewpoint selected nothing, so no Storey should be selected
-      show_model_page.select_sidebar_tab 'Storeys'
-      show_model_page.expect_tree_panel_selected false, 'Storeys'
     end
   end
 
