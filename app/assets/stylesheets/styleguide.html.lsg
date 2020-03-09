@@ -25,7 +25,7 @@
   .styleguide-banner {
     height:  280px;
     padding: 200px 0 0;
-    background: url('/assets/styleguide/logo_openproject.png');
+    background: url('/assets/styleguide/logo_openproject.svg');
     background-position: top center;
     background-repeat: no-repeat;
   }
