@@ -107,10 +107,19 @@ fil:
         Enter the Base DN of the subtree in LDAP you want OpenProject to look for users and groups.
         OpenProject will filter for provided usernames in this subtree only.
         Example: ou=users,dc=example,dc=com
+      filter_string: |
+        Add an optional RFC4515 filter to apply to the results returned for users filtered in the LDAP.
+        This can be used to restrict the set of users that are found by OpenProject for authentication and group synchronization.
+      filter_string_concat: |
+        OpenProject will always filter for the login attribute provided by the user to identify the record. If you provide a filter here,
+        it will be concatenated with an AND. By default, a catch-all (objectClass=*) will be used as a filter.
       onthefly_register: |
         If you check this box, OpenProject will automatically create new users from their LDAP entries
         when they first authenticate with OpenProject.
         Leave this unchecked to only allow existing accounts in OpenProject to authenticate through LDAP!
+      onthefly_group_sync: |
+        If you enable group synchronization for this LDAP connection, users will also be automatically created
+        in OpenProject for synchronized groups. Without it, only existing accounts in OpenProject will be added to groups.
     connection_encryption: 'Connection encryption'
     system_account: 'System account'
     system_account_legend: |
@@ -223,6 +232,9 @@ fil:
       no_results_title_text: Sa kasalukuyan ay walang mga balita para ma-ireport.
       no_results_content_text: Magdagdag ng bagong news item
   users:
+    groups:
+      member_in_these_groups: 'This user is currently a member of the following groups:'
+      no_results_title_text: This user is currently not a member in any group.
     memberships:
       no_results_title_text: Ang user na ito ay kasalukuyang hindi myembro ng proyekto.
   prioritiies:
@@ -349,7 +361,7 @@ fil:
         attr_mail: "Ang katangian ng Email"
         base_dn: "Ang Base DN"
         host: "Host"
-        onthefly: "On-the-fly paglilikha ng gumagamit"
+        onthefly: "Automatic user creation"
         port: "Port"
       changeset:
         repository: "Repositoryo"
@@ -402,6 +414,7 @@ fil:
         types: "Mga uri"
         versions: "Mga bersyon"
         work_packages: "Ang mga pakete na ginawa"
+        templated: 'Template project'
       projects/status:
         code: 'Estado'
         explanation: 'Status description'
@@ -473,6 +486,7 @@ fil:
         parent_work_package: "Magulang"
         priority: "Ang prayoridad"
         progress: "Isinasagawa (%)"
+        schedule_manually: "Schedule manually"
         spent_hours: "Nauubos na oras"
         spent_time: "Nauubos na oras"
         subproject: "Kahaliling proyekto"
@@ -1059,6 +1073,7 @@ fil:
   error_cookie_missing: 'Ang OpenProject cookie ay nawawala. Mangyaring siguraduhin na ang mga cookie ay pinagana, bilang aplikasyon na ito ay hindi gumagana ng maayos na hindi kasama ang.'
   error_custom_option_not_found: "Ang opsyon ay hindi umiiral."
   error_enterprise_activation_user_limit: "Your account could not be activated (user limit reached). Please contact your administrator to gain access."
+  error_enterprise_token_invalid_domain: "The Enterprise Edition is not active. Your Enterprise token's domain (%{actual}) does not match the system's host name (%{expected})."
   error_failed_to_delete_entry: 'Nabigong burahin ang entry na ito.'
   error_in_dependent: "Error attempting to alter dependent object: %{dependent_class} #%{related_id} - %{related_subject}: %{error}"
   error_invalid_selected_value: "Invalid selected value."
@@ -1299,6 +1314,7 @@ fil:
   label_delete_project: "Burahin ang proyekto"
   label_deleted: "binura"
   label_deleted_custom_field: "(binurang custom field)"
+  label_deleted_custom_option: "(deleted option)"
   label_descending: "Pababa"
   label_details: "Mga detalye"
   label_development_roadmap: "Kaunlaran ng roadmao"
@@ -1316,6 +1332,7 @@ fil:
   label_duplicate: "gayahin"
   label_duplicates: "mga ginaya"
   label_edit: "I-edit"
+  label_edit_x: "Edit: %{x}"
   label_enable_multi_select: "Toggle multi select"
   label_enabled_project_custom_fields: 'Pinagana ang mga custom na patlang'
   label_enabled_project_modules: 'Pinagana ang mga modyul'
@@ -1894,7 +1911,7 @@ fil:
   permission_manage_project_activities: "Ang mga aktibidad ng pamahalaing proyekto"
   permission_manage_public_queries: "Manage public views"
   permission_manage_repository: "Pamahalain ang repositoryo"
-  permission_manage_subtasks: "Pamahalain ang mga subtask"
+  permission_manage_subtasks: "Manage work package hierarchies"
   permission_manage_versions: "Pamahalain ang mga bersyon"
   permission_manage_wiki: "Pamahalain ang wiki"
   permission_manage_wiki_menu: "Pagpipilian ng pamahalaing wiki"
@@ -1929,6 +1946,12 @@ fil:
       warning_one: Ang mga miyembro ng proyekto ay kinakailangang ilipat ang mga repository ng proyekto.
       warning_two: Ang mga umiiral na mga link sa proyekto ay hindi na maaring magamit.
       title: Baguhin ang mga pagkakilanlan ng proyekto
+    template:
+      copying: >
+        Your project is being created from the selected template project. You will be notified by mail as soon as the project is available.
+      use_template: 'Use template'
+      make_template: 'Set as template'
+      remove_from_templates: 'Remove from templates'
     archive:
       are_you_sure: "Sigurado ka bang na gusto mong i-archive ang proyekto'%{name}'?"
       archived: "Archived"

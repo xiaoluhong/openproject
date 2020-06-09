@@ -38,7 +38,18 @@ zh-CN:
         action_by_attribute: '操作面板 (%{attribute})'
         action_text: >
           创建一个在单个属性上具有筛选列表的面板。将工作包移动到其他列表将更新其属性。
+        action_type:
+          assignee: 指派人
+          status: 状态
+          version: 版本
         select_attribute: "操作属性"
+      add_list_modal:
+        warning:
+          status: |
+            目前没有可用的状态。<br>
+            可能没有问题，或者它们已被全部添加到问题板中。
+          assignee: 此项目当前没有可以添加的任何成员。<br>
+          add_members: <a href="%{link}">向此项目添加一个新成员</a>以重新选择用户。
       configuration_modal:
         title: '配置此面板'
         display_settings:

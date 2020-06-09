@@ -92,13 +92,6 @@ module OpenProject
         self['edition'] == 'bim'
       end
 
-      ##
-      # Whether we want to report to sentry
-      def frontend_sentry?
-        self['sentry_dsn'].present? && sentry_report_js?
-      end
-
-
       def available_file_uploaders
         uploaders = {
           file: ::LocalFileUploader
@@ -111,6 +104,11 @@ module OpenProject
         end
 
         uploaders
+      end
+
+      def ldap_tls_options
+        val = self['ldap_tls_options']
+        val.presence || {}
       end
 
       private

@@ -103,7 +103,7 @@ export class TimeEntryCalendarComponent implements OnInit, AfterViewInit {
   public calendarEventOverlap = (stillEvent:any) => !stillEvent.classNames.includes(TIME_ENTRY_CLASS_NAME);
 
   protected memoizedTimeEntries:{ start:Date, end:Date, entries:Promise<CollectionResource<TimeEntryResource>> };
-  protected memoizedCreateAllowed:boolean = false;
+  public memoizedCreateAllowed:boolean = false;
 
   public text = {
     logTime: this.i18n.t('js.button_log_time')
@@ -202,7 +202,13 @@ export class TimeEntryCalendarComponent implements OnInit, AfterViewInit {
     }
 
     if (oldRatio !== this.scaleRatio) {
-      this.ucCalendar.getApi().render();
+      // This is a hack.
+      // We already set the same function (different object) via angular.
+      // But it will trigger repainting the calendar.
+      // Weirdly, this.ucCalendar.getApi().rerender() does not.
+      this.ucCalendar.getApi().setOption('slotLabelFormat', (info:any) => {
+        return (this.maxHour - info.date.hour) / this.scaleRatio;
+      });
     }
   }
 

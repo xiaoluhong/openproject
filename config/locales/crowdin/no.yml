@@ -107,10 +107,19 @@
         Enter the Base DN of the subtree in LDAP you want OpenProject to look for users and groups.
         OpenProject will filter for provided usernames in this subtree only.
         Example: ou=users,dc=example,dc=com
+      filter_string: |
+        Add an optional RFC4515 filter to apply to the results returned for users filtered in the LDAP.
+        This can be used to restrict the set of users that are found by OpenProject for authentication and group synchronization.
+      filter_string_concat: |
+        OpenProject will always filter for the login attribute provided by the user to identify the record. If you provide a filter here,
+        it will be concatenated with an AND. By default, a catch-all (objectClass=*) will be used as a filter.
       onthefly_register: |
         If you check this box, OpenProject will automatically create new users from their LDAP entries
         when they first authenticate with OpenProject.
         Leave this unchecked to only allow existing accounts in OpenProject to authenticate through LDAP!
+      onthefly_group_sync: |
+        If you enable group synchronization for this LDAP connection, users will also be automatically created
+        in OpenProject for synchronized groups. Without it, only existing accounts in OpenProject will be added to groups.
     connection_encryption: 'Connection encryption'
     system_account: 'System account'
     system_account_legend: |
@@ -223,6 +232,9 @@
       no_results_title_text: There is currently no news to report.
       no_results_content_text: Add a news item
   users:
+    groups:
+      member_in_these_groups: 'This user is currently a member of the following groups:'
+      no_results_title_text: This user is currently not a member in any group.
     memberships:
       no_results_title_text: This user is currently not a member of a project.
   prioritiies:
@@ -349,7 +361,7 @@
         attr_mail: "E-postattributt"
         base_dn: "Base DN"
         host: "Vert"
-        onthefly: "I-farta-opprettelse av bruker"
+        onthefly: "Automatic user creation"
         port: "Port"
       changeset:
         repository: "Pakkebrønn"
@@ -402,6 +414,7 @@
         types: "Typer"
         versions: "Versjoner"
         work_packages: "Arbeidspakker"
+        templated: 'Template project'
       projects/status:
         code: 'Status'
         explanation: 'Status description'
@@ -473,6 +486,7 @@
         parent_work_package: "Overordnet"
         priority: "Prioritet"
         progress: "Progress (%)"
+        schedule_manually: "Schedule manually"
         spent_hours: "Tid brukt"
         spent_time: "Tid brukt"
         subproject: "Underprosjekt"
@@ -1059,6 +1073,7 @@
   error_cookie_missing: 'Cookie OpenProject mangler. Kontroller at informasjonskapsler er aktivert, dette programmet fungerer ikke riktig uten.'
   error_custom_option_not_found: "Option does not exist."
   error_enterprise_activation_user_limit: "Your account could not be activated (user limit reached). Please contact your administrator to gain access."
+  error_enterprise_token_invalid_domain: "The Enterprise Edition is not active. Your Enterprise token's domain (%{actual}) does not match the system's host name (%{expected})."
   error_failed_to_delete_entry: 'Failed to delete this entry.'
   error_in_dependent: "Error attempting to alter dependent object: %{dependent_class} #%{related_id} - %{related_subject}: %{error}"
   error_invalid_selected_value: "Invalid selected value."
@@ -1299,6 +1314,7 @@
   label_delete_project: "Delete project"
   label_deleted: "slettet"
   label_deleted_custom_field: "(slettet egendefinert felt)"
+  label_deleted_custom_option: "(deleted option)"
   label_descending: "Synkende"
   label_details: "Detaljer"
   label_development_roadmap: "Development roadmap"
@@ -1316,6 +1332,7 @@
   label_duplicate: "duplicate"
   label_duplicates: "duplikater"
   label_edit: "Rediger"
+  label_edit_x: "Edit: %{x}"
   label_enable_multi_select: "Veksle multivalg"
   label_enabled_project_custom_fields: 'Enabled custom fields'
   label_enabled_project_modules: 'Enabled modules'
@@ -1894,7 +1911,7 @@
   permission_manage_project_activities: "Administrere prosjektaktiviteter"
   permission_manage_public_queries: "Manage public views"
   permission_manage_repository: "Administrere pakkebrønner"
-  permission_manage_subtasks: "Administrere underoppgaver"
+  permission_manage_subtasks: "Manage work package hierarchies"
   permission_manage_versions: "Administrere versjoner"
   permission_manage_wiki: "Administrere wiki"
   permission_manage_wiki_menu: "Administrere wiki-meny"
@@ -1929,6 +1946,12 @@
       warning_one: Members of the project will have to relocate the project's repositories.
       warning_two: Existing links to the project will no longer work.
       title: Change the project's identifier
+    template:
+      copying: >
+        Your project is being created from the selected template project. You will be notified by mail as soon as the project is available.
+      use_template: 'Use template'
+      make_template: 'Set as template'
+      remove_from_templates: 'Remove from templates'
     archive:
       are_you_sure: "Are you sure you want to archive the project '%{name}'?"
       archived: "Archived"

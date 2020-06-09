@@ -38,7 +38,18 @@ sl:
         action_by_attribute: 'Tabela opravil (%{attribute})'
         action_text: >
           Ustvarite tabelo s filtriranimi seznami z enim atributom. Če premaknete delovne pakete na druge sezname, boste posodobili atribute.
+        action_type:
+          assignee: Pooblaščenec
+          status: Stanje
+          version: različica
         select_attribute: "Atributi opravil"
+      add_list_modal:
+        warning:
+          status: |
+            Trenutno ni na voljo nobenega statusa <br>
+            Ali jih ni, ali pa so vsi že dodani na desko.
+          assignee: Ta projekt trenutno nima članov, ki bi jih lahko dodali. <br>
+          add_members: <a href="%{link}">V ta projekt dodajte novega člana </a>, da znova izberete uporabnike.
       configuration_modal:
         title: 'Konfigurirajte to tabelo'
         display_settings:

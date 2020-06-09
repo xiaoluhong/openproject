@@ -2,9 +2,12 @@ import {SchemaResource} from "core-app/modules/hal/resources/schema-resource";
 import {FormResource} from "core-app/modules/hal/resources/form-resource";
 import {HalResource} from "core-app/modules/hal/resources/hal-resource";
 import {ChangeMap, Changeset} from "core-app/modules/fields/changeset/changeset";
-import {InputState} from "reactivestates";
+import {input, InputState} from "reactivestates";
 import {IFieldSchema} from "core-app/modules/fields/field.base";
 import {debugLog} from "core-app/helpers/debug_output";
+import {take} from "rxjs/operators";
+
+export const PROXY_IDENTIFIER = '__is_changeset_proxy';
 
 /**
  * Temporary class living while a resource is being edited
@@ -21,26 +24,27 @@ export class ResourceChangeset<T extends HalResource|{ [key:string]:unknown; } =
   protected changeset = new Changeset();
 
   /** Reference and load promise for the current form */
-  private formPromise:Promise<FormResource>|null;
+  protected form$ = input<FormResource>();
+
+  /** Request cache for objects within the changeset for the current form */
+  protected cache:{ [key:string]:Promise<unknown> } = {};
 
   /** Flag whether this is currently being saved */
   public inFlight = false;
 
-  /** The projected resource, which will proxy values from the change set */
-  public projectedResource:T = new Proxy(
-    this.pristineResource,
-    {
-      get: (_, key:string) => this.proxyGet(key),
-      set: (_, key:string, val:any) => {
-        this.setValue(key, val);
-        return true;
-      },
-    }
-  );
+  /** Keep a reference to the original resource */
+  protected _pristineResource:T;
 
-  constructor(public pristineResource:T,
+  /** The projected resource, which will proxy values from the change set */
+  public projectedResource:T;
+
+  constructor(pristineResource:T,
               public readonly state?:InputState<ResourceChangeset<T>>,
-              public form:FormResource|null = null) {
+              loadedForm:FormResource|null = null) {
+    this.updatePristineResource(pristineResource);
+    if (loadedForm) {
+      this.form$.putValue(loadedForm);
+    }
   }
 
   /**
@@ -56,24 +60,38 @@ export class ResourceChangeset<T extends HalResource|{ [key:string]:unknown; } =
   /**
    * Build the request attributes against the fresh form
    */
-  public buildRequestPayload():Promise<[FormResource, Object]> {
+  public buildRequestPayload():Promise<Object> {
     return this
-      .updateForm()
-      .then(form => [form, this.buildPayloadFromChanges()]) as Promise<[FormResource, Object]>;
+      .getForm()
+      .then(() => this.buildPayloadFromChanges());
   }
 
-
-
   /**
-   * Returns the current work package form.
-   * This may be different from the base form when project or type is changed.
+   * Update the pristine resource in case it changed
+   *
+   * @param attribute
    */
-  public getForm():Promise<FormResource> {
-    if (!this.form) {
-      return this.updateForm();
-    } else {
-      return Promise.resolve(this.form);
+  public updatePristineResource(resource:T) {
+    // Ensure we're not passing in a proxy
+    if ((resource as any)[PROXY_IDENTIFIER]) {
+      throw "You're trying to pass proxy object as a pristine resource. This will cause errors";
     }
+
+    this._pristineResource = resource;
+    this.projectedResource = new Proxy(
+      this._pristineResource,
+      {
+        get: (_, key:string) => this.proxyGet(key),
+        set: (_, key:string, val:any) => {
+          this.setValue(key, val);
+          return true;
+        },
+      }
+    );
+  }
+
+  public get pristineResource():T {
+    return this._pristineResource;
   }
 
   public getSchemaName(attribute:string):string {
@@ -85,29 +103,45 @@ export class ResourceChangeset<T extends HalResource|{ [key:string]:unknown; } =
   }
 
   /**
-   * Update the form resource from the API.
+   * Returns the cached form or loads it if necessary.
+   */
+  public getForm():Promise<FormResource> {
+    if (this.form$.isPristine() && !this.form$.hasActivePromiseRequest()) {
+      return this.updateForm();
+    }
+
+    return this
+      .form$
+      .values$()
+      .pipe(take(1))
+      .toPromise();
+  }
+
+  /**
+   * Cache some promised value in the course of this changeset.
+   * Will get cleared automatically by the changeset on destroy/submission
+   */
+
+  /**
+   * Posts to the form with the current changes
+   * to get the up to date projected object.
    */
   protected updateForm():Promise<FormResource> {
     let payload = this.buildPayloadFromChanges();
 
-    if (!this.formPromise) {
-      this.formPromise = this.pristineResource.$links
-        .update(payload)
-        .then((form:FormResource) => {
-          this.formPromise = null;
-          this.form = form;
-          this.setNewDefaults(form);
-          this.push();
-          return form;
-        })
-        .catch((error:any) => {
-          this.formPromise = null;
-          this.form = null;
-          throw error;
-        }) as Promise<FormResource>;
-    }
+    const promise = this.pristineResource
+      .$links
+      .update(payload)
+      .then((form:FormResource) => {
+        this.cache = {};
+        this.form$.putValue(form);
+        this.setNewDefaults(form);
+        this.push();
+        return form;
+      });
 
-    return this.formPromise;
+    this.form$.putFromPromiseIfPristine(() => promise);
+    return promise;
   }
 
   /**
@@ -181,6 +215,10 @@ export class ResourceChangeset<T extends HalResource|{ [key:string]:unknown; } =
       return this.schema;
     }
 
+    if (key === '__is_proxy') {
+      return true;
+    }
+
     return this.value(key);
   }
 
@@ -215,9 +253,10 @@ export class ResourceChangeset<T extends HalResource|{ [key:string]:unknown; } =
   }
 
   public clear() {
-   this.state && this.state.clear();
-   this.changeset.clear();
-   this.form = null;
+    this.state && this.state.clear();
+    this.changeset.clear();
+    this.cache = {};
+    this.form$.clear();
   }
 
   /**
@@ -243,7 +282,19 @@ export class ResourceChangeset<T extends HalResource|{ [key:string]:unknown; } =
    * and contains available values.
    */
   public get schema():SchemaResource {
-    return (this.form || this.pristineResource).schema;
+    return this.form$.getValueOr(this.pristineResource).schema;
+  }
+
+  /**
+   * Access some promised value
+   * that should be cached for the lifetime duration of the form.
+   */
+  public cacheValue<T>(key:string, request:() => Promise<T>):Promise<T> {
+    if (this.cache[key]) {
+      return this.cache[key] as Promise<T>;
+    }
+    
+    return this.cache[key] = request();
   }
 
   protected get minimalPayload() {
@@ -259,8 +310,8 @@ export class ResourceChangeset<T extends HalResource|{ [key:string]:unknown; } =
   protected applyChanges(plainPayload:any) {
     // Fall back to the last known state of the HalResource should the form not be loaded.
     let reference = this.pristineResource.$source;
-    if (this.form) {
-      reference = this.form.payload.$source;
+    if (this.form$.value) {
+      reference = this.form$.value.payload.$source;
     }
 
     _.each(this.changeset.all, (val:unknown, key:string) => {
@@ -291,10 +342,11 @@ export class ResourceChangeset<T extends HalResource|{ [key:string]:unknown; } =
     if (this.pristineResource.isNew) {
       // If the resource is new, we need to pass the entire form payload
       // to let all default values be transmitted (type, status, etc.)
-      if (this.form) {
-        payload = this.form.payload.$source;
+      // We clone the object to avoid later manipulations to affect the original resource.
+      if (this.form$.value) {
+        payload = _.cloneDeep(this.form$.value.payload.$source);
       } else {
-        payload = this.pristineResource.$source;
+        payload = _.cloneDeep(this.pristineResource.$source);
       }
 
       // Add attachments to be assigned.
@@ -305,7 +357,7 @@ export class ResourceChangeset<T extends HalResource|{ [key:string]:unknown; } =
           .attachments
           .elements
           .map((a:HalResource) => {
-            return {href: a.href};
+            return { href: a.href };
           });
       }
 

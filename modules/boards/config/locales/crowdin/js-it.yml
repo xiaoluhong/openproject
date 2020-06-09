@@ -38,7 +38,18 @@ it:
         action_by_attribute: 'Scheda d''azione (%{attribute})'
         action_text: >
           Crea una scheda con elenchi filtrati su un singolo attributo. Spostare le macro-attività in altre liste aggiornerà il loro attributo.
+        action_type:
+          assignee: assegnatario
+          status: stato
+          version: versione
         select_attribute: "Attributo azione"
+      add_list_modal:
+        warning:
+          status: |
+            Al momento non sono disponibili stati. <br>
+            È probabile che non ce ne siano o che siano già stati aggiunti tutti alla scheda.
+          assignee: Questo progetto al momento non ha membri che possono essere aggiunti. <br>
+          add_members: <a href="%{link}">Aggiungi un nuovo membro a questo progetto</a> per selezionare nuovamente gli utenti.
       configuration_modal:
         title: 'Configura questa scheda'
         display_settings:

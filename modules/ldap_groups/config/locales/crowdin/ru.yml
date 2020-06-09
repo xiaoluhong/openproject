@@ -2,18 +2,34 @@ ru:
   activerecord:
     attributes:
       ldap_groups/synchronized_group:
-        entry: 'Идентификатор записи'
+        dn: 'DN'
         auth_source: 'LDAP-подключение'
+      ldap_groups/synchronized_filter:
+        filter_string: 'Фильтр LDAP'
+        auth_source: 'LDAP-подключение'
+        group_name_attribute: "Атрибут имени группы"
     models:
       ldap_groups/synchronized_group: 'Синхронизированная LDAP-группа'
+      ldap_groups/synchronized_filter: 'Фильтр синхронизации групп LDAP'
   ldap_groups:
     label_menu_item: 'Синхронизация LDAP-группы'
     label_group_key: 'Ключ фильтра LDAP-группы'
+    label_synchronize: 'Синхронизировать'
     settings:
-      group_key: 'Атрибут LDAP-группы'
-      group_key_text: 'Имя LDAP-атрибута, используемое для идентификации групп.'
-      group_base: 'База LDAP-группы'
-      group_base_text: 'База LDAP-группы, используемая для поиска записей группы.'
+      name_attribute: 'Атрибут имени группы LDAP'
+      name_attribute_text: 'Атрибут LDAP, используемый для именования группы OpenProject при создании фильтром'
+    synchronized_filters:
+      add_new: 'Добавить синхронизированный LDAP фильтр'
+      singular: 'Фильтр синхронизации групп LDAP'
+      plural: 'Фильтры синхронизации группы LDAP'
+      destroy:
+        title: 'Удалить синхронизированный фильтр %{name}'
+        confirmation: "Если вы продолжите, синхронизированный фильтр %{name} и все группы %{groups_count} , созданные через него, будут удалены."
+        removed_groups: "Предупреждение: Это удалит следующие группы из OpenProject и удалит их из всех проектов!"
+        verification: "Введите имя фильтра %{name} для проверки удаления."
+      form:
+        group_name_attribute_text: 'Введите атрибут группы LDAP, используемой для установки имени группы OpenProject.'
+        filter_string_text: 'Введите фильтр RFC4515 LDAP, который возвращает группы в ваш LDAP для синхронизации с OpenProject.'
     synchronized_groups:
       add_new: 'Добавить синхронизированную LDAP-группу'
       destroy:
@@ -32,7 +48,7 @@ ru:
       plural: 'Синхронизированные LDAP-группы'
       singular: 'Синхронизированная LDAP-группа'
       form:
-        auth_source_text: 'Выберите, какой режим LDAP-аутентификации используется.'
-        entry_text: 'Определите идентификатор LDAP-группы.'
+        auth_source_text: 'Выберите, какое соединение LDAP должно использоваться.'
+        dn_text: 'Введите полный DN группы в LDAP'
         group_text: 'Выберите существующую группу OpenProject, с которой должны синхронизироваться члены LDAP-группы'
 

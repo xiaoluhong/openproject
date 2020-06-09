@@ -107,10 +107,19 @@ hr:
         Enter the Base DN of the subtree in LDAP you want OpenProject to look for users and groups.
         OpenProject will filter for provided usernames in this subtree only.
         Example: ou=users,dc=example,dc=com
+      filter_string: |
+        Add an optional RFC4515 filter to apply to the results returned for users filtered in the LDAP.
+        This can be used to restrict the set of users that are found by OpenProject for authentication and group synchronization.
+      filter_string_concat: |
+        OpenProject will always filter for the login attribute provided by the user to identify the record. If you provide a filter here,
+        it will be concatenated with an AND. By default, a catch-all (objectClass=*) will be used as a filter.
       onthefly_register: |
         If you check this box, OpenProject will automatically create new users from their LDAP entries
         when they first authenticate with OpenProject.
         Leave this unchecked to only allow existing accounts in OpenProject to authenticate through LDAP!
+      onthefly_group_sync: |
+        If you enable group synchronization for this LDAP connection, users will also be automatically created
+        in OpenProject for synchronized groups. Without it, only existing accounts in OpenProject will be added to groups.
     connection_encryption: 'Connection encryption'
     system_account: 'System account'
     system_account_legend: |
@@ -223,6 +232,9 @@ hr:
       no_results_title_text: Nema novih vijesti.
       no_results_content_text: Nova vijest
   users:
+    groups:
+      member_in_these_groups: 'This user is currently a member of the following groups:'
+      no_results_title_text: This user is currently not a member in any group.
     memberships:
       no_results_title_text: Korisnik trenutno nije član projekta.
   prioritiies:
@@ -350,7 +362,7 @@ hr:
         attr_mail: "Email atribut"
         base_dn: "Temeljni DN"
         host: "Host"
-        onthefly: "On-the-fly stvaranje novog korisnika"
+        onthefly: "Automatic user creation"
         port: "Port"
       changeset:
         repository: "Repozitorij"
@@ -403,6 +415,7 @@ hr:
         types: "Tipovi"
         versions: "Verzije"
         work_packages: "Radni paketi"
+        templated: 'Template project'
       projects/status:
         code: 'Status'
         explanation: 'Status description'
@@ -474,6 +487,7 @@ hr:
         parent_work_package: "Matični"
         priority: "Prioritet"
         progress: "Napredak (%)"
+        schedule_manually: "Schedule manually"
         spent_hours: "Utrošeno vrijeme"
         spent_time: "Utrošeno vrijeme"
         subproject: "Potprojekt"
@@ -1075,6 +1089,7 @@ hr:
   error_cookie_missing: 'The OpenProject cookie is missing. Please ensure that cookies are enabled, as this application will not properly function without.'
   error_custom_option_not_found: "Opcija ne postoji."
   error_enterprise_activation_user_limit: "Your account could not be activated (user limit reached). Please contact your administrator to gain access."
+  error_enterprise_token_invalid_domain: "The Enterprise Edition is not active. Your Enterprise token's domain (%{actual}) does not match the system's host name (%{expected})."
   error_failed_to_delete_entry: 'Failed to delete this entry.'
   error_in_dependent: "Error attempting to alter dependent object: %{dependent_class} #%{related_id} - %{related_subject}: %{error}"
   error_invalid_selected_value: "Invalid selected value."
@@ -1315,6 +1330,7 @@ hr:
   label_delete_project: "Delete project"
   label_deleted: "izbrisano"
   label_deleted_custom_field: "(izbrisano prilagođeno polje)"
+  label_deleted_custom_option: "(deleted option)"
   label_descending: "Silazno"
   label_details: "Pojedinosti"
   label_development_roadmap: "Razvojni plan"
@@ -1332,6 +1348,7 @@ hr:
   label_duplicate: "duplicate"
   label_duplicates: "duplikati"
   label_edit: "Uredi"
+  label_edit_x: "Edit: %{x}"
   label_enable_multi_select: "Aktiviraj/deaktiviraj selekciju"
   label_enabled_project_custom_fields: 'Omogućena prilagođena polja'
   label_enabled_project_modules: 'Omogućeni moduli'
@@ -1915,7 +1932,7 @@ hr:
   permission_manage_project_activities: "Upravljanje aktivnosima projekta"
   permission_manage_public_queries: "Manage public views"
   permission_manage_repository: "Upravljanje repozitorijem"
-  permission_manage_subtasks: "Upravljanje podzadacima"
+  permission_manage_subtasks: "Manage work package hierarchies"
   permission_manage_versions: "Upravljanje verzijama"
   permission_manage_wiki: "Uredi wiki"
   permission_manage_wiki_menu: "Upravljanje wiki izbornikom"
@@ -1950,6 +1967,12 @@ hr:
       warning_one: Članovi projekta morati će relocirati repozitorije projketa.
       warning_two: Postojeće poveznice na projektu neće više funkcionirati.
       title: Promjeni identifikator projekta
+    template:
+      copying: >
+        Your project is being created from the selected template project. You will be notified by mail as soon as the project is available.
+      use_template: 'Use template'
+      make_template: 'Set as template'
+      remove_from_templates: 'Remove from templates'
     archive:
       are_you_sure: "Are you sure you want to archive the project '%{name}'?"
       archived: "Archived"

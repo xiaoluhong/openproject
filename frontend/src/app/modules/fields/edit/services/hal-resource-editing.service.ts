@@ -27,7 +27,7 @@
 // ++
 
 import {combine, deriveRaw, InputState, multiInput, MultiInputState, State, StatesGroup} from 'reactivestates';
-import {map} from 'rxjs/operators';
+import {filter, map} from 'rxjs/operators';
 import {Injectable, Injector} from '@angular/core';
 import {Subject} from "rxjs";
 import {FormResource} from "core-app/modules/hal/resources/form-resource";
@@ -36,6 +36,7 @@ import {ResourceChangeset} from "core-app/modules/fields/changeset/resource-chan
 import {HalResource} from "core-app/modules/hal/resources/hal-resource";
 import {StateCacheService} from "core-components/states/state-cache.service";
 import {HookService} from "core-app/modules/plugins/hook-service";
+import {HalEventsService} from "core-app/modules/hal/services/hal-events.service";
 
 class ChangesetStates extends StatesGroup {
   name = 'Changesets';
@@ -98,30 +99,20 @@ export class HalResourceEditingService extends StateCacheService<ResourceChanges
   private stateGroup = new ChangesetStates();
 
   constructor(protected readonly injector:Injector,
+              protected readonly halEvents:HalEventsService,
               protected readonly hook:HookService) {
     super();
   }
 
   public async save<V extends HalResource, T extends ResourceChangeset<V>>(change:T):Promise<ResourceChangesetCommit<V>> {
-    change.inFlight = true;
-
     // Form the payload we're going to save
-    const [form, payload] = await change.buildRequestPayload();
-    // Reject errors when occurring in form validation
-    const errors = form.getErrors();
-    if (errors !== null) {
-      change.inFlight = false;
-      throw(errors);
-    }
-
+    const payload = await change.buildRequestPayload();
     const savedResource = await change.pristineResource.$links.updateImmediately(payload);
 
     // Initialize any potentially new HAL values
     savedResource.retainFrom(change.pristineResource);
 
-    this.onSaved(savedResource);
-
-    change.inFlight = false;
+    await this.onSaved(savedResource);
 
     // Complete the change
     return this.complete(change, savedResource);
@@ -135,6 +126,9 @@ export class HalResourceEditingService extends StateCacheService<ResourceChanges
     const commit = new ResourceChangesetCommit<V>(change, saved);
     this.comittedChanges.next(commit);
     this.reset(change);
+
+    const eventType = commit.wasNew ? 'created' : 'updated';
+    this.halEvents.push(commit.resource, { eventType }) ;
 
     return commit;
   }
@@ -201,12 +195,16 @@ export class HalResourceEditingService extends StateCacheService<ResourceChanges
     if (changeset && !changeset.isEmpty()) {
       return changeset;
     }
-    if (!changeset ||
-      changeset.pristineResource !== resource ||
-      resource.hasOwnProperty('lockVersion') && changeset.pristineResource.lockVersion < resource.lockVersion) {
+
+    if (!changeset) {
       return this.edit<V, T>(resource);
     }
 
+    if (resource.hasOwnProperty('lockVersion') && changeset.pristineResource.lockVersion < resource.lockVersion) {
+      return this.edit<V, T>(resource);
+    }
+
+    changeset.updatePristineResource(resource);
     return changeset;
   }
 
@@ -228,12 +226,14 @@ export class HalResourceEditingService extends StateCacheService<ResourceChanges
     return deriveRaw(combined,
       ($) => $
         .pipe(
+          filter(([resource, _]) => !!resource),
           map(([resource, change]) => {
-            if (resource && change && !change.isEmpty()) {
-              return change.projectedResource as V;
-            } else {
-              return resource;
+            if (change) {
+              change.updatePristineResource(resource as V);
+              return change.projectedResource;
             }
+
+            return resource;
           })
         )
     );
@@ -247,10 +247,12 @@ export class HalResourceEditingService extends StateCacheService<ResourceChanges
     return Promise.reject('Loading not applicable for changesets.') as any;
   }
 
-  protected onSaved(saved:HalResource) {
+  protected onSaved(saved:HalResource):Promise<unknown> {
     if (saved.state) {
-      saved.push(saved);
+      return saved.push(saved);
     }
+
+    return Promise.resolve();
   }
 
   protected loadAll(hrefs:string[]) {

@@ -38,7 +38,18 @@ de:
         action_by_attribute: 'Aktionsboard (%{attribute})'
         action_text: >
           Erstellen Sie ein Board mit gefilterten Listen auf einem Attribut. Das Verschieben von Arbeitspaketen auf andere Listen aktualisiert das Attribut entsprechend.
+        action_type:
+          assignee: Zugewiesen an
+          status: Status
+          version: Version
         select_attribute: "Aktionsattribut"
+      add_list_modal:
+        warning:
+          status: |
+            Derzeit ist kein Status verfügbar. <br>
+            Entweder gibt es keinen oder sie wurden alle bereits zum Board hinzugefügt.
+          assignee: Dieses Projekt hat derzeit keine Mitglieder, die hinzugefügt werden können. <br>
+          add_members: <a href="%{link}">Fügen Sie ein neues Mitglied zu diesem Projekt</a> hinzu, um Benutzer zu diesem Board hinzuzufügen.
       configuration_modal:
         title: 'Board konfigurieren'
         display_settings:

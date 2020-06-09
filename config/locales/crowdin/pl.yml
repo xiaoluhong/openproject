@@ -107,9 +107,16 @@ pl:
         Wprowadź bazową nazwę wyróżniającą poddrzewa w LDAP, w którym OpenProject ma szukać użytkowników i grup.
         OpenProject będzie filtrować w celu wyszukania podanych nazw użytkowników tylko w tym poddrzewie.
         Przykład: ou=users,dc=example,dc=com
+      filter_string: |
+        Dodaj opcjonalny filtr RFC4515, aby stosować go do wyników dotyczących zwracanych użytkowników, odfiltrowanych w usłudze LDAP.
+        Można go używać do ograniczania zestawu użytkowników, którzy są znajdowani przez OpenProject do celów uwierzytelniania i synchronizacji grupy.
+      filter_string_concat: |
+        OpenProject zawsze będzie filtrować atrybut logowania podany przez użytkownika w celu identyfikacji rekordu. Jeśli określisz filtr tutaj, będzie łączony w drodze konkatenacji za pomocą operatora AND. Domyślnie stosowany jest filtr zwracający wszystkie wyniki (obiektClass=*).
       onthefly_register: |
         Jeśli zaznaczysz to pole, OpenProject będzie automatycznie tworzyć nowych użytkowników z ich wpisów LDAP przy pierwszym uwierzytelnieniu za pomocą OpenProject.
         Pozostaw to pole niezaznaczone, aby tylko istniejące konta w OpenProject mogły się uwierzytelniać za pomocą LDAP!
+      onthefly_group_sync: |
+        Jeśli włączysz synchronizację grupy dla tego połączenia LDAP, użytkownicy zostaną również automatycznie utworzeni w OpenProject w przypadku grup synchronizowanych. Bez tego dodane do grup zostaną tylko konta istniejące w OpenProject.
     connection_encryption: 'Szyfrowanie połączenia'
     system_account: 'Konto systemowe'
     system_account_legend: |
@@ -221,6 +228,9 @@ pl:
       no_results_title_text: Nie ma jeszcze żadnych wiadomości do wyświetlenia.
       no_results_content_text: Dodaj nowy element
   users:
+    groups:
+      member_in_these_groups: 'Ten użytkownik jest obecnie członkiem następujących grup:'
+      no_results_title_text: Ten użytkownik nie jest obecnie członkiem żadnej grupy.
     memberships:
       no_results_title_text: Użytkownik jeszcze nie jest członkiem projektu.
   prioritiies:
@@ -349,7 +359,7 @@ pl:
         attr_mail: "Atrybut adresu e-mail"
         base_dn: "Bazowa nazwa wyróżniająca"
         host: "Host"
-        onthefly: "Tworzenie użytkownika w locie"
+        onthefly: "Automatyczne tworzenie użytkowników"
         port: "Port"
       changeset:
         repository: "Repozytorium"
@@ -402,6 +412,7 @@ pl:
         types: "Typy"
         versions: "Wersje"
         work_packages: "Zadania"
+        templated: 'Template project'
       projects/status:
         code: 'Status'
         explanation: 'Opis statusu'
@@ -473,6 +484,7 @@ pl:
         parent_work_package: "Rodzic"
         priority: "Priorytet"
         progress: "Postęp (%)"
+        schedule_manually: "Schedule manually"
         spent_hours: "Czas pracy"
         spent_time: "Czas pracy"
         subproject: "Podprojekt"
@@ -1089,6 +1101,7 @@ pl:
   error_cookie_missing: 'Brakuje pliku cookie OpenProject. Upewnij się, że obsługa plików cookie jest włączona, ponieważ bez tego aplikacja nie będzie funkcjonować prawidłowo.'
   error_custom_option_not_found: "Opcja nie istnieje."
   error_enterprise_activation_user_limit: "Twoje konto nie mogło zostać aktywowane (osiągnięty limit użytkownika). Skontaktuj się z administratorem, aby uzyskać dostęp."
+  error_enterprise_token_invalid_domain: "Wersja Enterprise jest nieaktywna. Domena Twojego tokenu Enterprise (%{actual}) nie odpowiada nazwie hosta systemu (%{expected})."
   error_failed_to_delete_entry: 'Nie udało się usunąć tego wpisu.'
   error_in_dependent: "Błąd podczas próby zmiany obiektu zależnego: %{dependent_class} #%{related_id} - %{related_subject}: %{error}"
   error_invalid_selected_value: "Nieprawidłowa wybrana wartość."
@@ -1329,6 +1342,7 @@ pl:
   label_delete_project: "Usuń projekt"
   label_deleted: "Usunięty"
   label_deleted_custom_field: "(usunięte pole niestandardowe)"
+  label_deleted_custom_option: "(opcja usunięta)"
   label_descending: "Malejąco"
   label_details: "Szczegóły"
   label_development_roadmap: "Droga rozwoju"
@@ -1346,6 +1360,7 @@ pl:
   label_duplicate: "duplikat"
   label_duplicates: "Duplikaty"
   label_edit: "Edycja"
+  label_edit_x: "Edytuj: %{x}"
   label_enable_multi_select: "Włącz wybór wielokrotny"
   label_enabled_project_custom_fields: 'Aktywne pola niestandardowe'
   label_enabled_project_modules: 'Aktywne moduły'
@@ -1933,7 +1948,7 @@ pl:
   permission_manage_project_activities: "Zarządzanie działaniami projektu"
   permission_manage_public_queries: "Zarządzaj widokami publicznymi"
   permission_manage_repository: "Zarządzanie repozytorium"
-  permission_manage_subtasks: "Zarządzanie podzadaniami"
+  permission_manage_subtasks: "Manage work package hierarchies"
   permission_manage_versions: "Zarządzanie wersjami"
   permission_manage_wiki: "Zarządzanie wiki"
   permission_manage_wiki_menu: "Zarządzanie menu wiki"
@@ -1968,6 +1983,12 @@ pl:
       warning_one: Członkowie projektu będą musieli przenieść repozytoria projektu.
       warning_two: Istniejące linki do projektu nie będą dłużej działać.
       title: Zmień identyfikator projektu
+    template:
+      copying: >
+        Your project is being created from the selected template project. You will be notified by mail as soon as the project is available.
+      use_template: 'Use template'
+      make_template: 'Set as template'
+      remove_from_templates: 'Remove from templates'
     archive:
       are_you_sure: "Jesteś pewien, że chcesz zarchiwizować projekt '%{name}'?"
       archived: "Zarchiwizowano"

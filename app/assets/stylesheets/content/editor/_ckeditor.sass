@@ -32,6 +32,15 @@ ckeditor-augmented-textarea .op-ckeditor--wrapper
   figure.image
     margin: 1em 0
 
+  figure.table
+    // Ensure we break apart words in table cells that
+    // are restricted in width (OP#33524)
+    td[style*=";width:"],
+    td[style^="width:"],
+    th[style*=";width:"],
+    th[style^="width:"]
+      word-break: break-all
+
 .ck .ck-widget.op-ckeditor--code-block
   // Display content as pre
   white-space: pre-wrap
@@ -104,13 +113,6 @@ ckeditor-augmented-textarea .op-ckeditor--wrapper
     .document-editor__editable
       .-large-height &
         min-height: 250px
-
-  .ck-editor__editable
-    padding: 1cm 2cm 2cm
-    border: 1px hsl( 0,0%,82.7% ) solid
-    border-radius: var(--ck-border-radius)
-    background: white
-    box-shadow: 0 0 5px hsla( 0,0%,0%,.1 )
 
 // todolist override global label style
 label.todo-list__label

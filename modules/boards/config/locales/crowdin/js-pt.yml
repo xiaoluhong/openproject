@@ -38,7 +38,18 @@ pt:
         action_by_attribute: 'Quadro de ação (%{attribute})'
         action_text: >
           Crie um quadro com listas filtradas num único atributo. Mover os pacotes de trabalho para outras listas atualizará o seu atributo.
+        action_type:
+          assignee: responsável
+          status: estado
+          version: versão
         select_attribute: "Atributo de ação"
+      add_list_modal:
+        warning:
+          status: |
+            De momento, não há nenhum estado disponível. <br>
+            Não há nenhum ou já foram todos adicionados ao painel.
+          assignee: Este projeto não possui nenhum membro que possa ser adicionado.  <br>
+          add_members: <a href="%{link}">Adicione um novo membro a este projeto</a> para selecionar novamente utilizadores.
       configuration_modal:
         title: 'Configurar este quadro'
         display_settings:

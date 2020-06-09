@@ -1,4 +1,4 @@
-import {Injectable} from "@angular/core";
+import {Injectable, Injector} from "@angular/core";
 import {BoardListsService} from "core-app/modules/boards/board/board-list/board-lists.service";
 import {Board} from "core-app/modules/boards/board/board";
 import {QueryResource} from "core-app/modules/hal/resources/query-resource";
@@ -15,17 +15,24 @@ import {HalResourceService} from 'core-app/modules/hal/services/hal-resource.ser
 import {AssigneeBoardHeaderComponent} from "core-app/modules/boards/board/board-actions/assignee/assignee-board-header.component";
 import {input} from "reactivestates";
 import {take} from "rxjs/operators";
+import {PathHelperService} from "core-app/modules/common/path-helper/path-helper.service";
+import {InjectField} from "core-app/helpers/angular/inject-field.decorator";
+import {ProjectDmService} from "core-app/modules/hal/dm-services/project-dm.service";
+import {ProjectResource} from "core-app/modules/hal/resources/project-resource";
 
 @Injectable()
 export class BoardAssigneeActionService implements BoardActionService {
 
   private assignees = input<HalResource[]>();
 
+  @InjectField() public projectDmService:ProjectDmService;
+
   constructor(protected boardListsService:BoardListsService,
               protected I18n:I18nService,
               protected halResourceService:HalResourceService,
-              protected currentProject:CurrentProjectService
-  ) {
+              protected pathHelper:PathHelperService,
+              protected currentProject:CurrentProjectService,
+              readonly injector:Injector) {
   }
 
   public get localizedName() {
@@ -125,11 +132,29 @@ export class BoardAssigneeActionService implements BoardActionService {
     return undefined;
   }
 
+  public warningTextWhenNoOptionsAvailable() {
+    let text = this.I18n.t('js.boards.add_list_modal.warning.assignee');
+
+    return this.projectDmService
+      .one(parseInt(this.currentProject.id!))
+      .then((project:ProjectResource) => {
+        if (project.memberships) {
+          text = text.concat(
+            this.I18n.t('js.boards.add_list_modal.warning.add_members', {
+              link: this.pathHelper.projectMembershipsPath(this.currentProject.identifier!)
+            })
+          );
+        }
+
+        return text;
+      });
+  }
+
   private getAssignees():Promise<HalResource[]> {
     const projectIdentifier = this.currentProject.identifier!;
     this.assignees.putFromPromiseIfPristine(() =>
       this.halResourceService
-        .get('/api/v3/projects/' + projectIdentifier + '/available_assignees')
+        .get(this.pathHelper.api.v3.projects.id(projectIdentifier).available_assignees)
         .toPromise()
         .then((collection:CollectionResource<UserResource>) => collection.elements)
     );

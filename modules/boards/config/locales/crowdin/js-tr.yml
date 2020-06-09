@@ -38,7 +38,18 @@ tr:
         action_by_attribute: 'Eylem kurulu (%{attribute})'
         action_text: >
           Tek bir özellik üzerinde filtrelenmiş listeler içeren bir tahta oluşturun. İş paketlerini diğer listelere taşımak, niteliklerini güncelleyecektir.
+        action_type:
+          assignee: vekil
+          status: durum
+          version: Sürüm
         select_attribute: "Eylem özelliği"
+      add_list_modal:
+        warning:
+          status: |
+            Şu anda kullanılabilir durum yok. <br>
+            Ya yok ya da hepsi zaten tahtaya eklenmiş.
+          assignee: Bu projenin şu anda eklenebilecek üyesi yok. <br>
+          add_members: Kullanıcıları tekrar seçmek için <a href="%{link}"> bu projeye yeni bir üye ekleyin </a>.
       configuration_modal:
         title: 'Bu kartı yapılandır'
         display_settings:

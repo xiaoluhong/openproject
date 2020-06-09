@@ -2,18 +2,34 @@ pt-BR:
   activerecord:
     attributes:
       ldap_groups/synchronized_group:
-        entry: 'Identificador de entrada'
+        dn: 'ND'
         auth_source: 'Conexão LDAP'
+      ldap_groups/synchronized_filter:
+        filter_string: 'Filtro LDAP'
+        auth_source: 'Conexão LDAP'
+        group_name_attribute: "Atributo de nome de grupo"
     models:
       ldap_groups/synchronized_group: 'Grupo LDAP sincronizado'
+      ldap_groups/synchronized_filter: 'Filtro de sincronização de grupo LDAP'
   ldap_groups:
     label_menu_item: 'Sincronização de grupo LDAP'
     label_group_key: 'Chave de filtro de grupo LDAP'
+    label_synchronize: 'Sincronizado'
     settings:
-      group_key: 'Atributo de grupo LDAP'
-      group_key_text: 'O nome do atributo LDAP usado para identificar os grupos.'
-      group_base: 'Base do grupo LDAP'
-      group_base_text: 'Base do grupo LDAP usada para procurar por entradas de grupo.'
+      name_attribute: 'Atributo de nome de grupo LDAP'
+      name_attribute_text: 'O atributo LDAP usado para nomear o grupo OpenProject quando criado por um filtro'
+    synchronized_filters:
+      add_new: 'Adicionar filtro LDAP sincronizado'
+      singular: 'Filtro de sincronização de grupo LDAP'
+      plural: 'Filtros de sincronização de grupo LDAP'
+      destroy:
+        title: 'Remover filtro sincronizado %{name}'
+        confirmation: "Se você continuar, o filtro sincronizado %{name} e todos os grupos %{groups_count} criados por meio dele serão removidos."
+        removed_groups: "Aviso: Isto removerá os seguintes grupos do OpenProject e removê-los de todos os projetos!"
+        verification: "Digite o nome do filtro %{name} para verificar a exclusão."
+      form:
+        group_name_attribute_text: 'Insira o atributo de grupo LDAP usado para configurações do nome de grupo do OpenProject.'
+        filter_string_text: 'Insira o filtro RFC4515 LDAP que retorna grupos em seu LDAP para sincronizar com o OpenProject.'
     synchronized_groups:
       add_new: 'Adicionar grupo LDAP sincronizado'
       destroy:
@@ -32,7 +48,7 @@ pt-BR:
       plural: 'Grupos LDAP sincronizados'
       singular: 'Grupo LDAP sincronizado'
       form:
-        auth_source_text: 'Selecione qual modo de autenticação LDAP é usado.'
-        entry_text: 'Defina o identificador do grupo LDAP.'
+        auth_source_text: 'Selecione a conexão LDAP a ser usada.'
+        dn_text: 'Inserir todo o ND do grupo no LDAP'
         group_text: 'Selecione um grupo existente no OpenProject para que seja sincronizado com membros do grupo LDAP'
 
